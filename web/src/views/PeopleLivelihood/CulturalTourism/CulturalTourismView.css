@@ -1,0 +1,173 @@
+.container {
+  width: 1920px;
+  height: 1080px;
+  background-color: rgba(30, 30, 47, 1);
+}
+
+.header {
+  width: 1920px;
+  height: 100px;
+  background: rgba(30, 30, 47, 1);
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+}
+
+.header div {
+  cursor: pointer;
+}
+
+.content {
+  width: 1920px;
+  height: 980px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-bar {
+  width: 300px;
+  height: 920px;
+  border-radius: 12px;
+  background: rgba(46, 47, 64, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-bar-title {
+  height: 100px;
+  width: 260px;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(112, 114, 140, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.message {
+  color: gray;
+}
+
+.breathe:nth-of-type(1) {
+  animation-delay: 0.125s;
+  text-shadow: 0px 0 20px;
+}
+
+.breathe:nth-of-type(2) {
+  animation-delay: 0.25s;
+  text-shadow: 0px 0 20px;
+}
+
+.breathe:nth-of-type(3) {
+  animation-delay: 0.375s;
+  text-shadow: 0px 0 20px;
+}
+
+.breathe:nth-of-type(4) {
+  animation-delay: 0.5s;
+  text-shadow: 0px 0 20px;
+}
+
+@keyframes breathe {
+  20% {
+    color: white;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+
+.breathe {
+  animation: breathe 2s infinite;
+}
+
+.menu-bar-list {
+  height: 820px;
+  width: 300px;
+  overflow: auto;
+  font-size: 16px;
+}
+
+.menu-bar-list::-webkit-scrollbar {
+  display: initial;
+  width: 6px;
+  height: 6px;
+}
+
+.menu-bar-list::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: gray;
+}
+
+.menu-bar-list .box {
+  margin-left: 20px;
+  height: 60px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.menu-bar-list .box div {
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 50ms ease-in-out;
+}
+
+.menu-bar-list .box div:hover {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+  font-size: 18px;
+}
+
+.menu-bar-list .box div:active {
+  font-size: 14px;
+  color: aquamarine;
+  text-shadow: 0px 0px 4px aquamarine;
+}
+
+.selected {
+  color: aqua;
+  text-shadow: 0px 0px 30px aqua;
+}
+
+.scenic-spot-img {
+  width: 29px;
+  height: 29px;
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/scenic-spot.png");
+}
+
+.cultural-construction {
+  width: 29px;
+  height: 29px;
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/cultural-construction.png");
+}
+
+.mechanism {
+  width: 29px;
+  height: 29px;
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/mechanism.png");
+}
+
+.cultural-heritage {
+  width: 29px;
+  height: 29px;
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/cultural-heritage.png");
+}
+
+.page {
+  width: 1530px;
+  height: 920px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid red;
+}

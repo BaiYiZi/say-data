@@ -23,6 +23,29 @@ const router = createRouter({
           path: "cultural-tourism",
           name: "cultural-tourism",
           component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalTourismView.vue'),
+          children: [
+            {
+              path: "scenic-spot",
+              name: "scenic-spot",
+              component: () => import('../views/Peoplelivelihood/CulturalTourism/ScenicSpot/ScenicSpotView.vue'),
+            },
+            {
+              path: "cultural-tourism-construction",
+              name: "cultural-tourism-construction",
+              component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalTourismConstruction/CulturalTourismConstructionView.vue'),
+            },
+            {
+              path: "mechanism",
+              name: "mechanism",
+              component: () => import('../views/Peoplelivelihood/CulturalTourism/Mechanism/MechanismView.vue'),
+            },
+            {
+              path: "cultural-heritage",
+              name: "cultural-heritage",
+              component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalHeritage/CulturalHeritageView.vue'),
+            }
+          ],
+          redirect: "/people-livelihood/cultural-tourism/scenic-spot"
         }
       ],
     }

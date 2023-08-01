@@ -1,13 +1,13 @@
 .container {
   width: 1920px;
   height: 1080px;
-  background-image: url("@/assets/PeopleLivelihood/background.png");
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/background.png");
 }
 
 .header {
   width: 1920px;
   height: 100px;
-  background-image: url("@/assets/PeopleLivelihood/top.png");
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/top.png");
   display: flex;
   justify-content: center;
   align-items: center;
