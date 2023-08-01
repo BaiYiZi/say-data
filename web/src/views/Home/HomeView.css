@@ -1,0 +1,151 @@
+.container {
+  width: 1920px;
+  height: 1080px;
+  background-image: url("@/assets/Home/background.png");
+}
+
+.header {
+  width: 1920px;
+  height: 100px;
+  background-image: url("@/assets/Home/top.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.header div {
+  cursor: pointer;
+}
+
+.content {
+  width: 1920px;
+  height: 980px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: calc(531px * 2 + 60px);
+  height: calc(310px * 2 + 60px);
+  flex-wrap: wrap;
+}
+
+.cnt-box {
+  width: 531px;
+  height: 310px;
+  background-size: 100% 100%;
+  font-weight: bold;
+  border-radius: 16px;
+  border: 0px solid rgba(0, 0, 0, 0);
+  transition: all 200ms ease-in-out;
+
+  text-align: center;
+  cursor: pointer;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+
+.cnt-box:hover {
+  opacity: 0.9;
+  transform: scale(1.04);
+  transition: all 200ms ease-in-out;
+}
+
+.economy {
+  background-image: url("@/assets/Home/economy.png");
+  -webkit-animation-name: ecomomy-animation;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+}
+
+@-webkit-keyframes ecomomy-animation {
+  0% {
+    box-shadow: 0 0px 0px rgba(47, 94, 206, 0), 0 0px 0px rgba(47, 94, 206, 0) inset;
+  }
+
+  100% {
+    border: 0px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0px 28px rgba(47, 94, 206, 1), 0 0px 28px rgba(47, 94, 206, 1) inset;
+  }
+}
+
+.people-livelihood {
+  background-image: url("@/assets/Home/people-livelihood.png");
+  -webkit-animation-name: people-livelihood-animation;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+}
+
+@-webkit-keyframes people-livelihood-animation {
+  0% {
+    box-shadow: 0 0px 0px rgba(0, 123, 217, 0), 0 0px 0px rgba(0, 123, 217, 0) inset;
+  }
+
+  100% {
+    border: 0px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0px 28px rgba(0, 123, 217, 1), 0 0px 28px rgba(0, 123, 217, 1) inset;
+  }
+}
+
+.agriculture {
+  background-image: url("@/assets/Home/agriculture.png");
+  -webkit-animation-name: agriculture-animation;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+}
+
+@-webkit-keyframes agriculture-animation {
+  0% {
+    box-shadow: 0 0px 0px rgba(95, 99, 204, 0), 0 0px 0px rgba(95, 99, 204, 0) inset;
+  }
+
+  100% {
+    border: 0px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0px 28px rgba(95, 99, 204, 1), 0 0px 28px rgba(95, 99, 204, 1) inset;
+  }
+}
+
+.double-carbon {
+  background-image: url("@/assets/Home/double-carbon.png");
+  -webkit-animation-name: double-carbon-animation;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+}
+
+@-webkit-keyframes double-carbon-animation {
+  0% {
+    box-shadow: 0 0px 0px rgba(227, 81, 121, 0), 0 0px 0px rgba(227, 81, 121, 0) inset;
+  }
+
+  100% {
+    border: 0px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0px 28px rgba(227, 81, 121, 1), 0 0px 28px rgba(227, 81, 121, 1) inset;
+  }
+}
