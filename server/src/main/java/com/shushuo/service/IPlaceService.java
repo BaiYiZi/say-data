@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPlaceService extends IService<Place> {
 
+    Integer getPlaceByType(String type);
+
 }

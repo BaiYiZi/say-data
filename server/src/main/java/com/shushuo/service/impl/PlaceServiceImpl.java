@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlaceServiceImpl extends ServiceImpl<PlaceMapper, Place> implements IPlaceService {
 
+    @Override
+    public Integer getPlaceByType(String type) {
+        return this.baseMapper.getPlaceByType(type);
+    }
 }

@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PlaceMapper extends BaseMapper<Place> {
 
+    Integer getPlaceByType(String type);
+
 }

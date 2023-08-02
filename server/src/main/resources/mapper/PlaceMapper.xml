@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shushuo.mapper.PlaceMapper">
+    <select id="getPlaceByType" parameterType="String" resultType="integer">
+        select count(0)
+        from place p,place_tag pt
+        Where p.tag_id = pt.tag_id
+        and pt.type = #{type}
+    </select>
 
 </mapper>
