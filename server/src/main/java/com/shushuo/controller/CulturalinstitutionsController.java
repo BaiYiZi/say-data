@@ -1,6 +1,5 @@
 package com.shushuo.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.shushuo.common.Code;
 import com.shushuo.common.Result;
 import com.shushuo.entity.Culturalinstitutions;
@@ -9,7 +8,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

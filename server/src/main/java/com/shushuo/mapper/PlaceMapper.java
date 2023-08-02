@@ -15,5 +15,6 @@ public interface PlaceMapper extends BaseMapper<Place> {
 
     Integer getPlaceByType(String type);
     Integer getPlaceByTag(String tag);
+    Integer getPlaceByAType(String atype);
 
 }

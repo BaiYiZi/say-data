@@ -13,5 +13,11 @@
         Where p.tag_id = pt.tag_id
         and pt.tag_name = #{tag}
     </select>
+    <select id="getPlaceByAType" parameterType="String" resultType="integer">
+        select count(0)
+        from place p,place_tag pt
+        where p.tag_id = pt.tag_id
+        and pt.atype = #{atype}
+    </select>
 
 </mapper>

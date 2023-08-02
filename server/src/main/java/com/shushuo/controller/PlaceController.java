@@ -36,5 +36,11 @@ public class PlaceController {
     public Result<?> getPlaceByTag(@PathVariable("tag") String tag){
         Integer place = placeService.getPlaceByTag(tag);
         return new Result<>(Code.SELECT_SUCCESS,"查询成功",place);
-    };
+    }
+    @Operation(summary = "查询某大区块数量")
+    @GetMapping("/atype/{atype}")
+    public Result<?> getPlaceByAType(@PathVariable("atype") String atype){
+        Integer place = placeService.getPlaceByAType(atype);
+        return new Result<>(Code.SELECT_SUCCESS,"查询成功",place);
+    }
 }

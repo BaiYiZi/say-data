@@ -15,5 +15,6 @@ public interface IPlaceService extends IService<Place> {
 
     Integer getPlaceByType(String type);
     Integer getPlaceByTag(String tag);
+    Integer getPlaceByAType(String atype);
 
 }
