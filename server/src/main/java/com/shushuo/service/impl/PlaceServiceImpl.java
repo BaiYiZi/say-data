@@ -21,4 +21,9 @@ public class PlaceServiceImpl extends ServiceImpl<PlaceMapper, Place> implements
     public Integer getPlaceByType(String type) {
         return this.baseMapper.getPlaceByType(type);
     }
+
+    @Override
+    public Integer getPlaceByTag(String tag) {
+        return this.baseMapper.getPlaceByTag(tag);
+    }
 }
