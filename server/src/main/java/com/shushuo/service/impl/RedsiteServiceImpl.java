@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class RedsiteServiceImpl extends ServiceImpl<RedsiteMapper, Redsite> implements IRedsiteService {
 
+    @Override
+    public Long getCount() {
+        return this.baseMapper.selectCount(null);
+    }
 }

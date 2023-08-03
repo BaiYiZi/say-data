@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-08-03
  */
 public interface IRedsiteService extends IService<Redsite> {
+    Long getCount();
 
 }
