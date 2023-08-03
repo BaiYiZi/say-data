@@ -29,7 +29,7 @@ function goCulturalHeritage() {
 <template>
   <div class="container">
     <div class="header">
-      <div  @click="goHome">数说保定</div>
+      <div @click="goHome">数说保定</div>
     </div>
 
     <div class="content">
