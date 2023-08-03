@@ -31,7 +31,7 @@ public class CodeGenerator {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "D:\\github\\say-data\\server\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("museum", "greening", "activity") // 设置需要生成的表名
+                    builder.addInclude("redsite") // 设置需要生成的表名
                             .addTablePrefix(); // 设置过滤表前缀
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
