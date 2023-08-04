@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  *  前端控制器
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @RestController
