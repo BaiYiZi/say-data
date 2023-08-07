@@ -1,6 +1,6 @@
 package com.shushuo.service;
 
-import com.shushuo.entity.Museum;
+import com.shushuo.entity.CulturalProtection;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -11,11 +11,9 @@ import java.util.List;
  * </p>
  *
  * @author star
- * @since 2023-08-03
+ * @since 2023-08-07
  */
-public interface IMuseumService extends IService<Museum> {
+public interface ICulturalProtectionService extends IService<CulturalProtection> {
 
-    List getAddress();
-
-    List getVisitors();
+    List getType();
 }

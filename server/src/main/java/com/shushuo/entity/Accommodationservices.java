@@ -2,6 +2,10 @@ package com.shushuo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -12,6 +16,9 @@ import java.io.Serializable;
  * @author star
  * @since 2023-08-03
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Accommodationservices implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,45 +32,4 @@ public class Accommodationservices implements Serializable {
 
     private String name;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAdname() {
-        return adname;
-    }
-
-    public void setAdname(String adname) {
-        this.adname = adname;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Accommodationservices{" +
-            "id = " + id +
-            ", adname = " + adname +
-            ", address = " + address +
-            ", name = " + name +
-        "}";
-    }
 }

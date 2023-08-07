@@ -3,6 +3,9 @@ package com.shushuo.service;
 import com.shushuo.entity.Hotel;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IHotelService extends IService<Hotel> {
 
+    List<Map<String,Object>> getQuantity();
+
+    List getaddress();
 }

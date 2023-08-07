@@ -11,7 +11,7 @@ import java.util.List;
  *  Mapper 接口
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 public interface AttractionsMapper extends BaseMapper<Attractions> {

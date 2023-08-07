@@ -13,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @AllArgsConstructor
@@ -28,12 +28,12 @@ public class Passengerflow implements Serializable {
 
     private String name;
 
-    private Object footfallIndex;
+    private double footfallIndex;
 
-    private Object congestionIndex;
+    private double congestionIndex;
 
-    private Object average;
+    private double average;
 
-    private Object distance;
+    private double distance;
 
 }

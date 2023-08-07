@@ -2,6 +2,10 @@ package com.shushuo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,6 +17,9 @@ import java.time.LocalDateTime;
  * @author star
  * @since 2023-08-03
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Activity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,37 +30,4 @@ public class Activity implements Serializable {
     private String title;
 
     private LocalDateTime time;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDateTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
-
-    @Override
-    public String toString() {
-        return "Activity{" +
-            "id = " + id +
-            ", title = " + title +
-            ", time = " + time +
-        "}";
-    }
 }

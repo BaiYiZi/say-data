@@ -13,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @NoArgsConstructor

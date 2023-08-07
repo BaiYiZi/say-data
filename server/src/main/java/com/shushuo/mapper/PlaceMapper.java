@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  *  Mapper 接口
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 public interface PlaceMapper extends BaseMapper<Place> {
