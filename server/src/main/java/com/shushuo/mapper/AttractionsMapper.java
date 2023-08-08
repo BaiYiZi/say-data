@@ -2,7 +2,7 @@ package com.shushuo.mapper;
 
 import com.shushuo.entity.Attractions;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.shushuo.entity.AttractionsCount;
+import com.shushuo.common.vo.AttractionsCount;
 
 import java.util.List;
 

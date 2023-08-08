@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.shushuo.common.Code;
 import com.shushuo.common.Result;
 import com.shushuo.entity.Attractions;
-import com.shushuo.entity.AttractionsCount;
+import com.shushuo.common.vo.AttractionsCount;
 import com.shushuo.service.IAttractionsService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -18,7 +18,7 @@ import java.util.List;
  *  前端控制器
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @RestController
@@ -32,6 +32,16 @@ public class PassengerflowController {
     public Result<?> getPassengerFlow(){
         List<Passengerflow> list = passengerFlowService.list();
         return new Result<>(Code.SELECT_SUCCESS,"查询成功",list);
+    }
+
+    @Operation(summary = "适游指数")
+    @GetMapping("/tourworthy")
+    public Result<?> getTourworthy(){
+        List list = passengerFlowService.getTourworthy();
+        if(!list.isEmpty()){
+            return new Result<>(Code.SELECT_SUCCESS,"查询成功",list);
+        }
+        return new Result<>(Code.SELECT_ERROR,"查询失败");
     }
 
 }

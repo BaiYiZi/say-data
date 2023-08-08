@@ -6,12 +6,14 @@ import com.shushuo.service.IPlaceService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @Service
@@ -30,6 +32,11 @@ public class PlaceServiceImpl extends ServiceImpl<PlaceMapper, Place> implements
     @Override
     public Integer getPlaceByAType(String atype) {
         return this.baseMapper.getPlaceByAType(atype);
+    }
+
+    @Override
+    public List getPlaceNumber() {
+        return this.baseMapper.getPlace();
     }
 
 }

@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shushuo.mapper.PlaceMapper">
-    <select id="getPlaceByType" parameterType="String" resultType="integer">
-        select count(0)
+    <select id="getPlaceByType" parameterType="String" resultType="Integer">
+        select count(0) as count
         from place p,place_tag pt
         Where p.tag_id = pt.tag_id
         and pt.type = #{type}
     </select>
-    <select id="getPlaceByTag" parameterType="String" resultType="integer">
-        select count(0)
+    <select id="getPlaceByTag" parameterType="String" resultType="Integer">
+        select count(0) as count
         from place p,place_tag pt
         Where p.tag_id = pt.tag_id
         and pt.tag_name = #{tag}
     </select>
-    <select id="getPlaceByAType" parameterType="String" resultType="integer">
-        select count(0)
+    <select id="getPlaceByAType" parameterType="String" resultType="Integer">
+        select count(0) as count
         from place p,place_tag pt
         where p.tag_id = pt.tag_id
         and pt.atype = #{atype}
+    </select>
+    <select id="getPlace" resultType="java.util.HashMap">
+        select pt.atype,count(0) as count
+        from place p,place_tag pt
+        where p.tag_id = pt.tag_id
+        group by pt.atype
     </select>
 
 </mapper>

@@ -11,7 +11,7 @@ import java.util.Map;
  *  服务类
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 public interface IHotelService extends IService<Hotel> {
