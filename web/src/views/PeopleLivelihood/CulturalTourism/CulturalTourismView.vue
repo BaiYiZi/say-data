@@ -1,9 +1,11 @@
 <style scoped src="./CulturalTourismView.css"></style>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { ref, onMounted } from 'vue'
 
 const router = useRouter()
+const currentCircleShowID = ref(1)
 
 function goHome() {
   router.push('/')
@@ -11,19 +13,41 @@ function goHome() {
 
 function goScenicSpot() {
   router.push('/people-livelihood/cultural-tourism/scenic-spot')
+  currentCircleShowID.value = 1
 }
 
 function goCulturalTourismConstruction() {
   router.push('/people-livelihood/cultural-tourism/cultural-tourism-construction')
+  currentCircleShowID.value = 2
 }
 
 function goMechanism() {
   router.push('/people-livelihood/cultural-tourism/mechanism')
+  currentCircleShowID.value = 3
 }
 
 function goCulturalHeritage() {
   router.push('/people-livelihood/cultural-tourism/cultural-heritage')
+  currentCircleShowID.value = 4
 }
+
+onMounted(() => {
+  const route = useRoute()
+  switch (route.path) {
+    case '/people-livelihood/cultural-tourism/scenic-spot':
+      currentCircleShowID.value = 1
+      break
+    case '/people-livelihood/cultural-tourism/cultural-tourism-construction':
+      currentCircleShowID.value = 2
+      break
+    case '/people-livelihood/cultural-tourism/mechanism':
+      currentCircleShowID.value = 3
+      break
+    case '/people-livelihood/cultural-tourism/cultural-heritage':
+      currentCircleShowID.value = 4
+      break
+  }
+})
 </script>
 
 <template>
@@ -45,19 +69,23 @@ function goCulturalHeritage() {
 
         <div class="menu-bar-list">
           <div class="box">
+            <span class="little-circle"><span v-show="currentCircleShowID == 1"></span></span>
             <span class="scenic-spot-img"></span>
             <div @click="goScenicSpot">景区及公共娱乐设施</div>
           </div>
           <div class="box">
-            <span class="cultural-construction"></span>
+            <span class="little-circle"><span v-show="currentCircleShowID == 2"></span></span>
+            <span class="cultural-construction-img"></span>
             <div @click="goCulturalTourismConstruction">文化旅游业发展情况</div>
           </div>
           <div class="box">
-            <span class="mechanism"></span>
+            <span class="little-circle"><span v-show="currentCircleShowID == 3"></span></span>
+            <span class="mechanism-img"></span>
             <div @click="goMechanism">文化机构及文旅相关设施</div>
           </div>
           <div class="box">
-            <span class="cultural-heritage"></span>
+            <span class="little-circle"><span v-show="currentCircleShowID == 4"></span></span>
+            <span class="cultural-heritage-img"></span>
             <div @click="goCulturalHeritage">文化遗产及文化相关</div>
           </div>
         </div>

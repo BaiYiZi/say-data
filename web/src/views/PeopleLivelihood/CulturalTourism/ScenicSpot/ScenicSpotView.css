@@ -1,0 +1,16 @@
+.container {
+  width: 1540px;
+  height: 950px;
+}
+
+.test-chart-box {
+  width: 1108px;
+  height: 530px;
+  background-color: rgba(46, 47, 64, 1);
+  border-radius: 12px;
+}
+
+button {
+  width: 128px;
+  height: 64px;
+}

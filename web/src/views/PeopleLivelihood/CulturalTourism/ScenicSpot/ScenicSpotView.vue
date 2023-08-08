@@ -1,63 +1,67 @@
+<style scoped src="./ScenicSpotView.css"></style>
 <script setup>
-import { onMounted, ref, watch, watchEffect } from 'vue'
-import * as echarts from 'echarts'
-import API from '@/api/index'
+import { onMounted, ref, onUnmounted } from 'vue'
+import { useScenicSpotTestChartStore } from './Charts/TestChart'
 
-const loading = ref(true)
+const testChartLoadingState = ref(true)
+const scenicSpotTestChart = useScenicSpotTestChartStore()
 
-const testChartData = ref({ category: [], value: [] })
-function getTestChartInfo() {
-  const chartDom = document.getElementById('box', 'dark')
-  const myChart = echarts.init(chartDom)
+const timerReLoadPageDataFuncs = []
 
-  const testChartOption = {
-    xAxis: {
-      type: 'category',
-      data: testChartData.value.category
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: testChartData.value.value,
-        type: 'bar',
-        showBackground: true
-      }
-    ]
-  }
-
-  return [myChart, testChartOption]
+function func() {
+  testChartLoadingState.value = true
+  scenicSpotTestChart.reLoadData().then(() => {
+    testChartLoadingState.value = false
+  })
 }
 
 onMounted(() => {
-  API.PEOPLE_LIVELIHOOD.test().then((res) => {
-    testChartData.value = res.data.data
-    const [testChart, testChartOption] = getTestChartInfo()
+  Promise.all([
+    scenicSpotTestChart
+      .loadData()
+      .then(() => {
+        scenicSpotTestChart.setDomID('test-chart-box')
+      })
+      .then(() => {
+        testChartLoadingState.value = false
+      })
+      .then(() => {
+        scenicSpotTestChart.loadDom()
+      })
+      .then(() => {
+        return async () => {
+          while (true) {
+            await new Promise((resolve) => {
+              setTimeout(() => {
+                resolve()
+              }, 5000)
+            })
 
-    loading.value = false
-
-    watchEffect(() => {
-      testChart.setOption(testChartOption)
-    })
+            testChartLoadingState.value = true
+            await scenicSpotTestChart.reLoadData()
+            testChartLoadingState.value = false
+          }
+        }
+      })
+  ]).then((reLoadDataFuncs) => {
+    reLoadDataFuncs.forEach((v) => v())
   })
 })
 
-function func() {
-  loading.value = true
-  API.PEOPLE_LIVELIHOOD.test().then((res) => {
-    testChartData.value = res.data.data
-    const [testChart, testChartOption] = getTestChartInfo()
-    testChart.setOption(testChartOption)
-    loading.value = false
-  })
-}
+onUnmounted(() => {
+  clearInterval(timerReLoadPageDataFuncs)
+  console.log('back')
+})
 </script>
 
 <template>
-  <div>ScenicSpot Page</div>
-
-  <div v-loading="loading" id="box" :style="{ width: '1024px', height: '300px' }"></div>
-
-  <button @click="func">CLick Me!</button>
+  <div class="container">
+    <div
+      id="test-chart-box"
+      class="test-chart-box"
+      v-loading="testChartLoadingState"
+      element-loading-background="rgba(0, 0, 0, 0)"
+    ></div>
+    <button @click="func">click me</button>
+  </div>
 </template>
