@@ -18,9 +18,8 @@ import java.util.Map;
  */
 public interface PlaceMapper extends BaseMapper<Place> {
 
-    Integer getPlaceByType(String type);
-    Integer getPlaceByTag(String tag);
-    Integer getPlaceByAType(String atype);
+    Integer getPlaceByAType();
     List<Map<String,Object>> getPlace();
+    List<Map<String,Object>> getPark();
 
 }

@@ -34,6 +34,7 @@ public class MuseumServiceImpl extends ServiceImpl<MuseumMapper, Museum> impleme
     public List getVisitors() {
         QueryWrapper<Museum> wrapper = new QueryWrapper<>();
         wrapper.select("name","visitors");
+        wrapper.orderByDesc("visitors");
         List<Map<String, Object>> maps = this.baseMapper.selectMaps(wrapper);
         return maps;
     }

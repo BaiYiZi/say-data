@@ -44,4 +44,14 @@ public class PassengerflowController {
         return new Result<>(Code.SELECT_ERROR,"查询失败");
     }
 
+    @Operation(summary = "拥堵指数")
+    @GetMapping("/congestion")
+    public Result<?> getCongestion(){
+        List list = passengerFlowService.getCongestion();
+        if(!list.isEmpty()){
+            return new Result<>(Code.SELECT_SUCCESS,"查询成功",list);
+        }
+        return new Result<>(Code.SELECT_ERROR,"查询失败");
+    }
+
 }

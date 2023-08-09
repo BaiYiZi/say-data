@@ -30,7 +30,19 @@ public class CulturalinstitutionsController {
     @Operation(summary = "各类文化机构情况")
     @GetMapping("/list")
     public Result<?> getCulturalList(){
-        List<Culturalinstitutions> culturalinstitutionsList = culturalinstiutionsService.list();
-        return new Result<>(Code.SELECT_SUCCESS,"查询成功",culturalinstitutionsList);
+        List culturalinstitutionsList = culturalinstiutionsService.getculture();
+        if(!culturalinstitutionsList.isEmpty()){
+            return new Result<>(Code.SELECT_SUCCESS,"查询成功",culturalinstitutionsList);
+        }
+        return new Result<>(Code.SELECT_ERROR,"查询失败");
+    }
+    @Operation(summary = "广播电视覆盖率")
+    @GetMapping("/program")
+    public Result<?> getProgram(){
+        List list = culturalinstiutionsService.getProgram();
+        if(!list.isEmpty()){
+            return new Result<>(Code.SELECT_SUCCESS,"查询成功",list);
+        }
+        return new Result<>(Code.SELECT_ERROR,"查询失败");
     }
 }

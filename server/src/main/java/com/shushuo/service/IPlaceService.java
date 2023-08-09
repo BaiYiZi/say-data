@@ -15,8 +15,7 @@ import java.util.List;
  */
 public interface IPlaceService extends IService<Place> {
 
-    Integer getPlaceByType(String type);
-    Integer getPlaceByTag(String tag);
-    Integer getPlaceByAType(String atype);
+    Integer getPlaceByAType();
     List getPlaceNumber();
+    List getPark();
 }

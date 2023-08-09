@@ -1,5 +1,6 @@
 package com.shushuo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.shushuo.entity.Passengerflow;
 import com.shushuo.mapper.PassengerflowMapper;
 import com.shushuo.service.IPassengerflowService;
@@ -24,6 +25,7 @@ public class PassengerflowServiceImpl extends ServiceImpl<PassengerflowMapper, P
 
     @Override
     public List getTourworthy() {
+        QueryWrapper wrapper = new QueryWrapper();
         List<Passengerflow> passengerflows = this.baseMapper.selectList(null);
         List<Map<String,Object>> list = new ArrayList<>();
         for (Passengerflow passengerflow : passengerflows) {
@@ -32,5 +34,13 @@ public class PassengerflowServiceImpl extends ServiceImpl<PassengerflowMapper, P
             list.add(map);
         }
         return list;
+    }
+
+    @Override
+    public List getCongestion() {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.select("name","congestion_index");
+        wrapper.orderByDesc("congestion_index");
+        return this.baseMapper.selectMaps(wrapper);
     }
 }

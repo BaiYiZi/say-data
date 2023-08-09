@@ -16,4 +16,6 @@ import java.util.List;
 public interface IPassengerflowService extends IService<Passengerflow> {
 
     List getTourworthy();
+
+    List getCongestion();
 }

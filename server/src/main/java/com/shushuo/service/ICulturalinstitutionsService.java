@@ -3,6 +3,8 @@ package com.shushuo.service;
 import com.shushuo.entity.Culturalinstitutions;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICulturalinstitutionsService extends IService<Culturalinstitutions> {
 
+    List getculture();
+
+    List getProgram();
 }

@@ -19,24 +19,20 @@ import java.util.List;
 @Service
 public class PlaceServiceImpl extends ServiceImpl<PlaceMapper, Place> implements IPlaceService {
 
-    @Override
-    public Integer getPlaceByType(String type) {
-        return this.baseMapper.getPlaceByType(type);
-    }
 
     @Override
-    public Integer getPlaceByTag(String tag) {
-        return this.baseMapper.getPlaceByTag(tag);
-    }
-
-    @Override
-    public Integer getPlaceByAType(String atype) {
-        return this.baseMapper.getPlaceByAType(atype);
+    public Integer getPlaceByAType() {
+        return this.baseMapper.getPlaceByAType();
     }
 
     @Override
     public List getPlaceNumber() {
         return this.baseMapper.getPlace();
+    }
+
+    @Override
+    public List getPark() {
+        return this.baseMapper.getPark();
     }
 
 }

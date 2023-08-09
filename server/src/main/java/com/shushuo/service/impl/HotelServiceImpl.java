@@ -27,6 +27,7 @@ public class HotelServiceImpl extends ServiceImpl<HotelMapper, Hotel> implements
     public List<Map<String, Object>> getQuantity() {
         QueryWrapper<Hotel> wrapper = new QueryWrapper<Hotel>();
         wrapper.select("hotel_name","quantity");
+        wrapper.orderByDesc("quantity");
         List<Map<String, Object>> maps = this.baseMapper.selectMaps(wrapper);
         return maps;
     }
