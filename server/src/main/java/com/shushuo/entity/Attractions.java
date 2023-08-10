@@ -13,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @Data
@@ -38,5 +38,5 @@ public class Attractions implements Serializable {
 
     private String phone;
 
-    private Object area;
+    private double area;
 }

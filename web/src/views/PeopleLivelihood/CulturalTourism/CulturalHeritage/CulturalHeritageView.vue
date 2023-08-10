@@ -1,5 +1,79 @@
 <style scoped src="./CulturalHeritageView.css"></style>
-<script setup></script>
+<script setup>
+import { onMounted, ref, onUnmounted } from 'vue'
+import { usegongyuanChartStore } from './Charts/gongyuan'
+import { useyundongChartStore } from './Charts/yundong'
+import { usehuodongChartStore } from './Charts/huodong'
+import { usechangsuoChartStore } from './Charts/changsuo'
+
+const gongyuanChartLoadingState = ref(true)
+const gongyuanChartState = usegongyuanChartStore()
+
+const yundongChartLoadingState = ref(true)
+const yundongChartState = useyundongChartStore()
+
+const huodongChartLoadingState = ref(true)
+const huodongChartState = usehuodongChartStore()
+
+const changsuoChartLoadingState = ref(true)
+const changsuoChartState = usechangsuoChartStore()
+
+
+onMounted(() => {
+  Promise.all([
+  gongyuanChartState
+      .loadData()
+      .then(() => {
+        gongyuanChartState.setDomID('left-down-left-content')
+      })
+      .then(() => {
+        gongyuanChartLoadingState.value = false
+      })
+      .then(() => {
+        gongyuanChartState.loadDom()
+      }),
+      yundongChartState
+      .loadData()
+      .then(() => {
+        yundongChartState.setDomID('left-down-right-content')
+      })
+      .then(() => {
+        yundongChartLoadingState.value = false
+      })
+      .then(() => {
+        yundongChartState.loadDom()
+      }),
+      huodongChartState
+      .loadData()
+      .then(() => {
+        huodongChartState.setDomID('left-up-content')
+      })
+      .then(() => {
+        huodongChartLoadingState.value = false
+      })
+      .then(() => {
+        huodongChartState.loadDom()
+      }),
+      changsuoChartState
+      .loadData()
+      .then(() => {
+        changsuoChartState.setDomID('right-up-content')
+      })
+      .then(() => {
+        changsuoChartLoadingState.value = false
+      })
+      .then(() => {
+        changsuoChartState.loadDom()
+      })
+  ]).then((reLoadDataFuncs) => {
+    // reLoadDataFuncs.forEach((v) => v())
+  })
+})
+
+onUnmounted(() => {
+  console.log('back')
+})
+</script>
 
 <template>
   <div class="page-container">

@@ -13,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @Data
@@ -31,4 +31,5 @@ public class Hotel implements Serializable {
     private String level;
 
     private String address;
+    private Integer quantity;
 }

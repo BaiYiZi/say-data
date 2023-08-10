@@ -13,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @Data
@@ -28,12 +28,12 @@ public class Revenue implements Serializable {
 
     private String year;
 
-    private Object domesticTourists;
+    private double domesticTourists;
 
-    private Object drevenue;
+    private double drevenue;
 
-    private Object internationalVisitors;
+    private double internationalVisitors;
 
-    private Object irevenue;
+    private double irevenue;
 
 }

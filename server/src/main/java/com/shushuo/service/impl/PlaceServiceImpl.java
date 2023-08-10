@@ -6,30 +6,33 @@ import com.shushuo.service.IPlaceService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
  * </p>
  *
- * @author baomidou
+ * @author star
  * @since 2023-07-31
  */
 @Service
 public class PlaceServiceImpl extends ServiceImpl<PlaceMapper, Place> implements IPlaceService {
 
+
     @Override
-    public Integer getPlaceByType(String type) {
-        return this.baseMapper.getPlaceByType(type);
+    public Integer getPlaceByAType() {
+        return this.baseMapper.getPlaceByAType();
     }
 
     @Override
-    public Integer getPlaceByTag(String tag) {
-        return this.baseMapper.getPlaceByTag(tag);
+    public List getPlaceNumber() {
+        return this.baseMapper.getPlace();
     }
 
     @Override
-    public Integer getPlaceByAType(String atype) {
-        return this.baseMapper.getPlaceByAType(atype);
+    public List getPark() {
+        return this.baseMapper.getPark();
     }
 
 }
