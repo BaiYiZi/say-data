@@ -6,6 +6,7 @@ import com.shushuo.entity.Passengerflow;
 import com.shushuo.service.IPassengerflowService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import java.util.List;
  * @since 2023-07-31
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/passengerflow")
 public class PassengerflowController {
     @Autowired

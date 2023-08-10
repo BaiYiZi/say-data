@@ -1,5 +1,6 @@
 package com.shushuo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.shushuo.entity.Attractions;
 import com.shushuo.common.vo.AttractionsCount;
 import com.shushuo.mapper.AttractionsMapper;

@@ -9,6 +9,7 @@
                  LEFT JOIN attractions_tag aat
                            ON aat.tag_id = ata.tag_id
         GROUP BY ata.tag_id
+        Order by count DESC
     </select>
 
 </mapper>

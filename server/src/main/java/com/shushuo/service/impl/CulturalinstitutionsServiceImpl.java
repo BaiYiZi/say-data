@@ -30,7 +30,7 @@ public class CulturalinstitutionsServiceImpl extends ServiceImpl<Culturalinstitu
     @Override
     public List getProgram() {
         QueryWrapper wrapper = new QueryWrapper();
-        wrapper.select("program_coverage");
+        wrapper.select("year","program_coverage");
         return this.baseMapper.selectMaps(wrapper);
     }
 }
