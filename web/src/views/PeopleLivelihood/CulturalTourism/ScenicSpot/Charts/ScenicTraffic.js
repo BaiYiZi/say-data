@@ -53,6 +53,19 @@ export const useScenicTrafficChartStore = defineStore('ScenicTrafficChart', () =
       },
       series: [
         {
+          itemStyle: {
+            barBorderRadius: [10, 10, 0, 0],
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: 'rgba(33, 196, 255, 1)'
+              },
+              {
+                offset: 1,
+                color: 'rgba(28, 146, 189, 1)'
+              }
+            ])
+          },
           data: scenicTrafficChartData.value.value,
           type: 'bar',
           showBackground: true,

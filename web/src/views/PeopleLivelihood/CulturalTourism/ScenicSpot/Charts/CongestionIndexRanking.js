@@ -65,21 +65,19 @@ export const useCongestionIndexRankingChartStore = defineStore('CongestionIndexR
       },
       series: [
         {
-          name: '2011',
           type: 'bar',
           itemStyle: {
             barBorderRadius: [0, 20, 20, 0],
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
               {
                 offset: 0,
-                color: 'rgba(0, 255, 188, 1)'
+                color: 'rgba(9, 173, 168, 1)'
               },
               {
                 offset: 1,
-                color: 'rgba(9, 173, 168, 1)'
+                color: 'rgba(0, 255, 188, 1)'
               }
             ])
-
           },
           label: {
             normal: {
