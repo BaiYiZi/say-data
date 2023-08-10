@@ -138,6 +138,11 @@
   height: 236px;
 }
 
+.left-middle .content .pic-box {
+  width: 1096px;
+  height: 236px;
+}
+
 .left-down {
   width: 1096px;
   height: 372px;
@@ -220,7 +225,8 @@
   width: 424px;
   height: 372px;
   border-radius: 12px;
-  background: rgba(46, 47, 64, 1);;
+  background: rgba(46, 47, 64, 1);
+  ;
 }
 
 .right-down .title {
@@ -248,4 +254,12 @@
 .right-down .content {
   width: 424px;
   height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-down .content .pic-box {
+  width: 384px;
+  height: 280px;
 }

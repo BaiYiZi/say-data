@@ -137,7 +137,7 @@ onUnmounted(() => {
 
       <div class="left-middle">
         <div id="left-middle-content" class="content">
-          <el-carousel trigger="click">
+          <el-carousel trigger="click" class="pic-box">
             <el-carousel-item>
               <img src="@/assets/PeopleLivelihood/CulturalTourism/baishishan.png" />
             </el-carousel-item>
@@ -184,12 +184,19 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">特色美食推荐</div>
         </div>
-        <div
-          id="right-down-content"
-          class="content"
-          v-loading="true"
-          element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        <div id="right-down-content" class="content">
+          <el-carousel trigger="click" class="pic-box">
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/huoshao.png" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/baiyunzhang.png" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/zhaobing.png" />
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       </div>
     </div>
   </div>
