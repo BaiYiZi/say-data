@@ -9,34 +9,33 @@
   height: 100px;
   background: rgba(30, 30, 47, 1);
   display: flex;
-  margin-left: 30px;
   align-items: center;
-  font-size: 60px;
+  font-size: 48px;
   color: white;
   font-weight: bold;
 }
 
 .header div {
   cursor: pointer;
+  margin-left: 30px;
 }
 
 .content {
   width: 1920px;
   height: 980px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
 .menu-bar {
   width: 300px;
-  height: 920px;
+  height: 950px;
   border-radius: 12px;
   background: rgba(46, 47, 64, 1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 30px;
 }
 
 .menu-bar-title {
@@ -91,7 +90,7 @@
 }
 
 .menu-bar-list {
-  height: 820px;
+  height: 850px;
   width: 300px;
   overflow: auto;
   font-size: 16px;
@@ -115,6 +114,7 @@
   display: flex;
   align-items: center;
   color: white;
+  white-space: nowrap;
 }
 
 .menu-bar-list .box div {
@@ -126,13 +126,11 @@
 .menu-bar-list .box div:hover {
   color: aqua;
   text-shadow: 0px 0px 30px aqua;
-  font-size: 18px;
 }
 
 .menu-bar-list .box div:active {
-  font-size: 14px;
-  color: aquamarine;
-  text-shadow: 0px 0px 4px aquamarine;
+  color: aqua;
+  text-shadow: 0px 0px 10px aqua;
 }
 
 .selected {
@@ -143,31 +141,47 @@
 .scenic-spot-img {
   width: 29px;
   height: 29px;
-  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/scenic-spot.png");
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/scenic-spot.png");
 }
 
-.cultural-construction {
+.cultural-construction-img {
   width: 29px;
   height: 29px;
-  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/cultural-construction.png");
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/cultural-construction.png");
 }
 
-.mechanism {
+.mechanism-img {
   width: 29px;
   height: 29px;
-  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/mechanism.png");
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/mechanism.png");
 }
 
-.cultural-heritage {
+.cultural-heritage-img {
   width: 29px;
   height: 29px;
-  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/cultural-heritage.png");
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/cultural-heritage.png");
+}
+
+.little-circle {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.little-circle span {
+  width: 8px;
+  height: 8px;
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/little-circle.png");
+  background-repeat: no-repeat;
 }
 
 .page {
-  width: 1530px;
-  height: 920px;
+  margin-left: 20px;
+  width: 1540px;
+  height: 950px;
   border-radius: 12px;
-  background: white;
-  border: 1px solid red;
+  /* border: 1px solid aqua; */
+  overflow: hidden;
 }
