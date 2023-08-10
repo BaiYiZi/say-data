@@ -1,16 +1,251 @@
-.container {
+.page-container {
   width: 1540px;
   height: 950px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.test-chart-box {
-  width: 1108px;
-  height: 530px;
+.left {
+  width: 1096px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left-up {
+  width: 1096px;
+  height: 302px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-up-left {
+  width: 352px;
+  height: 302px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(46, 47, 64, 1);
+}
+
+.left-up-left .title {
+  width: 352px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.left-up-left .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.left-up-left .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.left-up-left .content {
+  width: 352px;
+  height: 250px;
+}
+
+.left-up-middle {
+  width: 352px;
+  height: 302px;
   background-color: rgba(46, 47, 64, 1);
   border-radius: 12px;
+  overflow: hidden;
 }
 
-button {
-  width: 128px;
-  height: 64px;
+.left-up-middle .title {
+  width: 352px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.left-up-middle .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.left-up-middle .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.left-up-middle .content {
+  width: 352px;
+  height: 250px;
+}
+
+.left-up-right {
+  width: 352px;
+  height: 302px;
+  background-color: rgba(46, 47, 64, 1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.left-up-right .title {
+  width: 352px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.left-up-right .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.left-up-right .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.left-up-right .content {
+  width: 352px;
+  height: 250px;
+}
+
+.left-middle {
+  width: 1096px;
+  height: 236px;
+  background-color: rgba(46, 47, 64, 1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.left-middle .content {
+  width: 1096px;
+  height: 236px;
+}
+
+.left-down {
+  width: 1096px;
+  height: 372px;
+  background-color: rgba(46, 47, 64, 1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.left-down .title {
+  width: 1096px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.left-down .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.left-down .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.left-down .content {
+  width: 1096px;
+  height: 320px;
+}
+
+.right {
+  width: 424px;
+  height: 950px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-up {
+  width: 424px;
+  height: 558px;
+  border-radius: 12px;
+  background-color: rgba(46, 47, 64, 1);
+}
+
+.right-up .title {
+  width: 424px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.right-up .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.right-up .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.right-up .content {
+  width: 424px;
+  height: 506px;
+}
+
+.right-down {
+  width: 424px;
+  height: 372px;
+  border-radius: 12px;
+  background: rgba(46, 47, 64, 1);;
+}
+
+.right-down .title {
+  width: 424px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px double rgba(65, 66, 81, 1);
+}
+
+.right-down .title .img {
+  width: 12px;
+  height: 17px;
+  margin-left: 16px;
+  background-image: url('@/assets/PeopleLivelihood/CulturalTourism/chart-title-triangle.png');
+}
+
+.right-down .title .text {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.right-down .content {
+  width: 424px;
+  height: 320px;
 }
