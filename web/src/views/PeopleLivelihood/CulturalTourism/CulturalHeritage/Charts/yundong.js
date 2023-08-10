@@ -13,7 +13,7 @@ export const useyundongChartStore = defineStore('yundongChart', () => {
   }
 
   async function getCurrentData() {
-    yundongChartData.value = ((await API.PEOPLE_LIVELIHOOD.yundong()).data) }
+    yundongChartData.value = ((await API.PEOPLE_LIVELIHOOD.yundong()).data.data) }
 
   async function loadData() {
     await getCurrentData()
@@ -85,7 +85,7 @@ export const useyundongChartStore = defineStore('yundongChart', () => {
           },
           data: [
             {
-              value: 80
+              value: yundongChartData.value
             }
           ]
         }
