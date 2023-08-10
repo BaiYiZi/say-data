@@ -154,7 +154,7 @@ onUnmounted(() => {
       <div class="left-down">
         <div class="title">
           <div class="img"></div>
-          <div class="text">各景区客流数</div>
+          <div class="text">各景区客流指数</div>
         </div>
         <div
           id="left-down-content"
