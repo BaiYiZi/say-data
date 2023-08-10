@@ -3,12 +3,20 @@
 import { onMounted, ref, onUnmounted } from 'vue'
 import { useNumberOfAttractionsChartStore } from './Charts/NumberOfAttractions'
 import { useNumberOfPlacesAccommodationChartStore } from './Charts/NumberOfPlacesAccommodation'
+import { useCongestionIndexRankingChartStore } from './Charts/CongestionIndexRanking'
+import { useScenicTrafficChartStore } from './Charts/ScenicTraffic'
 
 const numberOfAttractionsChartLoadingState = ref(true)
 const numberOfAttractionsChartState = useNumberOfAttractionsChartStore()
 
 const numberOfPlacesAccommodationChartLoadingState = ref(true)
 const numberOfPlacesAccommodationChartState = useNumberOfPlacesAccommodationChartStore()
+
+const congestionIndexRankingChartLoadingState = ref(true)
+const congestionIndexRankingChartState = useCongestionIndexRankingChartStore()
+
+const scenicTrafficChartLoadingState = ref(true)
+const scenicTrafficChartState = useScenicTrafficChartStore()
 
 onMounted(() => {
   Promise.all([
@@ -48,6 +56,30 @@ onMounted(() => {
       })
       .then(() => {
         numberOfPlacesAccommodationChartState.loadDom()
+      }),
+
+    congestionIndexRankingChartState
+      .loadData()
+      .then(() => {
+        congestionIndexRankingChartState.setDomID('left-up-right-content')
+      })
+      .then(() => {
+        congestionIndexRankingChartLoadingState.value = false
+      })
+      .then(() => {
+        congestionIndexRankingChartState.loadDom()
+      }),
+
+    scenicTrafficChartState
+      .loadData()
+      .then(() => {
+        scenicTrafficChartState.setDomID('left-down-content')
+      })
+      .then(() => {
+        scenicTrafficChartLoadingState.value = false
+      })
+      .then(() => {
+        scenicTrafficChartState.loadDom()
       })
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
@@ -97,19 +129,26 @@ onUnmounted(() => {
           <div
             id="left-up-right-content"
             class="content"
-            v-loading="true"
+            v-loading="congestionIndexRankingChartLoadingState"
             element-loading-background="rgba(0, 0, 0, 0)"
           ></div>
         </div>
       </div>
 
       <div class="left-middle">
-        <div
-          id="left-middle-content"
-          class="content"
-          v-loading="true"
-          element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        <div id="left-middle-content" class="content">
+          <el-carousel trigger="click">
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/baishishan.png" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/baishishan2.png" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="@/assets/PeopleLivelihood/CulturalTourism/yesanpo.png" />
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       </div>
 
       <div class="left-down">
@@ -118,7 +157,7 @@ onUnmounted(() => {
           <div class="text">各景区客流数</div>
         </div>
         <div
-          id="left-up-right-content"
+          id="left-down-content"
           class="content"
           v-loading="true"
           element-loading-background="rgba(0, 0, 0, 0)"
@@ -143,7 +182,7 @@ onUnmounted(() => {
       <div class="right-down">
         <div class="title">
           <div class="img"></div>
-          <div class="text">著名红色景区推荐</div>
+          <div class="text">特色美食推荐</div>
         </div>
         <div
           id="right-down-content"

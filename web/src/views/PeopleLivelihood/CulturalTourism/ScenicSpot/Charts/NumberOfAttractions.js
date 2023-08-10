@@ -34,6 +34,9 @@ export const useNumberOfAttractionsChartStore = defineStore('NumberOfAttractions
     const numberOfAttractionsChart = echarts.getInstanceById(instanceID) || echarts.init(document.getElementById(domID.value))
 
     const numberOfAttractionsChartOption = {
+      tooltip: {
+        trigger: 'item'
+      },
       // color: [
       //   "red",
       //   "aqua",
