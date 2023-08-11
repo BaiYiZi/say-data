@@ -1,3 +1,4 @@
+import { HotelDensityData } from './Mechanism/HotelDensityData.js'
 import { NumberOfAttractionsData } from './scenic-spot/NumberOfAttractionsData.js'
 import { NumberOfPlacesAccommodationData } from './scenic-spot/NumberOfPlacesAccommodationData.js'
 import { CongestionIndexRankingData } from './scenic-spot/CongestionIndexRankingData.js'
@@ -21,7 +22,8 @@ const PEOPLE_LIVELIHOOD = {
   gongyuan: gongyuan,
   yundong: yundong,
   huodong: huodong,
-  changsuo: changsuo
+  changsuo: changsuo,
+  HotelDensityData: HotelDensityData
 }
 
 export default PEOPLE_LIVELIHOOD
