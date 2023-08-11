@@ -57,21 +57,31 @@ export const usebowuguanChartStore = defineStore('bowuguanChart', () => {
           type: 'shadow'
         }
       },
+      legend: {
+        type: 'plain',
+        x: 'center',
+        // y: 'bottom',
+        bottom: 12,
+        icon: 'roundRect', // 图例的图标样式
+        textStyle: { //图例的文字样式
+          color: '#fff',
+        },
+      },
       grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
+        top: '10%',
+        left: '6%',
+        right: '6%',
+        bottom: '14%',
         containLabel: true
       },
       xAxis: [
         {
-          axisLabel: {  
-            interval:0,
-            formatter:function(value)  
-            {  
-                return value.split("").join("\n");  
+          axisLabel: {
+            interval: 0,
+            formatter: function (value) {
+              return value.split("").join("\n");
             }
-        },
+          },
           type: 'category',
           data: bowuguanName.value,
           axisTick: {
@@ -81,15 +91,25 @@ export const usebowuguanChartStore = defineStore('bowuguanChart', () => {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(255,255,255,0.15)'
+            }
+          }
         }
       ],
       series: [
         {
-          name: '数量',
+          name: '数量(个)',
           type: 'bar',
           barWidth: '60%',
-          data: bowuguanChartData.value
+          data: bowuguanChartData.value,
+          itemStyle: {
+            borderRadius: [3, 3, 3, 3],
+            color: 'rgba(56, 215, 255, 1)'
+          }
         }
       ]
     }

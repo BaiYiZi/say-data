@@ -4,6 +4,7 @@ import { onMounted, ref, onUnmounted } from 'vue'
 import { usewenbaoChartStore } from './Charts/wenbao'
 import { usebowuguanChartStore } from './Charts/bowuguan'
 import { usefeiyiChartStore } from './Charts/feiyi'
+import { useMuseumVisitorsChartStore } from './Charts/MuseumVisitors'
 
 const wenbaoChartLoadingState = ref(true)
 const wenbaoChartState = usewenbaoChartStore()
@@ -14,10 +15,12 @@ const bowuguanChartState = usebowuguanChartStore()
 const feiyiChartLoadingState = ref(true)
 const feiyiChartState = usefeiyiChartStore()
 
+const museumVisitorsChartLoadingState = ref(true)
+const museumVisitorsChartState = useMuseumVisitorsChartStore()
 
 onMounted(() => {
   Promise.all([
-  wenbaoChartState
+    wenbaoChartState
       .loadData()
       .then(() => {
         wenbaoChartState.setDomID('left-down-left-content')
@@ -42,7 +45,8 @@ onMounted(() => {
         //   }
         // }
       }),
-      bowuguanChartState
+
+    bowuguanChartState
       .loadData()
       .then(() => {
         bowuguanChartState.setDomID('left-down-right-content')
@@ -67,7 +71,8 @@ onMounted(() => {
         //   }
         // }
       }),
-      feiyiChartState
+
+    feiyiChartState
       .loadData()
       .then(() => {
         feiyiChartState.setDomID('left-up-content')
@@ -77,6 +82,32 @@ onMounted(() => {
       })
       .then(() => {
         feiyiChartState.loadDom()
+      })
+      .then(() => {
+        // return async () => {
+        //   while (true) {
+        //     await new Promise((resolve) => {
+        //       setTimeout(() => {
+        //         resolve()
+        //       }, 2000)
+        //     })
+        //     numberOfAttractionsChartLoadingState.value = true
+        //     await numberOfAttractionsChartState.reLoadData()
+        //     numberOfAttractionsChartLoadingState.value = false
+        //   }
+        // }
+      }),
+
+    museumVisitorsChartState
+      .loadData()
+      .then(() => {
+        museumVisitorsChartState.setDomID('right-up-content')
+      })
+      .then(() => {
+        museumVisitorsChartLoadingState.value = false
+      })
+      .then(() => {
+        museumVisitorsChartState.loadDom()
       })
       .then(() => {
         // return async () => {
@@ -110,12 +141,7 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">非物质文化遗产数量</div>
         </div>
-        <div
-          id="left-up-content"
-          class="content"
-          v-loading="true"
-          element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        <div id="left-up-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
       </div>
 
       <div class="left-down">
@@ -124,12 +150,8 @@ onUnmounted(() => {
             <div class="img"></div>
             <div class="text">各类型文化保护单位数量</div>
           </div>
-          <div
-            id="left-down-left-content"
-            class="content"
-            v-loading="true"
-            element-loading-background="rgba(0, 0, 0, 0)"
-          ></div>
+          <div id="left-down-left-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)">
+          </div>
         </div>
 
         <div class="left-down-right">
@@ -137,12 +159,8 @@ onUnmounted(() => {
             <div class="img"></div>
             <div class="text">各地区博物馆数量</div>
           </div>
-          <div
-            id="left-down-right-content"
-            class="content"
-            v-loading="true"
-            element-loading-background="rgba(0, 0, 0, 0)"
-          ></div>
+          <div id="left-down-right-content" class="content" v-loading="true"
+            element-loading-background="rgba(0, 0, 0, 0)"></div>
         </div>
       </div>
     </div>
@@ -153,12 +171,7 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">各博物馆年参观人次</div>
         </div>
-        <div
-          id="right-up-content"
-          class="content"
-          v-loading="true"
-          element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        <div id="right-up-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
       </div>
 
       <div class="right-down">
@@ -166,12 +179,7 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">红色遗址</div>
         </div>
-        <div
-          id="right-down-content"
-          class="content"
-          v-loading="true"
-          element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        <div id="right-down-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
       </div>
     </div>
   </div>

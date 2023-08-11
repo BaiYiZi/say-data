@@ -48,16 +48,19 @@ export const useProgramChartStore = defineStore('Program', () => {
       legend: {
         type: 'plain',
         x: 'center',
-        y: 'bottom',
-        data: [
-          {
-            name: '人口覆盖率',
-            icon: 'circle', // 图例的图标样式
-          },
-        ],
+        // y: 'bottom',
+        bottom: 12,
+        icon: 'roundRect', // 图例的图标样式
         textStyle: { //图例的文字样式
           color: '#fff',
         },
+      },
+      grid: {
+        top: '10%',
+        left: '6%',
+        right: '6%',
+        bottom: '14%',
+        containLabel: true
       },
       xAxis: {
         type: 'category',
@@ -71,6 +74,12 @@ export const useProgramChartStore = defineStore('Program', () => {
           show: true,
           interval: 'auto',
           formatter: '{value} %'//纵坐标百分比
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: 'rgba(255,255,255,0.15)'
+          }
         }
       },
       series: [
@@ -83,7 +92,7 @@ export const useProgramChartStore = defineStore('Program', () => {
           },
           lineStyle: {
             width: 4
-          }
+          },
         }
       ]
     }

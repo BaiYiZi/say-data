@@ -51,12 +51,22 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
           type: "shadow",
         },
       },
+      legend: {
+        type: 'plain',
+        x: 'center',
+        // y: 'bottom',
+        bottom: 12,
+        icon: 'roundRect', // 图例的图标样式
+        textStyle: { //图例的文字样式
+          color: '#fff',
+        },
+      },
       //图表位置
       grid: {
-        top: "5%",
-        left: "3%",
-        right: "4%",
-        bottom: "3%",
+        top: "4%",
+        left: "10%",
+        right: "14%",
+        bottom: "8%",
         containLabel: true,
       },
       //X轴
@@ -98,7 +108,7 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
         {
           //柱状图自动排序，排序自动让Y轴名字跟着数据动
           realtimeSort: true,
-          name: "数量",
+          name: "数量(个)",
           type: "bar",
           data: hotelQuantityChartData.value.quantity,
           barWidth: 14,
@@ -113,7 +123,7 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
               valueAnimation: true,
               offset: [5, -2],
               textStyle: {
-                color: "#333",
+                color: "#fff",
                 fontSize: 13,
               },
             },

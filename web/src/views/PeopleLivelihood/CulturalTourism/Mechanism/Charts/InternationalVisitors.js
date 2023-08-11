@@ -49,15 +49,21 @@ export const useInternationalVisitorsChartStore = defineStore('InternationalVisi
       legend: {
         type: 'plain',
         x: 'center',
-        y: 'bottom',
-        top: 270,
-        icon: 'circle',
+        // y: 'bottom',
+        bottom: 12,
+        icon: 'roundRect', // 图例的图标样式
         textStyle: { //图例的文字样式
           color: '#fff',
         },
       },
+      grid: {
+        top: '10%',
+        left: '6%',
+        right: '6%',
+        bottom: '14%',
+        containLabel: true
+      },
       xAxis: {
-        name: '年份',
         type: 'category',
         data: internationalVisitorsChartData.value.year.reverse()
       },
