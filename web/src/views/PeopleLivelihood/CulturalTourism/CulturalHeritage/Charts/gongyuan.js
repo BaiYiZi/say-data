@@ -32,9 +32,9 @@ export const usegongyuanChartStore = defineStore('gongyuanChart', () => {
     watch(gongyuanChartData, () => {
       loadDom()
     }),
-    watch(gongyuanName, () =>{
-      loadDom()
-    })
+      watch(gongyuanName, () => {
+        loadDom()
+      })
   }
 
   function loadDom() {
@@ -67,13 +67,12 @@ export const usegongyuanChartStore = defineStore('gongyuanChart', () => {
       },
       xAxis: [
         {
-          axisLabel: {  
-            interval:0,
-            formatter:function(value)  
-            {  
-                return value.split("").join("\n");  
+          axisLabel: {
+            interval: 0,
+            formatter: function (value) {
+              return value.split("").join("\n");
             }
-        },
+          },
           type: 'category',
           data: gongyuanName.value,
           axisTick: {
@@ -83,18 +82,39 @@ export const usegongyuanChartStore = defineStore('gongyuanChart', () => {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          splitLine: {
+            lineStyle: {
+              color: 'rgba(255, 255, 255, 0.15)'
+            }
+          }
         }
       ],
       series: [
         {
           name: '数量',
           type: 'bar',
-          barWidth: '60%',
-          data: gongyuanChartData.value
+          barWidth: 24,
+          data: gongyuanChartData.value,
+          itemStyle: {
+            borderRadius: [3, 3, 3, 3],
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 1,
+              x2: 0,
+              y2: 0,
+              colorStops: [{
+                offset: 0, color: 'rgba(9, 97, 173, 1)' // 0% 处的颜色
+              }, {
+                offset: 1, color: 'rgba(56, 215, 255, 1)' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            }
+          },
         }
       ],
-      
+
     }
 
     gongyuanChart.setOption(gongyuanChartOption)

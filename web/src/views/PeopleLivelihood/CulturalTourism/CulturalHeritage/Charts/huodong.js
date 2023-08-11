@@ -15,6 +15,8 @@ export const usehuodongChartStore = defineStore('huodongChart', () => {
 
   async function getCurrentData() {
     huodongName.value = ((await API.PEOPLE_LIVELIHOOD.huodong()).data.data).map(v => {
+      var d = new Date(v.dates)
+      v.dates = d.getFullYear() + '年' + d.getMonth() + '月'
       return {
         value: v.dates
       }
@@ -64,13 +66,12 @@ export const usehuodongChartStore = defineStore('huodongChart', () => {
       },
       xAxis: [
         {
-          axisLabel: {  
-            interval:0,
-            formatter:function(value)  
-            {  
-                return value.split("").join("\n");  
+          axisLabel: {
+            interval: 0,
+            formatter: function (value) {
+              return value.split("").join("\n");
             }
-        },
+          },
           type: 'category',
           data: huodongName.value,
           axisTick: {
@@ -80,15 +81,24 @@ export const usehuodongChartStore = defineStore('huodongChart', () => {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          splitLine: {
+            lineStyle: {
+              color: 'rgba(255, 255, 255, 0.15)'
+            }
+          }
         }
       ],
       series: [
         {
           name: '次数',
-          type: 'bar',
-          barWidth: '60%',
-          data: huodongChartData.value
+          smooth: true,
+          type: 'line',
+          data: huodongChartData.value,
+          color: '#54EBC8',
+          lineStyle: {
+            width: 4
+          }
         }
       ],
     }
