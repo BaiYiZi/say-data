@@ -1,4 +1,3 @@
-import { HotelDensityData } from './Mechanism/HotelDensityData.js'
 import { NumberOfAttractionsData } from './scenic-spot/NumberOfAttractionsData.js'
 import { NumberOfPlacesAccommodationData } from './scenic-spot/NumberOfPlacesAccommodationData.js'
 import { RedScenicSpotData } from './scenic-spot/RedScenicSpotData.js'
@@ -11,6 +10,11 @@ import { gongyuan } from './jumin/gongyuan.js'
 import { yundong } from './jumin/yundong.js'
 import { huodong } from './jumin/huodong.js'
 import { changsuo } from './jumin/changsuo.js'
+
+import { HotelDensityData } from './Mechanism/HotelDensityData.js'
+import { RevenueData } from './Mechanism/RevenueData.js'
+import { ProgramData } from './Mechanism/programData.js'
+import { HotelQuantityData } from './Mechanism/HotelQuantityData.js'
 
 const PEOPLE_LIVELIHOOD = {
   NumberOfAttractionsData: NumberOfAttractionsData,
@@ -25,7 +29,10 @@ const PEOPLE_LIVELIHOOD = {
   yundong: yundong,
   huodong: huodong,
   changsuo: changsuo,
-  HotelDensityData: HotelDensityData
+  HotelDensityData: HotelDensityData,
+  HotelQuantityData: HotelQuantityData,
+  RevenueData: RevenueData,
+  ProgramData: ProgramData
 }
 
 export default PEOPLE_LIVELIHOOD

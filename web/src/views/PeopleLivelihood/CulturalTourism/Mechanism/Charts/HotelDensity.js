@@ -34,8 +34,6 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
     const instanceID = document.getElementById(domID.value).getAttribute("_echarts_instance_")
     const hotelDensityChart = echarts.getInstanceById(instanceID) || echarts.init(document.getElementById(domID.value))
 
-    console.log(hotelDensityChartData)
-
     echarts.registerMap('baoding', mapData);
 
     const hotelDensityChartOption = {
@@ -49,35 +47,43 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
         },
         itemStyle: {
           borderColor: '#ffffff',
-          normal: {
-            borderColor: '#ffffff', //区域边框颜色
-            areaColor: "#ffffff", //区域颜色
-          },
+          borderWidth: 0.5,
+          areaColor: "#ffffff", //区域颜色
         },
-        // emphasis: {
-        //   show: false,
-        //   focus: 'self',
-        //   itemStyle: {
-        //     areaColor: "#d46e6e",
-        //   }
-        // }
+        emphasis: {
+          show: true,
+          focus: 'self',
+          itemStyle: {
+            areaColor: "#d46e6e",
+          }
+        }
       },
       visualMap: {
+        show: true,
+        type: 'continuous',
+        splitNumber: 10,
         min: 0, // 最小值
         max: 7, // 最大值
+        calculable: true,
+        realtime: true,
+        itemWidth: 10,
         inRange: {
-          areaColor: [
-            '#32ACEF',
-            '#35F3FD',
-            '#2C84B4',
-            '#484CDC',
-            '#229EA8',
-            '#3BD2A6',
-            '#2E33D1',
-            '#22597E',
-            '#2EBDCC',
-            '#4EFD95',
-          ]
+          color: [
+            '#46EEA1',
+            '#3DDAB2',
+            '#33C8C1',
+            '#2DB4C5',
+            '#2997AE',
+            '#267C99',
+            '#235F82',
+            '#24518D',
+            '#2846A5',
+            '#2B3BBD',
+          ],
+          symbolSize: [30, 100]
+        },
+        outOfRange: {
+          color: 'rgba(255,255,255,0.20)'
         }
       },
       series: [
