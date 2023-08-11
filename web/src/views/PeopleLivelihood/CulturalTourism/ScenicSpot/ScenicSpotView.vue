@@ -1,5 +1,6 @@
 <style scoped src="./ScenicSpotView.css"></style>
 <script setup>
+import request from '@/utils/request/index'
 import { onMounted, ref, onUnmounted } from 'vue'
 import { useNumberOfAttractionsChartStore } from './Charts/NumberOfAttractions'
 import { useNumberOfPlacesAccommodationChartStore } from './Charts/NumberOfPlacesAccommodation'
@@ -21,6 +22,7 @@ const scenicTrafficChartState = useScenicTrafficChartStore()
 
 const redScenicSpotChartLoadingState = ref(true)
 const redScenicSpotChartState = useRedScenicSpotChartStore()
+const redScenicSpotData = ref([])
 
 onMounted(() => {
   Promise.all([
@@ -86,17 +88,25 @@ onMounted(() => {
         scenicTrafficChartState.loadDom()
       }),
 
-    redScenicSpotChartState
-      .loadData()
-      .then(() => {
-        redScenicSpotChartState.setDomID('right-up-content')
+    // redScenicSpotChartState
+    //   .loadData()
+    //   .then(() => {
+    //     redScenicSpotChartState.setDomID('right-up-content')
+    //   })
+    //   .then(() => {
+    //     redScenicSpotChartLoadingState.value = false
+    //   })
+    //   .then(() => {
+    //     redScenicSpotChartState.loadDom()
+    //   })
+    new Promise((resolve) => {
+      request.get('/attractions/red').then((res) => {
+        setTimeout(resolve, 2000, res)
       })
-      .then(() => {
-        redScenicSpotChartLoadingState.value = false
-      })
-      .then(() => {
-        redScenicSpotChartState.loadDom()
-      })
+    }).then((res) => {
+      redScenicSpotData.value = res.data.data.map((v) => v.attractions_name)
+      console.log(redScenicSpotData.value)
+    })
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
   })
@@ -132,7 +142,7 @@ onUnmounted(() => {
           <div
             id="left-up-middle-content"
             class="content"
-            v-loading="numberOfAttractionsChartLoadingState"
+            v-loading="numberOfPlacesAccommodationChartLoadingState"
             element-loading-background="rgba(0, 0, 0, 0)"
           ></div>
         </div>
@@ -190,11 +200,9 @@ onUnmounted(() => {
         <div
           id="right-up-content"
           class="content"
-          v-loading="true"
+          v-loading="redScenicSpotChartLoadingState"
           element-loading-background="rgba(0, 0, 0, 0)"
-        >
-          <el-carousel class="carousel-box" v-show="false"></el-carousel>
-        </div>
+        ></div>
       </div>
 
       <div class="right-down">
