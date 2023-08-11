@@ -8,6 +8,7 @@ import { wenbao } from './wenhua/wenbao.js'
 import { bowuguan } from './wenhua/bowuguan.js'
 import { feiyi } from './wenhua/feiyi.js'
 import { MuseumVisitorsData } from './wenhua/MuseumVisitorsData.js'
+import { RedRuinsData } from './wenhua/RedRuinsData.js'
 
 
 import { gongyuan } from './jumin/gongyuan.js'
@@ -33,6 +34,7 @@ const PEOPLE_LIVELIHOOD = {
   yundong: yundong,
   huodong: huodong,
   changsuo: changsuo,
+  RedRuinsData:RedRuinsData,
   HotelDensityData: HotelDensityData,
   HotelQuantityData: HotelQuantityData,
   RevenueData: RevenueData,

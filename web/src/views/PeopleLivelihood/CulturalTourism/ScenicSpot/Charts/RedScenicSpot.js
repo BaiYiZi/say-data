@@ -28,18 +28,14 @@ export const useRedScenicSpotChartStore = defineStore('RedScenicSpotDataChart', 
   }
 
   function loadDom() {
-    // const instanceID = document.getElementById(domID.value)
-    // const carouselBox = instanceID.children.item(0)
-    // carouselBox.innerHTML = ""
-    // console.log(redScenicSpotChartData.value.length)
+    const instanceID = document.getElementById(domID.value)
 
-    // const currentInsertDom = document.createElement('el-carousel-item')
-    // carouselBox.appendChild(currentInsertDom)
-
-    // const childs = instanceID.children
-    // for (let i = 0; i < childs.length; i++) {
-    //   childs[i].style.color = "red"
-    // }
+    const childs = instanceID.children
+    for (let i = 0; i < 6; i++) {
+      console.log(childs.item(i))
+      console.log(childs.item(i).firstChild)
+      childs.item(i).firstChild.innerHTML = redScenicSpotChartData.value[i] || "待推荐"
+    }
   }
 
   async function reLoadData() {

@@ -1,13 +1,14 @@
 import request from '@/utils/request/index'
 
-function RedScenicSpotData() {
+function RedRuinsData() {
+  console.log("123123")
   return new Promise((resolve) => {
-    request.get('/attractions/red').then((res) => {
+    request.get('/redsite/list').then((res) => {
       setTimeout(resolve, 0, res)
     })
   })
 }
 
 export {
-  RedScenicSpotData
+  RedRuinsData
 }

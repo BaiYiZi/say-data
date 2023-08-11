@@ -5,6 +5,7 @@ import { usewenbaoChartStore } from './Charts/wenbao'
 import { usebowuguanChartStore } from './Charts/bowuguan'
 import { usefeiyiChartStore } from './Charts/feiyi'
 import { useMuseumVisitorsChartStore } from './Charts/MuseumVisitors'
+import { useRedRuinsChartStore } from './Charts/RedRuins'
 
 const wenbaoChartLoadingState = ref(true)
 const wenbaoChartState = usewenbaoChartStore()
@@ -18,6 +19,9 @@ const feiyiChartState = usefeiyiChartStore()
 const museumVisitorsChartLoadingState = ref(true)
 const museumVisitorsChartState = useMuseumVisitorsChartStore()
 
+const redRuinsChartLoadingState = ref(true)
+const redRuinsChartState = useRedRuinsChartStore()
+
 onMounted(() => {
   Promise.all([
     wenbaoChartState
@@ -30,20 +34,6 @@ onMounted(() => {
       })
       .then(() => {
         wenbaoChartState.loadDom()
-      })
-      .then(() => {
-        // return async () => {
-        //   while (true) {
-        //     await new Promise((resolve) => {
-        //       setTimeout(() => {
-        //         resolve()
-        //       }, 2000)
-        //     })
-        //     numberOfAttractionsChartLoadingState.value = true
-        //     await numberOfAttractionsChartState.reLoadData()
-        //     numberOfAttractionsChartLoadingState.value = false
-        //   }
-        // }
       }),
 
     bowuguanChartState
@@ -56,20 +46,6 @@ onMounted(() => {
       })
       .then(() => {
         bowuguanChartState.loadDom()
-      })
-      .then(() => {
-        // return async () => {
-        //   while (true) {
-        //     await new Promise((resolve) => {
-        //       setTimeout(() => {
-        //         resolve()
-        //       }, 2000)
-        //     })
-        //     numberOfAttractionsChartLoadingState.value = true
-        //     await numberOfAttractionsChartState.reLoadData()
-        //     numberOfAttractionsChartLoadingState.value = false
-        //   }
-        // }
       }),
 
     feiyiChartState
@@ -82,20 +58,6 @@ onMounted(() => {
       })
       .then(() => {
         feiyiChartState.loadDom()
-      })
-      .then(() => {
-        // return async () => {
-        //   while (true) {
-        //     await new Promise((resolve) => {
-        //       setTimeout(() => {
-        //         resolve()
-        //       }, 2000)
-        //     })
-        //     numberOfAttractionsChartLoadingState.value = true
-        //     await numberOfAttractionsChartState.reLoadData()
-        //     numberOfAttractionsChartLoadingState.value = false
-        //   }
-        // }
       }),
 
     museumVisitorsChartState
@@ -108,20 +70,18 @@ onMounted(() => {
       })
       .then(() => {
         museumVisitorsChartState.loadDom()
+      }),
+
+    redRuinsChartState
+      .loadData()
+      .then(() => {
+        redRuinsChartState.setDomID('right-down-content')
       })
       .then(() => {
-        // return async () => {
-        //   while (true) {
-        //     await new Promise((resolve) => {
-        //       setTimeout(() => {
-        //         resolve()
-        //       }, 2000)
-        //     })
-        //     numberOfAttractionsChartLoadingState.value = true
-        //     await numberOfAttractionsChartState.reLoadData()
-        //     numberOfAttractionsChartLoadingState.value = false
-        //   }
-        // }
+        redRuinsChartLoadingState.value = false
+      })
+      .then(() => {
+        redRuinsChartState.loadDom()
       })
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
@@ -141,7 +101,12 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">非物质文化遗产数量</div>
         </div>
-        <div id="left-up-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
+        <div
+          id="left-up-content"
+          class="content"
+          v-loading="true"
+          element-loading-background="rgba(0, 0, 0, 0)"
+        ></div>
       </div>
 
       <div class="left-down">
@@ -150,8 +115,12 @@ onUnmounted(() => {
             <div class="img"></div>
             <div class="text">各类型文化保护单位数量</div>
           </div>
-          <div id="left-down-left-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)">
-          </div>
+          <div
+            id="left-down-left-content"
+            class="content"
+            v-loading="true"
+            element-loading-background="rgba(0, 0, 0, 0)"
+          ></div>
         </div>
 
         <div class="left-down-right">
@@ -159,8 +128,12 @@ onUnmounted(() => {
             <div class="img"></div>
             <div class="text">各地区博物馆数量</div>
           </div>
-          <div id="left-down-right-content" class="content" v-loading="true"
-            element-loading-background="rgba(0, 0, 0, 0)"></div>
+          <div
+            id="left-down-right-content"
+            class="content"
+            v-loading="true"
+            element-loading-background="rgba(0, 0, 0, 0)"
+          ></div>
         </div>
       </div>
     </div>
@@ -171,7 +144,12 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">各博物馆年参观人次</div>
         </div>
-        <div id="right-up-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
+        <div
+          id="right-up-content"
+          class="content"
+          v-loading="true"
+          element-loading-background="rgba(0, 0, 0, 0)"
+        ></div>
       </div>
 
       <div class="right-down">
@@ -179,7 +157,17 @@ onUnmounted(() => {
           <div class="img"></div>
           <div class="text">红色遗址</div>
         </div>
-        <div id="right-down-content" class="content" v-loading="true" element-loading-background="rgba(0, 0, 0, 0)"></div>
+        <div
+          id="right-down-content"
+          class="content"
+          v-loading="redRuinsChartLoadingState"
+          element-loading-background="rgba(0, 0, 0, 0)"
+        >
+          <div v-show="!redRuinsChartLoadingState"><span></span></div>
+          <div v-show="!redRuinsChartLoadingState"><span></span></div>
+          <div v-show="!redRuinsChartLoadingState"><span></span></div>
+          <div v-show="!redRuinsChartLoadingState"><span></span></div>
+        </div>
       </div>
     </div>
   </div>
