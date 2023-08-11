@@ -2,9 +2,25 @@
 <script setup>
 import { onMounted, ref, onUnmounted } from 'vue'
 import { useHotelDensityChartStore } from './Charts/HotelDensity'
+import { useDomesticTouristsChartStore } from './Charts/DomesticTourists'
+import { useInternationalVisitorsChartStore } from './Charts/InternationalVisitors'
+import { useProgramChartStore } from './Charts/Program'
+import { useHotelQuantityChartStore } from './Charts/HotelQuantity'
 
 const hotelDensityChartLoadingState = ref(true)
 const hotelDensityChartState = useHotelDensityChartStore()
+
+const hotelQuantityChartLoadingState = ref(true)
+const hotelQuantityChartState = useHotelQuantityChartStore()
+
+const domesticTouristsChartLoadingState = ref(true)
+const domesticTouristsChartState = useDomesticTouristsChartStore()
+
+const internationalVisitorsLoadingState = ref(true)
+const internationalVisitorsChartState = useInternationalVisitorsChartStore()
+
+const programChartLoadingState = ref(true)
+const programChartState = useProgramChartStore()
 
 onMounted(() => {
   Promise.all([
@@ -33,6 +49,63 @@ onMounted(() => {
         //   }
         // }
       }),
+
+    hotelQuantityChartState
+      .loadData()
+      .then(() => {
+        hotelQuantityChartState.setDomID('right-up-content')
+      })
+      .then(() => {
+        hotelQuantityChartLoadingState.value = false
+      })
+      .then(() => {
+        hotelQuantityChartState.loadDom()
+      })
+      .then(() => {
+      }),
+
+    domesticTouristsChartState
+      .loadData()
+      .then(() => {
+        domesticTouristsChartState.setDomID('left-down-right-content')
+      })
+      .then(() => {
+        domesticTouristsChartLoadingState.value = false
+      })
+      .then(() => {
+        domesticTouristsChartState.loadDom()
+      })
+      .then(() => {
+      }),
+
+    internationalVisitorsChartState
+      .loadData()
+      .then(() => {
+        internationalVisitorsChartState.setDomID('left-down-left-content')
+      })
+      .then(() => {
+        internationalVisitorsLoadingState.value = false
+      })
+      .then(() => {
+        internationalVisitorsChartState.loadDom()
+      })
+      .then(() => {
+      }),
+
+    programChartState
+      .loadData()
+      .then(() => {
+        programChartState.setDomID('right-down-content')
+      })
+      .then(() => {
+        programChartLoadingState.value = false
+      })
+      .then(() => {
+        programChartState.loadDom()
+      })
+      .then(() => {
+      }),
+
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
   })
