@@ -5,6 +5,7 @@ import { usegongyuanChartStore } from './Charts/gongyuan'
 import { useyundongChartStore } from './Charts/yundong'
 import { usehuodongChartStore } from './Charts/huodong'
 import { usechangsuoChartStore } from './Charts/changsuo'
+import { useGreeningChartStore } from './Charts/Greening'
 
 const gongyuanChartLoadingState = ref(true)
 const gongyuanChartState = usegongyuanChartStore()
@@ -17,6 +18,9 @@ const huodongChartState = usehuodongChartStore()
 
 const changsuoChartLoadingState = ref(true)
 const changsuoChartState = usechangsuoChartStore()
+
+const greeningChartLoadingState = ref(true)
+const greeningChartState = useGreeningChartStore()
 
 onMounted(() => {
   Promise.all([
@@ -63,6 +67,17 @@ onMounted(() => {
       })
       .then(() => {
         changsuoChartState.loadDom()
+      }),
+    greeningChartState
+      .loadData()
+      .then(() => {
+        greeningChartState.setDomID('right-down-content')
+      })
+      .then(() => {
+        greeningChartLoadingState.value = false
+      })
+      .then(() => {
+        greeningChartState.loadDom()
       })
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
@@ -141,9 +156,29 @@ onUnmounted(() => {
         <div
           id="right-down-content"
           class="content"
-          v-loading="true"
+          v-loading=greeningChartLoadingState
           element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        >
+          <div v-show="!greeningChartLoadingState">
+            <span class="name">市中心绿地面积</span>
+            <span class="text">
+              <span class="icon"></span>
+              <span class="value">99600</span>
+              <span class="unit">&nbsp亩</span>
+            </span>
+            <div class="empty"></div>
+            <span class="name">人均绿地面积</span>
+            <span class="text">
+                <span class="icon"></span>
+                <span class="value">11.16</span>
+                <span class="unit">&nbsp平方米</span>
+              </span>
+            
+          </div>
+          <!-- <div v-show="!greeningChartLoadingState"><span></span>亩</div>
+          <div v-show="!greeningChartLoadingState">人均绿地面积</div>
+          <div v-show="!greeningChartLoadingState"><span></span>平方米</div> -->
+        </div>
       </div>
     </div>
   </div>

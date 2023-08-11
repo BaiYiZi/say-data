@@ -197,4 +197,69 @@
 .right-down .content {
   width: 420px;
   height: 413px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-down .content div {
+  width: 260px;
+  height: 393px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.right-down .content div .name {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 34.75px;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+  vertical-align: middle;
+  padding-left: 38px;
+}
+
+.right-down .content div .text {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.right-down .content div .text .icon {
+  width: 30px;
+  height: 30px;
+  padding-right: 8px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url("@/assets/PeopleLivelihood/CulturalTourism/tree.svg");
+}
+
+.right-down .content div .text .value {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 52.13px;
+
+  background: linear-gradient(to right, rgba(92, 237, 59, 1), rgba(58, 242, 230, 1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.right-down .content div .text .unit {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+  bottom: 4px;
+}
+
+.right-down .content div .empty {
+  height: 54px;
 }

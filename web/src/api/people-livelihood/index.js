@@ -15,6 +15,7 @@ import { gongyuan } from './jumin/gongyuan.js'
 import { yundong } from './jumin/yundong.js'
 import { huodong } from './jumin/huodong.js'
 import { changsuo } from './jumin/changsuo.js'
+import { GreeningData } from './jumin/GreeningData.js'
 
 import { HotelDensityData } from './Mechanism/HotelDensityData.js'
 import { RevenueData } from './Mechanism/RevenueData.js'
@@ -39,7 +40,8 @@ const PEOPLE_LIVELIHOOD = {
   HotelQuantityData: HotelQuantityData,
   RevenueData: RevenueData,
   ProgramData: ProgramData,
-  MuseumVisitorsData: MuseumVisitorsData
+  MuseumVisitorsData: MuseumVisitorsData,
+  GreeningData: GreeningData
 }
 
 export default PEOPLE_LIVELIHOOD
