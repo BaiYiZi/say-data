@@ -18,10 +18,9 @@ const huodongChartState = usehuodongChartStore()
 const changsuoChartLoadingState = ref(true)
 const changsuoChartState = usechangsuoChartStore()
 
-
 onMounted(() => {
   Promise.all([
-  gongyuanChartState
+    gongyuanChartState
       .loadData()
       .then(() => {
         gongyuanChartState.setDomID('left-down-left-content')
@@ -32,7 +31,7 @@ onMounted(() => {
       .then(() => {
         gongyuanChartState.loadDom()
       }),
-      yundongChartState
+    yundongChartState
       .loadData()
       .then(() => {
         yundongChartState.setDomID('left-down-right-content')
@@ -43,7 +42,7 @@ onMounted(() => {
       .then(() => {
         yundongChartState.loadDom()
       }),
-      huodongChartState
+    huodongChartState
       .loadData()
       .then(() => {
         huodongChartState.setDomID('left-up-content')
@@ -54,7 +53,7 @@ onMounted(() => {
       .then(() => {
         huodongChartState.loadDom()
       }),
-      changsuoChartState
+    changsuoChartState
       .loadData()
       .then(() => {
         changsuoChartState.setDomID('right-up-content')
@@ -108,7 +107,7 @@ onUnmounted(() => {
         <div class="left-down-right">
           <div class="title">
             <div class="img"></div>
-            <div class="text">休闲运动场所数量 </div>
+            <div class="text">休闲运动场所数量</div>
           </div>
           <div
             id="left-down-right-content"
