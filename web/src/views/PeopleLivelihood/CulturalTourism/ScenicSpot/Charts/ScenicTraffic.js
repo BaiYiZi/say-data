@@ -46,6 +46,15 @@ export const useScenicTrafficChartStore = defineStore('ScenicTrafficChart', () =
       },
       xAxis: {
         type: 'category',
+        axisLabel: {
+          interval: 0,
+          formatter: function (value) {
+            return value.split("").join("\n");
+          }
+        },
+        axisTick: {
+          alignWithLabel: true
+        },
         data: scenicTrafficChartData.value.category
       },
       yAxis: {

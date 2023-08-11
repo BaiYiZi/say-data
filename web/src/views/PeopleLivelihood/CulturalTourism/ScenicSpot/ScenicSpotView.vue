@@ -5,6 +5,7 @@ import { useNumberOfAttractionsChartStore } from './Charts/NumberOfAttractions'
 import { useNumberOfPlacesAccommodationChartStore } from './Charts/NumberOfPlacesAccommodation'
 import { useCongestionIndexRankingChartStore } from './Charts/CongestionIndexRanking'
 import { useScenicTrafficChartStore } from './Charts/ScenicTraffic'
+import { useRedScenicSpotChartStore } from './Charts/RedScenicSpot'
 
 const numberOfAttractionsChartLoadingState = ref(true)
 const numberOfAttractionsChartState = useNumberOfAttractionsChartStore()
@@ -17,6 +18,9 @@ const congestionIndexRankingChartState = useCongestionIndexRankingChartStore()
 
 const scenicTrafficChartLoadingState = ref(true)
 const scenicTrafficChartState = useScenicTrafficChartStore()
+
+const redScenicSpotChartLoadingState = ref(true)
+const redScenicSpotChartState = useRedScenicSpotChartStore()
 
 onMounted(() => {
   Promise.all([
@@ -80,6 +84,18 @@ onMounted(() => {
       })
       .then(() => {
         scenicTrafficChartState.loadDom()
+      }),
+
+    redScenicSpotChartState
+      .loadData()
+      .then(() => {
+        redScenicSpotChartState.setDomID('right-up-content')
+      })
+      .then(() => {
+        redScenicSpotChartLoadingState.value = false
+      })
+      .then(() => {
+        redScenicSpotChartState.loadDom()
       })
   ]).then((reLoadDataFuncs) => {
     // reLoadDataFuncs.forEach((v) => v())
@@ -176,7 +192,9 @@ onUnmounted(() => {
           class="content"
           v-loading="true"
           element-loading-background="rgba(0, 0, 0, 0)"
-        ></div>
+        >
+          <el-carousel class="carousel-box" v-show="false"></el-carousel>
+        </div>
       </div>
 
       <div class="right-down">

@@ -1,6 +1,7 @@
 import { HotelDensityData } from './Mechanism/HotelDensityData.js'
 import { NumberOfAttractionsData } from './scenic-spot/NumberOfAttractionsData.js'
 import { NumberOfPlacesAccommodationData } from './scenic-spot/NumberOfPlacesAccommodationData.js'
+import { RedScenicSpotData } from './scenic-spot/RedScenicSpotData.js'
 import { CongestionIndexRankingData } from './scenic-spot/CongestionIndexRankingData.js'
 import { ScenicTrafficData } from './scenic-spot/ScenicTrafficData.js'
 import { wenbao } from './wenhua/wenbao.js'
@@ -16,6 +17,7 @@ const PEOPLE_LIVELIHOOD = {
   NumberOfPlacesAccommodationData: NumberOfPlacesAccommodationData,
   CongestionIndexRankingData: CongestionIndexRankingData,
   ScenicTrafficData: ScenicTrafficData,
+  RedScenicSpotData: RedScenicSpotData,
   wenbao: wenbao,
   bowuguan: bowuguan,
   feiyi: feiyi,

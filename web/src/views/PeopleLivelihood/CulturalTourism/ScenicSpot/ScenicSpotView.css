@@ -219,6 +219,17 @@
 .right-up .content {
   width: 424px;
   height: 506px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-up .content .carousel-box {
+  width: 384px;
+  height: 466px;
+  background-color: black;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .right-down {
