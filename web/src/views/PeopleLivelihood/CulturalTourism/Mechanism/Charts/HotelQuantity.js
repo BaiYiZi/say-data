@@ -18,9 +18,14 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
       quantity: [],
     };
 
+    var i = 13;
     (await API.PEOPLE_LIVELIHOOD.HotelQuantityData()).data.data.map(v => {
+      if (i <= 0) {
+        return
+      }
       hotelQuantityChartData.value.hotel_name.push(v.hotel_name)
       hotelQuantityChartData.value.quantity.push(v.quantity)
+      i--
     })
   }
 
@@ -48,6 +53,7 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
       },
       //图表位置
       grid: {
+        top: "5%",
         left: "3%",
         right: "4%",
         bottom: "3%",
@@ -120,8 +126,8 @@ export const useHotelQuantityChartStore = defineStore('HotelQuantity', () => {
             normal: {
               barBorderRadius: 7,
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                { offset: 0, color: "#3977E6" },
-                { offset: 1, color: "#37BBF8" },
+                { offset: 0, color: "rgba(15, 135, 250, 1)" },
+                { offset: 1, color: "rgba(0, 192, 254, 1)" },
               ]),
             },
           },
