@@ -108,7 +108,7 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
                 {
                     //柱状图自动排序，排序自动让Y轴名字跟着数据动
                     realtimeSort: true,
-                    name: "数量",
+                    name: "年参观量（万人次）",
                     type: "bar",
                     data: museumVisitorsChartData.value.visitors,
                     barWidth: 14,
