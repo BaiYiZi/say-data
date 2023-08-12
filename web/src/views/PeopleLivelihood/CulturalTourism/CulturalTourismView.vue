@@ -71,22 +71,26 @@ onMounted(() => {
           <div class="box">
             <span class="little-circle"><span v-show="currentCircleShowID == 1"></span></span>
             <span class="scenic-spot-img"></span>
-            <div @click="goScenicSpot">景区及公共娱乐设施</div>
+            <div v-show="false" @click="goScenicSpot">景区及公共娱乐设施</div>
+            <div @click="goScenicSpot">景区及特色推荐</div>
           </div>
           <div class="box">
             <span class="little-circle"><span v-show="currentCircleShowID == 2"></span></span>
             <span class="cultural-construction-img"></span>
-            <div @click="goCulturalTourismConstruction">文化旅游业发展情况</div>
+            <div v-show="false" @click="goCulturalTourismConstruction">文化旅游业发展情况</div>
+            <div @click="goCulturalTourismConstruction">历史底蕴及发展</div>
           </div>
           <div class="box">
             <span class="little-circle"><span v-show="currentCircleShowID == 3"></span></span>
             <span class="mechanism-img"></span>
-            <div @click="goMechanism">文化机构及文旅相关设施</div>
+            <div v-show="false" @click="goMechanism">文化机构及文旅相关设施</div>
+            <div @click="goMechanism">旅游相关单位</div>
           </div>
           <div class="box">
             <span class="little-circle"><span v-show="currentCircleShowID == 4"></span></span>
             <span class="cultural-heritage-img"></span>
-            <div @click="goCulturalHeritage">文化遗产及文化相关</div>
+            <div v-show="false" @click="goCulturalHeritage">文化遗产及文化相关</div>
+            <div @click="goCulturalHeritage">居民周边游玩</div>
           </div>
         </div>
       </div>
