@@ -67,12 +67,118 @@
   width: 498px;
   height: 198px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cnt-colum-left-up .title {
+  margin-left: 12px;
+  width: 474px;
+  height: 50px;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-left-up .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-left-up .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-left-up .cnt {
+  margin-left: 12px;
+  width: 474px;
+  height: 148px;
+  display: flex;
+}
+
+.cnt-colum-left-up .cnt>div {
+  width: 237px;
+  height: 148px;
+  font-size: 18px;
+  color: white;
+}
+
+.cnt-colum-left-up .cnt>div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnt-colum-left-up .cnt>div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cnt-colum-left-down {
   width: 498px;
   height: 634px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cnt-colum-left-down .title {
+  margin-left: 12px;
+  width: 474px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-left-down .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-left-down .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-left-down .list-box {
+  margin-left: 12px;
+  width: 474px;
+  height: 584px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cnt-colum-left-down .list-box .li {
+  height: 44.9px;
+  width: 474px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.cnt-colum-left-down .list-box .li:hover {
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
+}
+
+.cnt-colum-left-down .list-box .li span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cnt-colum-middle {
@@ -252,6 +358,35 @@
   width: 809px;
   height: 216px;
   transition: all 200ms ease-in-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnt-colum-middle-down>table {
+  height: 196px;
+  width: 789px;
+  border-radius: 12px;
+}
+
+.cnt-colum-middle-down>table>tr>td {
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  cursor: pointer;
+  color: white;
+}
+
+.cnt-colum-middle-down>table>tr>td a {
+  text-decoration: none;
+  color: white;
+}
+
+.cnt-colum-middle-down>table>tr>td:hover {
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
 }
 
 .cnt-colum-right {
@@ -260,16 +395,90 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .cnt-colum-right-up {
   width: 498px;
   height: 393px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cnt-colum-right-up div:nth-child(1) {
+  width: 458px;
+  height: 173px;
+  background-color: lightseagreen;
+  border-radius: 12px;
+  font-size: 26px;
+}
+
+.cnt-colum-right-up div:nth-child(1):hover {
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 .cnt-colum-right-down {
   width: 498px;
   height: 439px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cnt-colum-right-down .title {
+  margin-left: 12px;
+  width: 474px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-right-down .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-right-down .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-right-down .list-box {
+  margin-left: 12px;
+  width: 474px;
+  height: 389px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cnt-colum-right-down .list-box .li {
+  height: 38.9px;
+  width: 474px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.cnt-colum-right-down .list-box .li:hover {
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
+}
+
+.cnt-colum-right-down .list-box .li span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

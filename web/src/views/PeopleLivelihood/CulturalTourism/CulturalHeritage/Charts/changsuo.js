@@ -60,7 +60,7 @@ export const usechangsuoChartStore = defineStore('changsuoChart', () => {
       series: [
         {
           type: "pie",
-          radius: "56%",
+          radius: ["30%", "70%"],
           center: [
             "50%",
             "50%"
