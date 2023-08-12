@@ -163,21 +163,17 @@ onUnmounted(() => {
             <span class="name">市中心绿地面积</span>
             <span class="text">
               <span class="icon"></span>
-              <span class="value">99600</span>
+              <span class="value"></span>
               <span class="unit">&nbsp亩</span>
             </span>
             <div class="empty"></div>
             <span class="name">人均绿地面积</span>
             <span class="text">
-                <span class="icon"></span>
-                <span class="value">11.16</span>
-                <span class="unit">&nbsp平方米</span>
-              </span>
-            
+              <span class="icon"></span>
+              <span class="value"></span>
+              <span class="unit">&nbsp平方米</span>
+            </span>
           </div>
-          <!-- <div v-show="!greeningChartLoadingState"><span></span>亩</div>
-          <div v-show="!greeningChartLoadingState">人均绿地面积</div>
-          <div v-show="!greeningChartLoadingState"><span></span>平方米</div> -->
         </div>
       </div>
     </div>

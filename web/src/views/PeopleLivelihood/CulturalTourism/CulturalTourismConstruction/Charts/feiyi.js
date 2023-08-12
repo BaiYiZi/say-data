@@ -57,9 +57,10 @@ export const usefeiyiChartStore = defineStore('feiyiChart', () => {
         }
       },
       grid: {
+        top: 40,
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: 40,
         containLabel: true
       },
       xAxis: [
@@ -97,10 +98,9 @@ export const usefeiyiChartStore = defineStore('feiyiChart', () => {
           label: {
             show: true, //开启显示
             position: 'top', //在上方显示
-            textStyle: { //数值样式
-              color: 'white',
-              fontSize: 16
-            }
+            //数值样式
+            color: 'rgba(255, 255, 255, 0.5)',
+            fontSize: 12
           },
           itemStyle: {
             borderRadius: [3, 3, 0, 0],

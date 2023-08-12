@@ -93,6 +93,21 @@ export const useProgramChartStore = defineStore('Program', () => {
           lineStyle: {
             width: 4
           },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(84, 235, 200, 0.5)' // 0% 处的颜色
+              }, {
+                offset: 1, color: 'rgba(84, 235, 200, 0)' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            }
+          },
         }
       ]
     }

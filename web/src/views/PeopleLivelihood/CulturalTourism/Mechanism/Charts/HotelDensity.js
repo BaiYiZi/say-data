@@ -38,24 +38,53 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
 
     const hotelDensityChartOption = {
       tooltip: {
-        formatter: '{a}<br/>{b}: {c}个'
+        // formatter: '{a}<br/>{b}: {c}个'
+        formatter: function (params) {
+          if (params.value) {
+            return params.seriesName + '<br/>' + params.name + ' : ' + params.value + ' 个';
+          } else {
+            return params.seriesName + '<br/>' + params.name + ' : ' + '0 个';
+          }
+        }
       },
       geo: {
+        show: true,
         map: 'baoding',
         label: {
           show: true,
         },
         itemStyle: {
+          //边框样式
           borderColor: '#ffffff',
           borderWidth: 0.5,
-          areaColor: "#ffffff", //区域颜色
+          //阴影
+          shadowColor: 'rgba(0, 0, 0, 0.24)',
+          shadowOffsetX: 0,
+          shadowOffsetY: 10,
+          shadowBlur: 20,
+          //区域颜色
+          areaColor: "#ffffff",
         },
         emphasis: {
           show: true,
           focus: 'self',
           itemStyle: {
+            //区域颜色
             areaColor: "#d46e6e",
-          }
+            //阴影
+            shadowColor: 'rgba(255, 255, 255, 0.75)',
+            shadowOffsetX: 0,
+            shadowOffsetY: 10,
+            shadowBlur: 20,
+          },
+          label: {
+            color: '#000',
+            fontSize: 14,
+            fontWeight: 'bold'
+          },
+        },
+        select: {
+
         }
       },
       visualMap: {
@@ -80,11 +109,7 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
             '#2846A5',
             '#2B3BBD',
           ],
-          symbolSize: [30, 100]
         },
-        outOfRange: {
-          color: 'rgba(255,255,255,0.20)'
-        }
       },
       series: [
         {

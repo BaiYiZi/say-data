@@ -44,6 +44,13 @@ export const useScenicTrafficChartStore = defineStore('ScenicTrafficChart', () =
           type: 'shadow'
         }
       },
+      grid: {
+        top: '10%',
+        left: '5%',
+        right: '4%',
+
+        // containLabel: true
+      },
       xAxis: {
         type: 'category',
         axisLabel: {
@@ -58,12 +65,34 @@ export const useScenicTrafficChartStore = defineStore('ScenicTrafficChart', () =
         data: scenicTrafficChartData.value.category
       },
       yAxis: {
-        type: 'value'
+        type: 'value',
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: 'rgba(255,255,255,0.15)'
+          }
+        }
       },
       series: [
         {
+          name: "客流指数",
+          type: 'bar',
+          barWidth: 30,
+          showBackground: true,
+          backgroundStyle: {
+            borderRadius: [3, 3, 0, 0],
+            color: 'rgba(0,0,0,0.05)',
+          },
+          label: {
+            show: true, //开启显示
+            position: 'top', //在上方显示
+            textStyle: { //数值样式
+              color: 'rgba(255, 255, 255, 0.5)',
+              fontSize: 12
+            }
+          },
           itemStyle: {
-            barBorderRadius: [10, 10, 0, 0],
+            borderRadius: [3, 3, 0, 0],
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 0,
@@ -75,12 +104,7 @@ export const useScenicTrafficChartStore = defineStore('ScenicTrafficChart', () =
               }
             ])
           },
-          data: scenicTrafficChartData.value.value,
-          type: 'bar',
-          showBackground: true,
-          backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
-          }
+          data: scenicTrafficChartData.value.value.reverse()
         }
       ]
     };

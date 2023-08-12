@@ -16,7 +16,7 @@ export const useRedScenicSpotChartStore = defineStore('RedScenicSpotDataChart', 
       return v.attractions_name
     });
 
-    redScenicSpotChartData.value.forEach(v => { console.log(v) })
+    // redScenicSpotChartData.value.forEach(v => { console.log(v) })
   }
 
   async function loadData() {
@@ -32,8 +32,8 @@ export const useRedScenicSpotChartStore = defineStore('RedScenicSpotDataChart', 
 
     const childs = instanceID.children
     for (let i = 0; i < 6; i++) {
-      console.log(childs.item(i))
-      console.log(childs.item(i).firstChild)
+      // console.log(childs.item(i))
+      // console.log(childs.item(i).firstChild)
       childs.item(i).firstChild.innerHTML = redScenicSpotChartData.value[i] || "待推荐"
     }
   }

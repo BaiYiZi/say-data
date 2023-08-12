@@ -16,7 +16,7 @@ export const useRedRuinsChartStore = defineStore('RedRuinsDataChart', () => {
       return v.site
     });
 
-    redRuinsChartData.value.forEach(v => { console.log(v) })
+    // redRuinsChartData.value.forEach(v => { console.log(v) })
   }
 
   async function loadData() {

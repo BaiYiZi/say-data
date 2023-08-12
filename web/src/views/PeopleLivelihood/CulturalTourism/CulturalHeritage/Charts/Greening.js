@@ -29,10 +29,11 @@ export const useGreeningChartStore = defineStore('GreeningChart', () => {
         const instanceID = document.getElementById(domID.value)
 
         const childs = instanceID.children.item(0)
-        console.log(childs.childNodes[0].childNodes[2])
+        // console.log(childs.children.item(1).children.item(1))
+        // console.log(childs.childNodes[4].childNodes[1])
 
-        childs.childNodes[0].childNodes[2].innerHTML = greeningChartData.value.area
-        childs.childNodes[1].childNodes[2].innerHTML = greeningChartData.value.aarea
+        childs.childNodes[1].childNodes[1].innerHTML = greeningChartData.value.area
+        childs.childNodes[4].childNodes[1].innerHTML = greeningChartData.value.aarea
     }
 
     async function reLoadData() {

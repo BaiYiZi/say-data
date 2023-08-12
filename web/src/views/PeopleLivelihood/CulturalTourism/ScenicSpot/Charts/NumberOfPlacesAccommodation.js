@@ -48,20 +48,41 @@ export const useNumberOfPlacesAccommodationChartStore = defineStore('NumberOfPla
       //   "#9a60b4",
       //   "#ea7ccc"
       // ],
+      color: [
+        // '#2B3BBD',
+        // '#2846A5',
+        // '#24518D',
+        '#235F82',
+        '#267C99',
+        '#2997AE',
+        '#2DB4C5',
+        '#33C8C1',
+        '#3DDAB2',
+        '#46EEA1',
+      ],
+      legend: {
+        type: 'scroll',
+        orient: 'vertical',
+        align: 'left',
+        right: 20,
+        bottom: 20,
+        itemHeight: 12,
+        itemGap: 10,
+        height: '50%',
+        pageTextStyle: {
+          color: 'rgba(255,255,255,0.25)'
+        },
+        icon: 'circle', // 图例的图标样式
+        textStyle: { //图例的文字样式
+          color: 'rgba(255,255,255,0.75)',
+        },
+      },
       series: [
         {
           type: "pie",
-          radius: "56%",
-          center: [
-            "50%",
-            "50%"
-          ],
-          label: {
-            show: true,
-            color: "#ffffff",
-            fontSize: 16,
-            position: "outside"
-          },
+          radius: ['35%', '70%'],
+          center: ["40%", "50%"],
+          label: { show: false },
           data: numberOfPlacesAccommodationChartData.value,
         }
       ]

@@ -47,27 +47,29 @@ export const useCongestionIndexRankingChartStore = defineStore('CongestionIndexR
       },
       legend: { show: false },
       grid: {
-        left: '2%',
-        right: '8%',
-        bottom: '2%',
-        top: '2%',
+        top: 20,
+        bottom: '0%',
+        left: 20,
+        right: 20,
         containLabel: true
       },
-      xAxis: {
-        type: 'value',
-      },
+      xAxis: { show: false },
       yAxis: {
         type: 'category',
+        axisLine: false,
+        splitLine: { show: false },
         data: congestionIndexRankingChartData.value.category
       },
       textStyle: {
-        color: "white"
+        color: "#fff"
       },
       series: [
         {
           type: 'bar',
+          barWidth: 14,
           itemStyle: {
-            barBorderRadius: [0, 20, 20, 0],
+            borderWidth: 1,
+            barBorderRadius: [6, 6, 6, 6],
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
               {
                 offset: 0,
@@ -82,12 +84,12 @@ export const useCongestionIndexRankingChartStore = defineStore('CongestionIndexR
           label: {
             normal: {
               show: true,
-              lineHeight: 10,
-              position: 'right',
+              lineHeight: 12,
+              position: 'insideRight',
               textStyle: {
-                color: '#fff',
-                fontSize: 10
-              }
+                color: '#ffffff',
+                fontSize: 12
+              },
             }
           },
           data: congestionIndexRankingChartData.value.congestion_index

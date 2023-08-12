@@ -55,7 +55,7 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
                 type: 'plain',
                 x: 'center',
                 // y: 'bottom',
-                bottom: 12,
+                bottom: 15,
                 icon: 'roundRect', // 图例的图标样式
                 textStyle: { //图例的文字样式
                     color: '#fff',
@@ -64,7 +64,7 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
             //图表位置
             grid: {
                 top: "4%",
-                left: "10%",
+                left: "8%",
                 right: "14%",
                 bottom: "8%",
                 containLabel: true,
@@ -84,7 +84,6 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
             },
             yAxis: {
                 type: "category",
-                data: museumVisitorsChartData.value.name,
                 //升序
                 inverse: true,
                 splitLine: { show: false },
@@ -103,6 +102,7 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
                 nameTextStyle: {
                     fontSize: 5,
                 },
+                data: museumVisitorsChartData.value.name,
             },
             series: [
                 {
@@ -110,37 +110,42 @@ export const useMuseumVisitorsChartStore = defineStore('MuseumVisitors', () => {
                     realtimeSort: true,
                     name: "年参观量（万人次）",
                     type: "bar",
-                    data: museumVisitorsChartData.value.visitors,
-                    barWidth: 14,
-                    barGap: 10,
+                    // barWidth: 18,
+                    barCategoryGap: 20,
                     smooth: true,
                     valueAnimation: true,
+                    showBackground: true,
+                    backgroundStyle: {
+                        borderRadius: 100,
+                        //颜色样式
+                        color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                            { offset: 0, color: "rgba(0, 192, 254, 0.1)" },
+                            { offset: 1, color: "rgba(15, 135, 250, 0.1)" },
+                        ]),
+                    },
                     //Y轴数字显示部分
                     label: {
-                        normal: {
-                            show: true,
-                            position: "right",
-                            valueAnimation: true,
-                            offset: [5, -2],
-                            textStyle: {
-                                color: "#fff",
-                                fontSize: 13,
-                            },
-                        },
+                        show: true,
+                        position: 'insideLeft',
+                        offset: [200, 0],
+                        valueAnimation: true,
+                        color: "rgba(255,255,255,1)",
+                        fontSize: 12,
                     },
                     itemStyle: {
-                        emphasis: {
-                            barBorderRadius: 7,
-                        },
+                        borderRadius: [0, 100, 100, 0],
+                        //阴影
+                        shadowColor: 'rgba(0, 0, 0, 0.24)',
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 6,
+                        shadowBlur: 18,
                         //颜色样式部分
-                        normal: {
-                            barBorderRadius: 7,
-                            color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                                { offset: 0, color: "rgba(15, 135, 250, 1)" },
-                                { offset: 1, color: "rgba(0, 192, 254, 1)" },
-                            ]),
-                        },
+                        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                            { offset: 0, color: "rgba(15, 135, 250, 1)" },
+                            { offset: 1, color: "rgba(0, 192, 254, 1)" },
+                        ]),
                     },
+                    data: museumVisitorsChartData.value.visitors,
                 },
             ],
             //动画部分

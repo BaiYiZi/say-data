@@ -45,6 +45,18 @@ export const usechangsuoChartStore = defineStore('changsuoChart', () => {
       //   "#9a60b4",
       //   "#ea7ccc"
       // ],
+      color: [
+        // '#2B3BBD',
+        // '#2846A5',
+        // '#24518D',
+        // '#235F82',
+        // '#267C99',
+        '#2997AE',
+        '#2DB4C5',
+        '#33C8C1',
+        '#3DDAB2',
+        '#46EEA1',
+      ],
       series: [
         {
           type: "pie",
