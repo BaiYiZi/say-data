@@ -53,7 +53,7 @@ onBeforeMount(() => {
     CONFIG: {
       layout: '1',
       width: '458',
-      height: '180',
+      height: '200',
       background: '1',
       dataColor: 'FFFFFF',
       borderRadius: '12',
@@ -98,33 +98,34 @@ onMounted(() => {
             </div>
 
             <div class="cnt">
+              <div class="line"></div>
               <div>
                 <table>
                   <thead>
                     <tr>
                       <td>名称</td>
-                      <td></td>
+                      <!-- <td></td> -->
                       <td>电话</td>
                     </tr>
                   </thead>
                   <tr>
                     <td>匪警</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>110</td>
                   </tr>
                   <tr>
                     <td>火警</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>119</td>
                   </tr>
                   <tr>
                     <td>急救中心</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>120</td>
                   </tr>
                   <tr>
                     <td>交通事故</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>122</td>
                   </tr>
                 </table>
@@ -134,28 +135,28 @@ onMounted(() => {
                   <thead>
                     <tr>
                       <td>名称</td>
-                      <td></td>
+                      <!-- <td></td> -->
                       <td>电话</td>
                     </tr>
                   </thead>
                   <tr>
                     <td>市长热线</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>12345</td>
                   </tr>
                   <tr>
                     <td>文化市场举报</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>12318</td>
                   </tr>
                   <tr>
                     <td>水上求救专用</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>12395</td>
                   </tr>
                   <tr>
                     <td>公安短信报警</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
                     <td>12110</td>
                   </tr>
                 </table>
@@ -281,38 +282,38 @@ onMounted(() => {
           >
             <table>
               <tr>
-                <td onclick="window.open('https://www.baoding.gov.cn/')">市政府</td>
-                <td>市教育局</td>
-                <td>市科学技术局</td>
-                <td>市工业和信息化局</td>
+                <td onclick="window.open('https://www.baoding.gov.cn/')"> >市政府</td>
+                <td onclick="window.open('http://jyj.baoding.gov.cn/')"> >市教育局</td>
+                <td onclick="window.open('http://kjj.baoding.gov.cn/')"> >市科学技术局</td>
+                <td onclick="window.open('http://gxj.baoding.gov.cn/')"> >市工业和信息化局</td>
               </tr>
               <tr>
-                <td>市自然资源和规划局</td>
-                <td>市生态环境局</td>
-                <td>市住房和城乡建设局</td>
-                <td>市城市管理综合行政执法局</td>
+                <td onclick="window.open('http://zrgh.baoding.gov.cn/')"> >市自然资源和规划局</td>
+                <td onclick="window.open('http://sthjj.baoding.gov.cn/')"> >市生态环境局</td>
+                <td onclick="window.open('http://zjj.baoding.gov.cn/')"> >市住房和城乡建设局</td>
+                <td onclick="window.open('http://zfj.baoding.gov.cn/')"> >市城市管理综合行政执法局</td>
               </tr>
               <tr>
-                <td>市应急管理局</td>
-                <td>市外事办公室</td>
-                <td>市国有资产监督管理委员会</td>
-                <td>市公安局</td>
+                <td onclick="window.open('http://yjglj.baoding.gov.cn/')"> >市应急管理局</td>
+                <td onclick="window.open('http://wsb.baoding.gov.cn/')"> >市外事办公室</td>
+                <td onclick="window.open('http://gzw.baoding.gov.cn/')"> >市国有资产监督管理委员会</td>
+                <td onclick="window.open('http://gaj.baoding.gov.cn/')"> >市公安局</td>
               </tr>
               <tr>
-                <td>市司法局</td>
-                <td>市人力资源和社会保障局</td>
-                <td>市文化广电和旅游局</td>
-                <td>市卫生健康委员会</td>
+                <td onclick="window.open('http://sfj.baoding.gov.cn/')"> >市司法局</td>
+                <td onclick="window.open('http://rsj.baoding.gov.cn/')"> >市人力资源和社会保障局</td>
+                <td onclick="window.open('https://whgdhlyj.baoding.gov.cn/')"> >市文化广电和旅游局</td>
+                <td onclick="window.open('http://wjw.baoding.gov.cn/')"> >市卫生健康委员会</td>
               </tr>
               <tr>
-                <td>市公积金中心管理中心</td>
-                <td>市行政审批局</td>
-                <td>市体育局</td>
-                <td>市水利局</td>
+                <td onclick="window.open('https://bdgjj.baoding.gov.cn/')"> >市公积金中心管理中心</td>
+                <td onclick="window.open('http://xzspj.baoding.gov.cn/')"> >市行政审批局</td>
+                <td onclick="window.open('http://tyj.baoding.gov.cn/')"> >市体育局</td>
+                <td onclick="window.open('http://slj.baoding.gov.cn/')"> >市水利局</td>
               </tr>
               <tr>
-                <td>市市场监督管理局</td>
-                <td>市发展改革委员会</td>
+                <td onclick="window.open('http://scjgj.baoding.gov.cn/')"> >市市场监督管理局</td>
+                <td onclick="window.open('http://fgw.baoding.gov.cn/')"> >市发展改革委员会</td>
               </tr>
             </table>
           </div>
@@ -325,8 +326,10 @@ onMounted(() => {
             class="cnt-colum-right-up content-box-opacity-radius"
             v-show="frameAppearanceAnimation"
           >
+            <div>
+              <div id="he-plugin-standard"></div>
+            </div>
             <div class="box-public" @click="goMap"><span>查看保定地图</span></div>
-            <div id="he-plugin-standard"></div>
           </div>
         </transition>
         <transition name="el-zoom-in-center">
