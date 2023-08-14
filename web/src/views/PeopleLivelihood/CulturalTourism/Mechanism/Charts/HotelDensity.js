@@ -50,6 +50,8 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
       geo: {
         show: true,
         map: 'baoding',
+        layoutCenter: ['50%', '50%'],//位置
+        layoutSize: '105%',//大小
         label: {
           show: true,
         },
@@ -120,6 +122,7 @@ export const useHotelDensityChartStore = defineStore('HotelDensityChart', () => 
           coordinateSystem: 'geo',
           aspectScale: 0.75,
           // zoom: 1.2,
+          selectedMode: false,
           data: hotelDensityChartData.value
         }
       ]
