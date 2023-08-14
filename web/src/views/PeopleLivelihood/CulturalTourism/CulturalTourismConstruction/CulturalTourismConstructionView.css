@@ -196,5 +196,28 @@
 
 .right-down .content {
   width: 476px;
-  height: 302px;
+  height: 308px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.right-down .content div {
+  width: 384px;
+  height: 68px;
+  min-width: 384px;
+  min-height: 68px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.right-down .content div span {
+  margin-left: 16px;
 }

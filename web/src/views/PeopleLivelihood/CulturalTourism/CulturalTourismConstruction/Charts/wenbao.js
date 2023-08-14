@@ -34,6 +34,9 @@ export const usewenbaoChartStore = defineStore('wenbaoChart', () => {
     const wenbaoChart = echarts.getInstanceById(instanceID) || echarts.init(document.getElementById(domID.value))
 
     const wenbaoChartOption = {
+      tooltip: {
+        trigger: 'item'
+      },
       // color: [
       //   "red",
       //   "aqua",

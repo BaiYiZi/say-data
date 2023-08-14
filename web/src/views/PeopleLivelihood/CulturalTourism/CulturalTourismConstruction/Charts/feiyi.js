@@ -64,13 +64,12 @@ export const usefeiyiChartStore = defineStore('feiyiChart', () => {
       },
       xAxis: [
         {
-          axisLabel: {  
-            interval:0,
-            formatter:function(value)  
-            {  
-                return value.split("").join("\n");  
+          axisLabel: {
+            interval: 0,
+            formatter: function (value) {
+              return value.split("").join("\n");
             }
-        },
+          },
           type: 'category',
           data: feiyiName.value,
           axisTick: {
@@ -80,15 +79,45 @@ export const usefeiyiChartStore = defineStore('feiyiChart', () => {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(255,255,255,0.15)'
+            }
+          }
         }
       ],
       series: [
         {
           name: '数量',
           type: 'bar',
-          barWidth: '60%',
-          data: feiyiChartData.value
+          barWidth: 30,
+          data: feiyiChartData.value,
+          label: {
+            show: true, //开启显示
+            position: 'top', //在上方显示
+            textStyle: { //数值样式
+              color: 'white',
+              fontSize: 16
+            }
+          },
+          itemStyle: {
+            borderRadius: [3, 3, 0, 0],
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(0, 204, 255, 1)' // 0% 处的颜色
+              }, {
+                offset: 1, color: 'rgba(9, 97, 173, 1)' // 100% 处的颜色
+              }],
+              global: false // 缺省为 false
+            }
+          }
         }
       ]
     }
