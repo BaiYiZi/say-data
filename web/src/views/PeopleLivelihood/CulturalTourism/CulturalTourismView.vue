@@ -84,13 +84,13 @@ onMounted(() => {
             <span class="little-circle"><span v-show="currentCircleShowID == 3"></span></span>
             <span class="mechanism-img"></span>
             <div v-show="false" @click="goMechanism">文化机构及文旅相关设施</div>
-            <div @click="goMechanism">旅游相关单位</div>
+            <div @click="goMechanism">旅游设施及创收</div>
           </div>
           <div class="box">
             <span class="little-circle"><span v-show="currentCircleShowID == 4"></span></span>
             <span class="cultural-heritage-img"></span>
             <div v-show="false" @click="goCulturalHeritage">文化遗产及文化相关</div>
-            <div @click="goCulturalHeritage">居民周边游玩</div>
+            <div @click="goCulturalHeritage">居民周边游玩地</div>
           </div>
         </div>
       </div>
