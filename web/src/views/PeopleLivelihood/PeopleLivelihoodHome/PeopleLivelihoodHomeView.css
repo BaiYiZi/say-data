@@ -67,12 +67,152 @@
   width: 498px;
   height: 198px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cnt-colum-left-up .title {
+  margin-top: 20px;
+  width: 458px;
+  height: 26px;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-left-up .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-left-up .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-left-up .cnt {
+  /* margin-left: 20px; */
+  width: 458px;
+  height: 132px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cnt-colum-left-up .cnt>div {
+  margin-top: 10px;
+  height: 122px;
+  font-size: 18px;
+  color: white;
+}
+
+.cnt-colum-left-up .cnt>div:nth-child(2) {
+  width: 229px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.line {
+  background: rgba(255, 255, 255, 0.25);
+  /*背景色为浅灰色*/
+  width: 0.6px;
+  /*设置宽高*/
+  height: 48px;
+  position: relative;
+  left: 229px;
+  /*调整位置*/
+  float: left;
+  /*让此div与前面的并排显示*/
+}
+
+.cnt-colum-left-up .cnt>div:nth-child(3) {
+  width: 229px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cnt-colum-left-up .cnt>div table {
+  border-collapse: collapse;
+  padding: 0;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cnt-colum-left-up .cnt>div table tr td:nth-child(1){
+  width: 134px;
+  /* box-shadow: 0px 0px 0px 1px red inset; */
+}
+.cnt-colum-left-up .cnt>div table tr td:nth-child(2) {
+  width: 74px;
+  /* box-shadow: 0px 0px 0px 1px red inset; */
 }
 
 .cnt-colum-left-down {
   width: 498px;
   height: 634px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cnt-colum-left-down .title {
+  margin-top: 20px;
+  width: 458px;
+  height: 26px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-left-down .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-left-down .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-left-down .list-box {
+  margin-top: 10px;
+  width: 458px;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cnt-colum-left-down .list-box .li {
+  height: 44.9px;
+  width: 458px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+}
+
+.cnt-colum-left-down .list-box .li:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
+}
+
+.cnt-colum-left-down .list-box .li span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cnt-colum-middle {
@@ -249,9 +389,42 @@
 }
 
 .cnt-colum-middle-down {
-  width: 809px;
   height: 216px;
+  width: 809px;
   transition: all 200ms ease-in-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnt-colum-middle-down>table {
+  height: 176px;
+  width: 769px;
+  border-radius: 12px;
+  padding: 20px;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+.cnt-colum-middle-down>table>tr>td {
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid white; */
+}
+
+.cnt-colum-middle-down>table>tr>td a {
+  text-decoration: none;
+  color: white;
+}
+
+.cnt-colum-middle-down>table>tr>td:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
 }
 
 .cnt-colum-right {
@@ -260,16 +433,98 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .cnt-colum-right-up {
   width: 498px;
   height: 393px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cnt-colum-right-up div:nth-child(1) {
+  width: 458px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 13.5px;
+}
+
+.cnt-colum-right-up div:nth-child(2) {
+  width: 458px;
+  height: 133px;
+  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/map.png");
+  border-radius: 12px;
+  font-size: 26px;
+}
+
+.cnt-colum-right-up div:nth-child(2):hover {
+  transform: scale(1.02);
 }
 
 .cnt-colum-right-down {
   width: 498px;
   height: 439px;
   transition: all 200ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cnt-colum-right-down .title {
+  margin-top: 20px;
+  width: 458px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt-colum-right-down .title span:nth-child(2) {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cnt-colum-right-down .title span:nth-child(2):hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.cnt-colum-right-down .list-box {
+  margin-top: 10px;
+  width: 458px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cnt-colum-right-down .list-box .li {
+  height: 38.9px;
+  width: 458px;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+
+  display: flex;
+  align-items: center;
+}
+
+.cnt-colum-right-down .list-box .li:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 4px;
+}
+
+.cnt-colum-right-down .list-box .li span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

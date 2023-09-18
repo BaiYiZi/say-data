@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'SourceHanSans';
+    src: url("./SourceHanSansSC-VF.ttf");
+    font-weight: normal;
+    font-style: normal;
+    /*为字体规则添加属性font-display*/
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'YouSheBiaoTiHei';
+    src: url("./YouSheBiaoTiHei-2.ttf");
+    font-weight: normal;
+    font-style: normal;
+    /*为字体规则添加属性font-display*/
+    font-display: auto;
+}

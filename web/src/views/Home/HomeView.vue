@@ -20,7 +20,7 @@ function goHome() {
 }
 
 function goPeopleLivelihood() {
-  router.push('/people-livelihood')
+  router.push({ name: "people-livelihood-home" })
 }
 
 onMounted(() => {
@@ -45,11 +45,7 @@ onMounted(() => {
         </transition>
 
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-box people-livelihood"
-            @click="goPeopleLivelihood"
-            v-show="appearanceAnimation"
-          >
+          <div class="cnt-box people-livelihood" @click="goPeopleLivelihood" v-show="appearanceAnimation">
             <div>民生</div>
           </div>
         </transition>

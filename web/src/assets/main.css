@@ -1,5 +1,5 @@
-/* @import './base.css';
-
+@import './font/font.css';
+/*
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -38,6 +38,8 @@ a,
   padding: 0;
   margin: 0;
   user-select: none;
+  box-sizing: border-box;
+  font-family: 'SourceHanSans';
 }
 
 #app {
@@ -45,6 +47,37 @@ a,
   height: 1080px;
 }
 
+body {
+  background-color: #ffffff;
+  overflow: scroll;
+}
+
+/* 
 ::-webkit-scrollbar {
   display: none;
+} */
+
+/*定义整个滚动条高宽及背景：高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+/*定义滚动条轨道：内阴影+圆角*/
+::-webkit-scrollbar-track {
+  background-color: rgba(227, 227, 227, 0.6);
+}
+
+/*定义滑块：内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(237, 239, 253);
+}
+
+:-webkit-search-cancel-button {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
 }
