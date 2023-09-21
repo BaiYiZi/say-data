@@ -32,7 +32,7 @@
 
 <script setup>
 import frame from '@/components/Frame.vue'
-import StatisticCard from '@/views/PeopleLivelihood/CultureTourism/Development/StatisticCard.vue';
+import StatisticCard from './StatisticCard/StatisticCard.vue';
 import Activity from './Activity.vue';
 import RevenueNumber from './RevenueNumber.vue';
 import RevenueDrevenue from './RevenueDrevenue.vue';

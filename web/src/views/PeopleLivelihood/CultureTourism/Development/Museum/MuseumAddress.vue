@@ -4,27 +4,41 @@
             <mychart ref="chart"></mychart>
         </div>
         <div class="rank">
-            <Table ref="table" title="博物馆年参观人次前N名"/>
+            <div class="title">博物馆年参观人次前N名</div>
+            <div class="t-box">
+                <Table :headerLineList="['博物馆名称', '地址', '参观人次(年/万次)']" :dataList="rankData"/>
+            </div>
         </div>
     </div>
+    <dialogFrame ref="dialog">
+        <frame :title="address">
+            <MuseumList :address="address"/>
+        </frame>
+    </dialogFrame>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue"
 
 import mychart from "@/components/Chart.vue"
-import { getMuseumAddress } from '@/api/DevelopmentData'
+import { getMuseumAddress, getMuseumVisitors } from '@/api/DevelopmentData'
+import dialogFrame from '@/components/dialogFrame.vue'
+import frame from "@/components/Frame.vue"
 import mapData from '@/utils/MapData/MapData.json'
 import Table from '@/components/Table.vue'
+
+import MuseumList from './MuseumList.vue'
 
 // 引用图表组件 chart
 const chart = ref(null)
 const chartData = ref([])
+const rankData = ref()
 
 // 引用对话框组件
 const dialog = ref(null)
-// 引用表格组件
-const table = ref(null)
+
+// 给子组件传递的参数
+const address = ref()
 
 // 获取 API 接口数据
 async function getChartData() {
@@ -32,6 +46,13 @@ async function getChartData() {
         return {
             name: item.address,
             value: item.count
+        }
+    });
+    rankData.value = ((await getMuseumVisitors()).data.data).map(item => {
+        return {
+            name: item.name,
+            address: item.address,
+            visitors: item.visitors
         }
     })
 }
@@ -143,7 +164,8 @@ onMounted(() => {
 
     // 图表点击事件
     chart.value.chart.on("click", function (params) {
-        // 打开下钻窗口
+        address.value = params.name
+        // // 打开下钻窗口
         dialog.value.open()
     });
 })
@@ -168,5 +190,17 @@ onMounted(() => {
 .rank {
     width: 740px;
     height: 194px;
+}
+.title {
+    height: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6E6E6E;
+    display: flex;
+    align-items: center;
+}
+.t-box {
+    width: 740px;
+    height: 144px;
 }
 </style>

@@ -8,6 +8,25 @@ export const getParkgreenAreas = () => {
     })
 }
 
+// 包含公园的区
+export const getParkAreaList = () => {
+    return request({
+        url: "/park/area",
+        type: "get"
+    })
+}
+
+// 某一地区公园名录
+export const getParkList = (address) => {
+    return request({
+        url: "/park/park",
+        type: "get",
+        params: {
+            address: address
+        }
+    })
+}
+
 // 文旅活动频率
 export const getActivity = () => {
     return request({
@@ -45,5 +64,27 @@ export const getMuseumVisitors = () => {
     return request({
         url: "/museum/visitors",
         type: "get"
+    })
+}
+
+// 某地区博物馆名录
+export const getMuseumList = (address) => {
+    return request({
+        url: "/museum/list",
+        type: "get",
+        params: {
+            address: address
+        }
+    })
+}
+
+// 某博物馆详细信息
+export const getMuseumInfo = (name) => {
+    return request({
+        url: "/museum/museum",
+        type: "get",
+        params: {
+            name: name
+        }
     })
 }

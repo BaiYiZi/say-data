@@ -24,7 +24,7 @@ const props = defineProps(["title"]);
     display: flex;
     flex-direction: column;
 
-    border-radius: 12px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }

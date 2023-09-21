@@ -1,6 +1,8 @@
 <template>
     <div class="dialog" v-if="dialogVisble">
-        <div class="dialog-context">
+        <div class="dialog-context" 
+        :style="{ 'height': props.height ? props.height : '550px', 'width': props.width ? props.width : '700px' }"
+        >
             <p class="tips" @click="close">单击背景关闭</p>
             <slot></slot>
         </div>
@@ -12,7 +14,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const props = defineProps(['id', 'title'])
+const props = defineProps(['id', 'title', 'height', 'width'])
 
 const dialogVisble = ref(false)
 
@@ -50,7 +52,6 @@ defineExpose({
 }
 
 .dialog-context {
-    height: 550px;
     width: 700px;
     z-index: 999;
 }

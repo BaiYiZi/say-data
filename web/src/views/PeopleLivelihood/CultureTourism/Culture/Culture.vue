@@ -32,7 +32,7 @@
             </div>
             <div class="down-right">
                 <frame title="特色美食推荐">
-
+                    <FoodCarousel/>
                 </frame>
             </div>
         </div>
@@ -46,6 +46,7 @@ import CulturalProtectionType from './CulturalProtection/CulturalProtectionType.
 import Red from './Red.vue';
 import CulturalinstitutionsList from './CulturalinstitutionsList.vue';
 import CulturalinstitutionsProgram from './CulturalinstitutionsProgram.vue';
+import FoodCarousel from './food/FoodCarousel.vue';
 </script>
 
 <style lang="less" scoped>

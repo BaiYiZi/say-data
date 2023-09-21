@@ -1,8 +1,8 @@
 <template>
     <mychart ref="chart"></mychart>
     <dialogFrame title="test" ref="dialog">
-        <frame title="testDrillDown">
-
+        <frame :title="type">
+            <CulturalProtectionTypeList :type="type"/>
         </frame>
     </dialogFrame>
 </template>
@@ -15,12 +15,17 @@ import { getCulturalProtectionType } from '@/api/CultureData'
 import dialogFrame from '@/components/dialogFrame.vue'
 import frame from "@/components/Frame.vue"
 
+import CulturalProtectionTypeList from "./CulturalProtectionTypeList.vue"
+
 // 引用图表组件 chart
 const chart = ref(null)
 const chartData = ref([])
 
 // 引用对话框组件
 const dialog = ref(null)
+
+// 给子组件传递的参数
+const type = ref()
 
 // 获取 API 接口数据
 async function getChartData() {
@@ -157,6 +162,7 @@ onMounted(() => {
 
     // 图表点击事件
     chart.value.chart.on("click", function (params) {
+        type.value = params.name
         // 打开下钻窗口
         dialog.value.open()
     });

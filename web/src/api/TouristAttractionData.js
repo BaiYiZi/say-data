@@ -1,10 +1,21 @@
 import request from "../utils/request";
 
 // 模拟测试接口
-export const getAttractionsCountData = () => {
+// export const getAttractionsCountData = () => {
+//     return request({
+//         url: "/attractions/count",
+//         type: "get"
+//     })
+// }
+
+// 获取景区详情
+export const getAttractionsInfo = (name) => {
     return request({
-        url: "/attractions/count",
-        type: "get"
+        url: "/attractions1/attractions",
+        type: "get",
+        params: {
+            name: name
+        }
     })
 }
 
@@ -18,9 +29,8 @@ export const getALevel = () => {
 
 // 某地区各级别景区占比
 export function getLevelsByAddress(arg) {
-    console.log(arg)
     return request({
-        url: "/attractions/level/{address}",
+        url: "/attractions/level",
         type: "get",
         params: {
             address: arg
@@ -31,7 +41,7 @@ export function getLevelsByAddress(arg) {
 // 某地区某级别景区名录
 export const getTourisAttractionByAddress = (address, level) => {
     return request({
-        url: "/attractions/ml/{address}",
+        url: "/attractions/ml",
         type: "get",
         params: {
             address: address,
@@ -68,6 +78,22 @@ export const getFootfall = () => {
 export const getHotelNumber = () => {
     return request({
         url: "/hotel/number",
+        type: "get"
+    })
+}
+
+// 保定一至四星级酒店占河北省一至四星级酒店数量的份额
+export const getHotelOf = () => {
+    return request({
+        url: "/hotel/of",
+        type: "get"
+    })
+}
+
+// 保定五星级酒店占河北省五星级酒店的份额
+export const getHotelFive = () => {
+    return request({
+        url: "/hotel/five",
         type: "get"
     })
 }

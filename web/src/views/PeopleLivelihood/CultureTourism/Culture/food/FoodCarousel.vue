@@ -1,8 +1,8 @@
 <template>
-    <carousel height="200px" :imgList="list"/>
+    <carousel height="308px" :imgList="list" />
     <dialogFrame title="test" ref="dialog" width="880px" height="740px">
         <frame :title="imgItem.name">
-            <TouristAttractionInfo :name="imgItem.name" :imgItem="imgItem"/>
+            <FoodInfo :name="imgItem.name" :imgItem="imgItem" />
         </frame>
     </dialogFrame>
 </template>
@@ -14,27 +14,23 @@ import frame from '@/components/Frame.vue'
 import dialogFrame from '@/components/dialogFrame.vue'
 import emitter from '@/utils/bus'
 
-import TouristAttractionInfo from './TouristAttractionInfo.vue'
+import FoodInfo from './FoodInfo.vue'
 
 const dialog = ref(null)
 
 const imgItem = ref(null)
 
 emitter.on('img', (params) => {
-    dialog.value.open()
     imgItem.value = params
+    dialog.value.open()
 })
 
 const base = "/src/assets/PeopleLivelihood/CulturalTourism"
 const list = ref([
     {
-        name: "清西陵",
-        path: base + "/qingxiling.png"
+        name: "驴肉火烧",
+        path: base + "/huoshao.png"
     },
-    {
-        name: "白石山",
-        path: base + "/baishishan4.png"
-    }
 ])
 </script>
 

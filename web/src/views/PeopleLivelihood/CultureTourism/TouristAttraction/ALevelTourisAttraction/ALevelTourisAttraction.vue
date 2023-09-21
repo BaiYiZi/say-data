@@ -1,18 +1,18 @@
 <template>
-    <button @click="sendData(111)">11111111</button>
     <mychart ref="chart"></mychart>
-    <dialogFrame title="test" ref="dialog">
-        <frame title="test">
-            <TourisAttractionLevelByAddress></TourisAttractionLevelByAddress>
+    <dialogFrame ref="dialog">
+        <frame :title="address">
+            <TourisAttractionLevelByAddress :address="address"></TourisAttractionLevelByAddress>
         </frame>
     </dialogFrame>
 </template>
 
 <script setup>
-import { ref, onMounted, getCurrentInstance, onBeforeUnmount  } from "vue"
+import { ref, onMounted } from "vue"
 
 import mychart from "@/components/Chart.vue"
 import { getALevel } from '@/api/TouristAttractionData'
+
 import dialogFrame from '@/components/dialogFrame.vue'
 import frame from '@/components/Frame.vue'
 import mapData from '@/utils/MapData/MapData.json'
@@ -26,15 +26,8 @@ const chartData = ref([])
 // 引用对话框组件
 const dialog = ref(null)
 
-const name = ref(null)
-
-const { $bus } = getCurrentInstance().appContext.config.globalProperties
-
-function sendData(params) {
-    console.log("=====================");
-    $bus.emit('addressName', params)
-    console.log("=====================");
-}
+// 给子组件传入的参数
+const address = ref(null)
 
 // 获取 API 接口数据
 async function getChartData() {
@@ -128,7 +121,7 @@ function chart0ption() {
         series: [
             {
                 geoIndex: 0,
-                name: '饭店分布',
+                name: 'A级景区分布',
                 type: 'map',
                 map: 'baoding',
                 coordinateSystem: 'geo',
@@ -153,18 +146,15 @@ onMounted(() => {
 
     // 图表点击事件
     chart.value.chart.on("click", function (params) {
-        // 打开下钻窗口
-        dialog.value.open()
-        sendData(params.name)
+        if (params.data) {
+            // 打开下钻窗口
+            dialog.value.open()
+            address.value = params.name
+        }
     });
 })
 
-onBeforeUnmount(() => {
-    $bus.off("AddressNameData")
-})
-
 </script>
-
 
 <style lang="scss" scoped>
 

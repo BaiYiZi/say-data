@@ -1,8 +1,8 @@
 <template>
     <mychart ref="chart"></mychart>
-    <dialogFrame title="test" ref="dialog">
+    <dialogFrame title="test" ref="dialog" height="550px" width="1000px">
         <frame title="testDrillDown">
-
+            <LevelOfHotel/>
         </frame>
     </dialogFrame>
 </template>
@@ -14,6 +14,8 @@ import mychart from "@/components/Chart.vue"
 import { getHotelNumber } from '@/api/TouristAttractionData'
 import dialogFrame from '@/components/dialogFrame.vue'
 import frame from "@/components/Frame.vue"
+
+import LevelOfHotel from "./LevelOfHotel.vue"
 
 // 引用图表组件 chart
 const chart = ref(null)
@@ -41,9 +43,9 @@ function chart0ption() {
         color: [
             // '#2B3BBD',
             // '#2846A5',
-            '#24518D',
-            '#235F82',
-            '#267C99',
+            // '#24518D',
+            // '#235F82',
+            // '#267C99',
             '#2997AE',
             '#2DB4C5',
             '#33C8C1',

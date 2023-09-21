@@ -24,7 +24,6 @@ async function getChartData() {
         drevenue.push(item.drevenue)
     });
 
-    console.log(chartData);
     chartData.value.year = year
     chartData.value.irevenue = irevenue
     chartData.value.drevenue = drevenue

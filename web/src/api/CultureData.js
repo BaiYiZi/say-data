@@ -8,11 +8,33 @@ export const getIntangibleculturalheritageLevel = () => {
     })
 }
 
+// 某非遗级别名录
+export const getIntangibleculturalheritageMlByLevel = (level) => {
+    return request({
+        url: "/intangibleculturalheritage/cultural",
+        type: "get",
+        params: {
+            level: level
+        }
+    })
+}
+
 // 各类文化保护单位数量
 export const getCulturalProtectionType = () => {
     return request({
         url: "/culturalProtection/type",
         type: "get"
+    })
+}
+
+// 各类文化保护单位数量
+export const getCulturalProtectionTypeList = (type) => {
+    return request({
+        url: "/culturalProtection/typeList",
+        type: "get",
+        params: {
+            type: type
+        }
     })
 }
 
@@ -40,3 +62,13 @@ export const getCulturalinstitutionsProgram = () => {
     })
 }
 
+// 美食详情
+export const getCulinarySpecialtiesFood = (name) => {
+    return request({
+        url: "/culinarySpecialties/food",
+        type: "get",
+        params: {
+            name: name
+        }
+    })
+}
