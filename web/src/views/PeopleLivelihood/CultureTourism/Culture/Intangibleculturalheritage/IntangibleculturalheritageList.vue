@@ -29,8 +29,6 @@ async function getChartData() {
             bttb: item.bttb,
         }
     })
-    
-    console.log(chartData.value);
 }
 
 onMounted(() => {

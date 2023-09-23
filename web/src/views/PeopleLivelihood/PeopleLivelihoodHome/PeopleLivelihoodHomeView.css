@@ -1,10 +1,15 @@
 .container {
   width: 1920px;
   height: 1080px;
-  background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/background.png");
+  /* background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/background.png"); */
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.header {
+/* .header {
   width: 1920px;
   height: 100px;
   background-image: url("@/assets/PeopleLivelihood/PeopleLivelihoodHome/top.png");
@@ -18,12 +23,36 @@
 
 .header div {
   cursor: pointer;
+} */
+
+.header {
+  width: 1860px;
+  height: 100px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgba(134, 134, 252, 1) 0%, rgba(118, 106, 240, 1) 37.22%, rgba(118, 106, 240, 1) 65.55%, rgba(131, 120, 255, 1) 100%, rgba(134, 134, 252, 1) 100%);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  font-size: 52px;
+  color: white;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+}
+
+.header div {
+  cursor: pointer;
+  font-family: "YouSheBiaoTiHei";
 }
 
 .content {
-  margin-top: 86px;
+  margin-top: 10px;
   width: 1920px;
-  height: 894px;
+  /*  */
+  height: 930px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -31,7 +60,8 @@
 
 .content-box-opacity-radius {
   border-radius: 16px;
-  background-color: rgba(204, 204, 204, 0.15);
+  background: rgba(115, 103, 240, 0.07);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .box-public {
@@ -65,12 +95,11 @@
 
 .cnt-colum-left-up {
   width: 498px;
-  height: 198px;
+  height: 236px;
   transition: all 200ms ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 .cnt-colum-left-up .title {
@@ -78,7 +107,7 @@
   width: 458px;
   height: 26px;
   font-size: 26px;
-  color: white;
+  color: #989898;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,21 +119,19 @@
 }
 
 .cnt-colum-left-up .title span:nth-child(2):hover {
-  color: aqua;
+  color: #8685FC;
   cursor: pointer;
 }
 
 .cnt-colum-left-up .cnt {
-  /* margin-left: 20px; */
-  width: 458px;
-  height: 132px;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .cnt-colum-left-up .cnt>div {
-  margin-top: 10px;
-  height: 122px;
+  height: 100%;
   font-size: 18px;
   color: white;
 }
@@ -117,11 +144,11 @@
 }
 
 .line {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(200, 200, 200, 0.575);
   /*背景色为浅灰色*/
   width: 0.6px;
   /*设置宽高*/
-  height: 48px;
+  height: 100%;
   position: relative;
   left: 229px;
   /*调整位置*/
@@ -137,17 +164,27 @@
 }
 
 .cnt-colum-left-up .cnt>div table {
+  height: 100%;
   border-collapse: collapse;
   padding: 0;
   text-align: left;
-  color: rgba(255, 255, 255, 0.8);
+  color: #585858;
 }
 
-.cnt-colum-left-up .cnt>div table tr td:nth-child(1){
+.cnt-colum-left-up .cnt>div table tr td:nth-child(1) {
+  font-size: 16px;
   width: 134px;
   /* box-shadow: 0px 0px 0px 1px red inset; */
 }
+
 .cnt-colum-left-up .cnt>div table tr td:nth-child(2) {
+  font-size: 16px;
+  width: 74px;
+  /* box-shadow: 0px 0px 0px 1px red inset; */
+}
+
+.cnt-colum-left-up .cnt>div table tr td:nth-child(2) {
+  font-size: 16px;
   width: 74px;
   /* box-shadow: 0px 0px 0px 1px red inset; */
 }
@@ -159,7 +196,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 .cnt-colum-left-down .title {
@@ -169,7 +205,7 @@
   font-size: 26px;
   display: flex;
   align-items: center;
-  color: white;
+  color: #989898;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,12 +217,11 @@
 }
 
 .cnt-colum-left-down .title span:nth-child(2):hover {
-  color: aqua;
+  color: #8685FC;
   cursor: pointer;
 }
 
 .cnt-colum-left-down .list-box {
-  margin-top: 10px;
   width: 458px;
   height: 558px;
   display: flex;
@@ -198,14 +233,14 @@
   width: 458px;
   text-decoration: none;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #585858;
   display: flex;
   align-items: center;
 }
 
 .cnt-colum-left-down .list-box .li:hover {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, .2);
+  color: #8685FC;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 
@@ -389,7 +424,7 @@
 }
 
 .cnt-colum-middle-down {
-  height: 216px;
+  height: 254px;
   width: 809px;
   transition: all 200ms ease-in-out;
   overflow: hidden;
@@ -412,18 +447,18 @@
   line-height: 18px;
   text-align: left;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
+  color: #585858;
   /* border: 1px solid white; */
 }
 
 .cnt-colum-middle-down>table>tr>td a {
   text-decoration: none;
-  color: white;
+  color: rgb(0, 4, 255);
 }
 
 .cnt-colum-middle-down>table>tr>td:hover {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, .2);
+  color: #8685FC;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
 
@@ -467,12 +502,11 @@
 
 .cnt-colum-right-down {
   width: 498px;
-  height: 439px;
+  height: 477px;
   transition: all 200ms ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 .cnt-colum-right-down .title {
@@ -482,7 +516,7 @@
   display: flex;
   align-items: center;
   font-size: 26px;
-  color: white;
+  color: #989898;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -494,32 +528,33 @@
 }
 
 .cnt-colum-right-down .title span:nth-child(2):hover {
-  color: aqua;
+  color: #8685FC;
   cursor: pointer;
 }
 
 .cnt-colum-right-down .list-box {
-  margin-top: 10px;
-  width: 458px;
-  height: 363px;
+  /* width: 458px;
+  height: 363px; */
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .cnt-colum-right-down .list-box .li {
-  height: 38.9px;
+  height: 40px;
   width: 458px;
   text-decoration: none;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #585858;
 
   display: flex;
   align-items: center;
 }
 
 .cnt-colum-right-down .list-box .li:hover {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, .2);
+  color: #8685FC;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
 }
 

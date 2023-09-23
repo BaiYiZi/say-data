@@ -1,9 +1,10 @@
 <template>
     <carousel height="200px" :imgList="list"/>
-    <dialogFrame title="test" ref="dialog" width="880px" height="740px">
+    <dialogFrame title="test" ref="dialog" width="1200px" height="444px">
         <frame :title="imgItem.name">
-            <TouristAttractionInfo :name="imgItem.name" :imgItem="imgItem"/>
-        </frame>
+            <!-- <TouristAttractionInfo :name="imgItem.name" :imgItem="imgItem"/> -->
+            <Info :infoData ="imgItem"/>
+        </frame >
     </dialogFrame>
 </template>
 
@@ -15,6 +16,8 @@ import dialogFrame from '@/components/dialogFrame.vue'
 import emitter from '@/utils/bus'
 
 import TouristAttractionInfo from './TouristAttractionInfo.vue'
+
+import Info from '@/components/Info.vue'
 
 const dialog = ref(null)
 
@@ -29,11 +32,13 @@ const base = "/src/assets/PeopleLivelihood/CulturalTourism"
 const list = ref([
     {
         name: "清西陵",
-        path: base + "/qingxiling.png"
+        imgPath: base + "/qingxiling.png",
+        infoImgPath: base + "/qingxilingInfoImage.png"
     },
     {
         name: "白石山",
-        path: base + "/baishishan4.png"
+        imgPath: base + "/baishishan4.png",
+        infoImgPath: base + "/baishishanInfoImage.png"
     }
 ])
 </script>

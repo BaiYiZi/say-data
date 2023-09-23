@@ -1,8 +1,8 @@
 <template>
     <carousel height="308px" :imgList="list" />
-    <dialogFrame title="test" ref="dialog" width="880px" height="740px">
+    <dialogFrame title="test" ref="dialog" width="1200px" height="444px">
         <frame :title="imgItem.name">
-            <FoodInfo :name="imgItem.name" :imgItem="imgItem" />
+            <FoodInfo :infoData ="imgItem"/>
         </frame>
     </dialogFrame>
 </template>
@@ -29,7 +29,8 @@ const base = "/src/assets/PeopleLivelihood/CulturalTourism"
 const list = ref([
     {
         name: "驴肉火烧",
-        path: base + "/huoshao.png"
+        imgPath: base + "/huoshao.png",
+        infoImgPath: base + "/huoshaoInfoImage.png"
     },
 ])
 </script>

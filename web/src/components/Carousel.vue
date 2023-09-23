@@ -2,7 +2,7 @@
     <div class="Carousel">
         <el-carousel trigger="click" class="pic-box shadow" :height="props.height">
             <el-carousel-item v-for="item in props.imgList" v-bind:key="item">
-                <img class="img" alt="loading" :src="item.path" @click="getImg(item)"/>
+                <img :title="item.name" class="img" alt="loading" :src="item.imgPath" @click="getImg(item)"/>
             </el-carousel-item>
         </el-carousel>
     </div>
@@ -11,6 +11,7 @@
 <script setup>
 import { onBeforeUnmount } from 'vue';
 import emitter from '@/utils/bus.js'
+
 const props = defineProps(["height", "imgList"])
 
 function getImg(item) {

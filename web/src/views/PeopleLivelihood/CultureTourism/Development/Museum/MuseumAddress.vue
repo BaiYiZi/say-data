@@ -5,6 +5,7 @@
         </div>
         <div class="rank">
             <div class="title">博物馆年参观人次前N名</div>
+            <hr>
             <div class="t-box">
                 <Table :headerLineList="['博物馆名称', '地址', '参观人次(年/万次)']" :dataList="rankData"/>
             </div>
@@ -164,9 +165,11 @@ onMounted(() => {
 
     // 图表点击事件
     chart.value.chart.on("click", function (params) {
-        address.value = params.name
-        // // 打开下钻窗口
-        dialog.value.open()
+        if (params.data && params.data.value > 0) {
+            address.value = params.name
+            // // 打开下钻窗口
+            dialog.value.open()
+        }
     });
 })
 
@@ -190,17 +193,34 @@ onMounted(() => {
 .rank {
     width: 740px;
     height: 194px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 .title {
-    height: 50px;
-    font-size: 12px;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    padding-left: 10px;
+
+    font-size: 16px;
     font-weight: 700;
     color: #6E6E6E;
-    display: flex;
-    align-items: center;
 }
+
+hr {
+    border:none;
+    height: 2px;
+    width: calc(100% - 20px);
+    background-color: #0000000c;
+}
+
 .t-box {
     width: 740px;
-    height: 144px;
+    height: 152px;
+    padding: 10px;
 }
 </style>

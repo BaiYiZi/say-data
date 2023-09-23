@@ -4,6 +4,7 @@
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { ref, onMounted, onBeforeMount } from 'vue'
+import Item from './Item.vue';
 
 const router = useRouter()
 
@@ -34,18 +35,6 @@ function goMap() {
   window.open(
     'https://map.baidu.com/search/%E4%BF%9D%E5%AE%9A%E5%B8%82/@12854364,4677424,13z?querytype=s&wd=%E4%BF%9D%E5%AE%9A%E5%B8%82&c=307&provider=pc-aladin&pn=0&device_ratio=1&da_src=shareurl'
   )
-}
-
-function toMorePhoneNumber() {
-  window.open('http://www.114chn.com/tel.htm')
-}
-
-function toMoreNotification() {
-  window.open('https://www.baoding.gov.cn/')
-}
-
-function toMorePublicity() {
-  window.open('https://www.baoding.gov.cn/')
 }
 
 onBeforeMount(() => {
@@ -89,82 +78,72 @@ onMounted(() => {
     <div class="content">
       <div class="cnt-colum-left">
         <transition name="el-zoom-in-center">
-          <div class="cnt-colum-left-up content-box-opacity-radius" v-show="frameAppearanceAnimation">
-            <div class="title">
-              <span>常用电话</span><span @click="toMorePhoneNumber">更多</span>
-            </div>
+          <div class="cnt-colum-left-up" v-show="frameAppearanceAnimation">
+            <Item title="常用电话" more="http://www.114chn.com/tel.htm">
+              <div class="cnt">
+                <div class="line"></div>
+                <div>
+                  <table>
+                    <thead>
+                      <!-- <tr> -->
+                        <th>名称</th>
+                        <th>电话</th>
+                      <!-- </tr> -->
+                    </thead>
+                    <tr>
+                      <td>匪警</td>
+                      <td>110</td>
+                    </tr>
+                    <tr>
+                      <td>火警</td>
+                      <td>119</td>
+                    </tr>
+                    <tr>
+                      <td>急救中心</td>
 
-            <div class="cnt">
-              <div class="line"></div>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <td>名称</td>
-                      <!-- <td></td> -->
-                      <td>电话</td>
+                      <td>120</td>
                     </tr>
-                  </thead>
-                  <tr>
-                    <td>匪警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>110</td>
-                  </tr>
-                  <tr>
-                    <td>火警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>119</td>
-                  </tr>
-                  <tr>
-                    <td>急救中心</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>120</td>
-                  </tr>
-                  <tr>
-                    <td>交通事故</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>122</td>
-                  </tr>
-                </table>
-              </div>
-              <div>
-                <table>
-                  <thead>
                     <tr>
-                      <td>名称</td>
-                      <!-- <td></td> -->
-                      <td>电话</td>
+                      <td>交通事故</td>
+                      <td>122</td>
                     </tr>
-                  </thead>
-                  <tr>
-                    <td>市长热线</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12345</td>
-                  </tr>
-                  <tr>
-                    <td>文化市场举报</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12318</td>
-                  </tr>
-                  <tr>
-                    <td>水上求救专用</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12395</td>
-                  </tr>
-                  <tr>
-                    <td>公安短信报警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12110</td>
-                  </tr>
-                </table>
+                  </table>
+                </div>
+                <div>
+                  <table>
+                    <thead>
+                      <!-- <tr> -->
+                        <th>名称</th>
+                        <th>电话</th>
+                      <!-- </tr> -->
+                    </thead>
+                    <tr>
+                      <td>市长热线</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>文化市场举报</td>
+                      <td>12318</td>
+                    </tr>
+                    <tr>
+                      <td>水上求救专用</td>
+                      <td>12395</td>
+                    </tr>
+                    <tr>
+                      <td>公安短信报警</td>
+                      <td>12110</td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
+            </Item>
           </div>
         </transition>
 
         <transition name="el-zoom-in-center">
-          <div class="cnt-colum-left-down content-box-opacity-radius" v-show="frameAppearanceAnimation">
-            <div class="title"><span>宣传相关</span><span @click="toMorePublicity">更多</span></div>
+          <div class="cnt-colum-left-down" v-show="frameAppearanceAnimation">
+            <!-- <div class="title"><span>宣传相关</span><span @click="toMorePublicity">更多</span></div> -->
+            <Item title="宣传相关" more="https://www.baoding.gov.cn/">
             <div class="list-box">
               <a class="li" href="https://mp.weixin.qq.com/s/r35XoiM1TdapMgmciK8-_A"
                 target="_blank"><span>防汛减灾第12天</span></a>
@@ -193,6 +172,7 @@ onMounted(() => {
               <a class="li" href="https://mp.weixin.qq.com/s/M6hpacvidyCuWekSC4ckQw" target="_blank"><span>文化风情{{ '<360>'
               }} | 我以我笔写英雄——军旅作家宫洁民</span></a>
             </div>
+            </Item>
           </div>
         </transition>
       </div>
@@ -302,32 +282,31 @@ onMounted(() => {
           </div>
         </transition>
         <transition name="el-zoom-in-center">
-          <div class="cnt-colum-right-down content-box-opacity-radius" v-show="frameAppearanceAnimation">
-            <div class="title">
-              <span>通知公告</span><span @click="toMoreNotification">更多</span>
-            </div>
-            <div class="list-box">
-              <a class="li" href="https://www.baoding.gov.cn/content-159-405308.html"
-                target="_blank"><span>全力防范！我市启动重大气象灾害（暴雨）Ⅳ级应急响应</span></a>
-              <a class="li" href="https://www.baoding.gov.cn/content-173-405596.html"
-                target="_blank"><span>举办专场招聘会</span></a>
-              <a class="li" href="https://www.baoding.gov.cn/content-173-405520.html"
-                target="_blank"><span>基本公共卫生服务质量提升项目经验交流会</span></a>
-              <a class="li" href="https://www.baoding.gov.cn/content-173-405390.html"
-                target="_blank"><span>第二届“文化旅游看河北——你不知道的特色小镇”媒体行活动</span></a>
-              <a class="li" href="https://www.baoding.gov.cn/content-173-405315.html"
-                target="_blank"><span>中央媒体“高质量发展调研行”主题采访活动</span></a>
-              <a class="li" href="https://www.baoding.gov.cn/content-173-405249.html"
-                target="_blank"><span>全省组织工作会议</span></a>
-              <a class="li" href="https://www.gov.cn/zhengce/202305/content_6875434.htm"
-                target="_blank"><span>关于推进基本养老服务体系建设的意见</span></a>
-              <a class="li" href="https://www.gov.cn/zhengce/content/202306/content_6887167.htm"
-                target="_blank"><span>国务院办公厅关于进一步构建高质量充电基础设施体系的指导意见</span></a>
-              <a class="li" href="https://www.gov.cn/zhengce/202304/content_6762874.htm"
-                target="_blank"><span>关于进一步完善医疗卫生服务体系的意见</span></a>
-              <a class="li" href="https://www.gov.cn/zhengce/202306/content_6886110.htm"
-                target="_blank"><span>关于构建优质均衡的基本公共教育服务体系的意见</span></a>
-            </div>
+          <div class="cnt-colum-right-down" v-show="frameAppearanceAnimation">
+            <Item title="通知公告" more="https://www.baoding.gov.cn/">
+              <div class="list-box">
+                <a class="li" href="https://www.baoding.gov.cn/content-159-405308.html"
+                  target="_blank"><span>全力防范！我市启动重大气象灾害（暴雨）Ⅳ级应急响应</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405596.html"
+                  target="_blank"><span>举办专场招聘会</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405520.html"
+                  target="_blank"><span>基本公共卫生服务质量提升项目经验交流会</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405390.html"
+                  target="_blank"><span>第二届“文化旅游看河北——你不知道的特色小镇”媒体行活动</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405315.html"
+                  target="_blank"><span>中央媒体“高质量发展调研行”主题采访活动</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405249.html"
+                  target="_blank"><span>全省组织工作会议</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202305/content_6875434.htm"
+                  target="_blank"><span>关于推进基本养老服务体系建设的意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/content/202306/content_6887167.htm"
+                  target="_blank"><span>国务院办公厅关于进一步构建高质量充电基础设施体系的指导意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202304/content_6762874.htm"
+                  target="_blank"><span>关于进一步完善医疗卫生服务体系的意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202306/content_6886110.htm"
+                  target="_blank"><span>关于构建优质均衡的基本公共教育服务体系的意见</span></a>
+              </div>
+            </Item>
           </div>
         </transition>
       </div>

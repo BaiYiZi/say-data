@@ -37,7 +37,6 @@ async function getChartData() {
             visitors: item.visitors
         }
     })[0]
-    console.log(infoData.value);
 }
 
 onMounted(() => {

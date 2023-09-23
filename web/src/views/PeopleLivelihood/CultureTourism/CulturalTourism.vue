@@ -2,7 +2,7 @@
     <div class="page">
         <!-- 头部 -->
         <div class="header">
-            <div>数说保定-城市数据平台</div>
+            <div @click="goPeopleLivelihoodHome">数说保定-城市数据平台</div>
         </div>
         <!-- 内容 -->
         <div class="container">
@@ -33,6 +33,10 @@ import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter()
 const route = useRoute()
+
+function goPeopleLivelihoodHome() {
+    router.push('/people-livelihood')
+}
 
 const menuList = ref([
     {

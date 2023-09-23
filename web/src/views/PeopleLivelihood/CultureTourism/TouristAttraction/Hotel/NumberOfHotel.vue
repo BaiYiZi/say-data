@@ -1,7 +1,7 @@
 <template>
     <mychart ref="chart"></mychart>
     <dialogFrame title="test" ref="dialog" height="550px" width="1000px">
-        <frame title="testDrillDown">
+        <frame title="省内占比">
             <LevelOfHotel/>
         </frame>
     </dialogFrame>
@@ -66,7 +66,7 @@ function chart0ption() {
             },
             icon: 'circle', // 图例的图标样式
             textStyle: { //图例的文字样式
-                color: 'rgba(255,255,255,0.75)',
+                color: '#858585',
             },
         },
         series: [

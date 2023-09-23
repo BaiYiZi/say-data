@@ -94,7 +94,6 @@ onMounted(() => {
 
     // 图表点击事件
     chart.value.chart.on("click", function (params) {
-        console.log(params);
         level.value = params.name
         // 打开下钻窗口
         dialog.value.open()

@@ -53,9 +53,12 @@ defineExpose({
         font-size: 18px;
         font-weight: 500;
         font-family: "SourceHanSans";
+        
+        
         border-radius: 12px;
-        background: linear-gradient(90deg, rgba(153, 153, 255, 1) 0%, rgba(117, 105, 240, 1) 100%);
-        box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.05);
+        background: linear-gradient(90deg, rgba(245, 86, 86, 1) 0%, rgba(255, 202, 153, 1) 100%, rgba(252, 222, 101, 1) 100%);
+
+        box-shadow:0px 0px 0px 3px rgba(255, 255, 255, 0.53) inset;
     }
 
     .item:hover{

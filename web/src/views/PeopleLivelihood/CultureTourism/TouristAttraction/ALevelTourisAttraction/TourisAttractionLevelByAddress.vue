@@ -31,7 +31,6 @@ const dialog = ref(null)
 
 // 获取 API 接口数据
 async function getChartData() {
-    console.log(props.address);
     chartData.value = ((await getLevelsByAddress(props.address)).data.data).map(item => {
         return {
             name: item.level,
@@ -79,7 +78,7 @@ function chart0ption() {
         series: [
             {
                 type: "pie",
-                radius: ['45%', '90%'],
+                radius: ['0%', '82%'],
                 center: ["45%", "50%"],
                 label: { show: false },
                 data: chartData.value

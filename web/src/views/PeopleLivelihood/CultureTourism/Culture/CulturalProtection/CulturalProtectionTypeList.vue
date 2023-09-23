@@ -25,7 +25,6 @@ async function getChartData() {
             batch: item.batch,
         }
     })
-    console.log(chartData.value);
 }
 
 onMounted(() => {

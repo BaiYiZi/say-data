@@ -1,7 +1,7 @@
 <template>
     <div v-if="loading" class="TouristAttractionInfo">
         <div class="img-box" 
-        :style="{ 'background-image': 'url('+ imgItem.path +')'}"
+        :style="{ 'background-image': 'url('+ props.imgItem.infoImgPath +')'}"
         >
             
         </div>
@@ -32,8 +32,6 @@ import { ref, onMounted } from 'vue';
 import { getAttractionsInfo } from '@/api/TouristAttractionData'
 
 const props = defineProps(["name","imgItem"])
-console.log(props.name);
-console.log(props.imgItem);
 
 const infoData = ref()
 

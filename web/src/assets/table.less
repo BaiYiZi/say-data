@@ -1,40 +1,55 @@
 .Table {
     width: 100%;
     height: 100%;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow-x: scroll;
-    overflow-x: hidden;
 
     border-radius: 8px;
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    .tbox {
+        width: calc(100%);
+        height: 100%;
+        // margin-right: calc(100% - 100vw);
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 
     table {
         table-layout: fixed;
-        // table-layout: fixed;
-        width: calc(100% - 40px);
+        width: 100%;
+        border-collapse: collapse
     }
 
     table th {
-        text-align: left;
-        font-size: 14px;
+        height: 30px;
+
+        text-align: center;
+        font-size: 16px;
         font-weight: 400;
-        color: rgba(133, 133, 133, 1);
+        border: 1px solid #99999917;
     }
 
     table tr {
         height: 30px;
-        border-bottom: 1px solid #000
+
+        font-size: 14px;
     }
 
     table tr td {
-        text-align: left;
+        height: 30px;
+        width: 100px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
+        text-align: center;
+        // text-align: left;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 500;
         color: rgba(133, 133, 133, 1);
+        border: 1px solid #99999917;
     }
 }

@@ -80,7 +80,7 @@ function chart0ption() {
             {
                 // 柱状图自动排序，排序自动让Y轴名字跟着数据动
                 realtimeSort: true,
-                name: "数量(个)",
+                name: "适游指数",
                 type: "bar",
                 data: chartData.value.values,
                 barWidth: 18,

@@ -6,22 +6,22 @@
         <div class="info-box" v-if="loading">
             <div class="title">
                 <div class="title-text">{{ infoData.name }}</div>
-                <div class="level">特色小吃</div>
+                <div class="level">{{ infoData.level }}</div>
             </div>
             <hr class="hr">
             <div class="info">
-                <div class="info-item"><span>英文名 ：</span>{{ infoData.ename }}</div>
-                <div class="info-item"><span>口感 ：</span>{{ infoData.palate }}</div>
-                <div class="info-item"><span>配料 ：</span>{{ infoData.ingredients }}</div>
+                <div class="info-item"><span>景区地址：</span>{{ infoData.address }}</div>
+                <div class="info-item"><span>营业时间：</span>{{ infoData.time }}</div>
+                <div class="info-item"><span>票价：</span>{{ infoData.tickets }}</div>
                 <div class="row">
-                    <div class="info-item"><span>不适宜人群 ：</span>暂无</div>
-                    <div class="info-item" style="margin-left: 24px;"><span>最佳搭配 ：</span>暂无</div>
+                    <div class="info-item"><span>适游季节：</span>暂无</div>
+                    <div class="info-item" style="margin-left: 24px;"><span>景区官网：</span>暂无</div>
                 </div>
             </div>
             <hr class="hr">
             <div class="particulars">
                 <div class="info-item">
-                    <span>详情 ：</span>
+                    <span>详情：</span>
                     暂无
                 </div>
             </div>
@@ -31,7 +31,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { getCulinarySpecialtiesFood } from '@/api/CultureData'
+import { getAttractionsInfo } from '@/api/TouristAttractionData'
 
 const props = defineProps(["infoData"])
 
@@ -40,7 +40,7 @@ const infoData = ref()
 const loading = ref(false)
 
 async function getInfoData() {
-    infoData.value = (await getCulinarySpecialtiesFood(props.infoData.name)).data.data[0]
+    infoData.value = (await getAttractionsInfo(props.infoData.name)).data.data[0]
 }
 
 onMounted(() => {
@@ -61,13 +61,13 @@ onMounted(() => {
     align-items: center;
     justify-content: space-between;
 
-    .img-box {
+    .img-box{
         width: 555px;
         height: 340px;
         margin-left: 10px;
     }
 
-    .info-box {
+    .info-box{
         width: 555px;
         height: 340px;
         margin-right: 10px;
@@ -84,7 +84,6 @@ onMounted(() => {
                 width: fit-content;
                 font-size: 28px;
             }
-
             .level {
                 height: 28px;
                 line-height: 28px;
@@ -105,7 +104,7 @@ onMounted(() => {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            
             padding: 16px 0px 16px 0px;
 
             .row {

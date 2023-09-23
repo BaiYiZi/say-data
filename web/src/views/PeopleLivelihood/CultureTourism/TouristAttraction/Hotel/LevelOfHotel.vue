@@ -1,11 +1,17 @@
 <template>
-    <div class="chart-box">
-        <div class="title">保定一至四星级酒店占河北省一至四星级酒店数量的份额</div>
-        <mychart ref="chartOf"></mychart>
-    </div>
-    <div class="chart-box">
-        <div class="title">保定五星级酒店占河北省五星级酒店的份额</div>
-        <mychart ref="chartFive"></mychart>
+    <div class="LevelOfHotel">
+        <div class="box">
+            <div class="title">保定市四星及以下级酒店占河北省的份额</div>
+            <div class="chart-box">
+                <mychart ref="chartOf"></mychart>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title">保定五星级酒店占河北省的份额</div>
+            <div class="chart-box">
+                <mychart ref="chartFive"></mychart>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -39,7 +45,6 @@ async function getChartData() {
         }
     ]
     chartOfData.value = dataList
-    console.log(chartOfData.value);
 
     data = (await getHotelFive()).data.data.OF
     dataList = [
@@ -55,7 +60,6 @@ async function getChartData() {
         }
     ]
     chartFiveData.value = dataList
-    console.log(chartFiveData.value);
 }
 
 function chart0ption(data) {
@@ -93,7 +97,7 @@ function chart0ption(data) {
         series: [
             {
                 type: "pie",
-                radius: '80%',
+                radius: '70%',
                 center: ["50%", "50%"],
                 label: { show: false },
                 data: data.value,
@@ -117,12 +121,42 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-.chart-box {
+.LevelOfHotel {
     height: 100%;
     width: 100%;
-    
-    .title {
-        text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .box {
+        height: 100%;
+        width: calc(50% - 10px);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 8px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+
+        // background-color: #f6f6f6;
+        .title {
+            width: fit-content;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px 0 20px;
+
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 18px;
+            color: #585858;
+            text-align: center;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        .chart-box {
+            height: calc(100% - 50px);
+            width: 100%;
+        }
     }
 }
+
 </style>

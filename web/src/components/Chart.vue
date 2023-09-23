@@ -23,7 +23,6 @@ const loadingStyle = {
 
 // 初始化图表
 function initChart() {
-    console.log("initChart");
     // 初始化图表
     chart.value = echarts.init(chartDom.value)
      

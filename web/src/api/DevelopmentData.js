@@ -28,10 +28,13 @@ export const getParkList = (address) => {
 }
 
 // 文旅活动频率
-export const getActivity = () => {
+export const getActivity = (year) => {
     return request({
         url: "/activity/activity",
-        type: "get"
+        type: "get",
+        params: {
+            year: year
+        }
     })
 }
 
