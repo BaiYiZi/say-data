@@ -3,7 +3,8 @@
         <div class="dialog-context" 
         :style="{ 'height': props.height ? props.height : '550px', 'width': props.width ? props.width : '700px' }"
         >
-            <p class="tips" @click="close">单击背景关闭</p>
+            <!-- <p class="tips" @click="close">单击背景关闭</p> -->
+            <img @click="close" class="close-button" src="@/assets/PeopleLivelihood/CulturalTourism/close button.svg">
             <slot></slot>
         </div>
 
@@ -13,6 +14,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import emitter from '@/utils/bus'
 
 const props = defineProps(['id', 'title', 'height', 'width'])
 
@@ -30,6 +32,10 @@ const close = () => {
     dialogVisble.value = false
 }
 
+emitter.on('closeDrillDownFrame', () => {
+    close()
+})
+
 defineExpose({
     dialogVisble,
     open,
@@ -38,7 +44,7 @@ defineExpose({
 }) 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .dialog {
     height: 1080px;
     width: 1920px;
@@ -54,6 +60,18 @@ defineExpose({
 .dialog-context {
     width: 700px;
     z-index: 999;
+}
+
+.close-button {
+    position: relative;
+    z-index: 999;
+    top: 36px;
+    left: calc(100% - 32px);
+    height: 20px;
+    width: 20px;
+    margin-right: 11px;
+
+    cursor: pointer;
 }
 
 .hidden {

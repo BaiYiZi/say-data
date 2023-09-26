@@ -80,7 +80,7 @@ function chart0ption() {
                 name: '人口覆盖率',
                 data: chartData.value.programCoverage,
                 itemStyle: {
-                    color: '#54EBC8',
+                    color: 'rgba(255, 166, 82, 1)',
                 },
                 lineStyle: {
                     width: 4
@@ -93,9 +93,9 @@ function chart0ption() {
                         x2: 0,
                         y2: 1,
                         colorStops: [{
-                            offset: 0, color: 'rgba(84, 235, 200, 0.5)' // 0% 处的颜色
+                            offset: 0, color: 'rgba(255, 166, 82, 0.5)' // 0% 处的颜色
                         }, {
-                            offset: 1, color: 'rgba(84, 235, 200, 0)' // 100% 处的颜色
+                            offset: 1, color: 'rgba(255, 166, 82, 0)' // 100% 处的颜色
                         }],
                         global: false // 缺省为 false
                     }

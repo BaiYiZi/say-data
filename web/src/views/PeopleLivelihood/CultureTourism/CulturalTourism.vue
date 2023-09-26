@@ -122,11 +122,13 @@ onMounted(() => {
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
 
     .header-text {
+        height: 80px;
+        line-height: 80px;
+        padding-left: 40px;
         cursor: pointer;
         font-size: 48px;
         font-family: 'YouSheBiaoTiHei';
         color: #7367F0;
-        margin-left: 40px;
     }
 }
 

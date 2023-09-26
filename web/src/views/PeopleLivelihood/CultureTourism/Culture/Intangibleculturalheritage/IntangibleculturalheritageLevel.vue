@@ -43,11 +43,15 @@ function chart0ption() {
             trigger: 'item'
         },
         color: [
-            '#00c1bf',
-            '#00cfce',
-            '#00dcde',
-            '#00eaee',
-            '#00f8ff'
+            // '#00c1bf',
+            // '#00cfce',
+            // '#00dcde',
+            // '#00eaee',
+            // '#00f8ff'
+            '#5297f0',
+            '#00baf9',
+            '#3fd8f3',
+            '#88f2ea'
         ],
         legend: {
             type: 'scroll',
@@ -71,7 +75,11 @@ function chart0ption() {
                 type: "pie",
                 radius: ['42%', '85%'],
                 center: ["35%", "50%"],
-                label: { show: false },
+                label: {
+                    show: true,
+                    position: 'inner',
+                    color: '#fff',
+                },
                 data: chartData.value
             }
         ]

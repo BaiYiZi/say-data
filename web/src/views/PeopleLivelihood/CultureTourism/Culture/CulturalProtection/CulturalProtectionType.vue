@@ -105,7 +105,8 @@ function chart0ption() {
                 },
                 itemStyle: {
                     shadowBlur: 4,
-                    shadowColor: '#7FEFFF',
+                    // shadowColor: '#7FEFFF',
+                    shadowColor: 'rgba(118, 106, 240, 0.5)',
                     //颜色样式部分
                     color: {
                         type: 'linear',
@@ -114,13 +115,21 @@ function chart0ption() {
                         x2: 0,  //左
                         y2: 1,  //上
                         colorStops: [
+                            // {
+                            //     offset: 0,
+                            //     color: 'rgba(108, 229, 245, 1)' // 0% 处的颜色
+                            // },
+                            // {
+                            //     offset: 1,
+                            //     color: 'rgba(69, 184, 255, 1)' // 100% 处的颜色
+                            // },
                             {
                                 offset: 0,
-                                color: 'rgba(108, 229, 245, 1)' // 0% 处的颜色
+                                color: 'rgba(152, 152, 255, 1)' // 0% 处的颜色
                             },
                             {
                                 offset: 1,
-                                color: 'rgba(69, 184, 255, 1)' // 100% 处的颜色
+                                color: 'rgba(118, 106, 240, 1)' // 100% 处的颜色
                             },
                         ]
                     },

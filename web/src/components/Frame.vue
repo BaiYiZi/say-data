@@ -1,8 +1,12 @@
 <template>
     <div class="item">
         <div class="title">
-            <img src="@/assets/PeopleLivelihood/CulturalTourism/title.svg">
-            <span class="text">{{ props.title }}</span>
+            <div class="left">
+                <img src="@/assets/PeopleLivelihood/CulturalTourism/title.svg">
+                <span class="text">{{ props.title }}</span>
+            </div>
+            
+            <!-- <img v-if="isDrillDown" @click="close" class="close-button" src="@/assets/PeopleLivelihood/CulturalTourism/close button.svg"> -->
         </div>
         <hr>
         <div class="chart-content">
@@ -12,8 +16,17 @@
 </template>
 
 <script setup>
+import { ref, onBeforeUnmount } from 'vue';
+import emitter from '@/utils/bus'
 
-const props = defineProps(["title"]);
+const props = defineProps(["title", "drillDownFlag"]);
+
+const isDrillDown = ref(props.drillDownFlag)
+
+function close() {
+    emitter.emit('closeDrillDownFrame')
+    console.log(emitter)
+}
 
 </script>
 
@@ -36,20 +49,21 @@ const props = defineProps(["title"]);
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 
-    img {
-        width: 12px;
-        height: 18px;
-        margin-left: 12px;
-        margin-right: 6px;
-    }
-
-    .text {
-        color: #6E6E6E;
-        font-size: 15px;
-        font-family: 'SourceHanSans';
-        font-weight: bold;
+    .left {
+        img {
+            width: 12px;
+            height: 18px;
+            margin-left: 12px;
+            margin-right: 6px;
+        }
+        .text {
+            color: #6E6E6E;
+            font-size: 15px;
+            font-family: 'SourceHanSans';
+            font-weight: bold;
+        }
     }
 }
 
