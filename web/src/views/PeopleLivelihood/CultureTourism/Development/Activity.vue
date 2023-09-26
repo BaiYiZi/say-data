@@ -175,6 +175,7 @@ onMounted(() => {
 }
 
 .item:hover {
+    cursor: pointer;
     background: rgb(232, 232, 232);
 }
 

@@ -28,6 +28,9 @@ onBeforeUnmount(() => {
     height: 100%;
     width: 100%;
 }
+.Carousel:hover {
+    cursor: pointer;
+}
 .shadow {
     border-radius: 12px;
     box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.1);

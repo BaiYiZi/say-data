@@ -1,13 +1,13 @@
 <template>
-    <div class="card">
-        <div class="card-item opening" @click="openDrillDown">
+    <div class="card" @click="openDrillDown">
+        <div class="card-item opening">
             <div class="tilte-text">市区开放公园数量</div>
             <span class="tilte-text  big">
                 {{ data.opening }}
                 <span class="tilte-text">座</span>
             </span>
         </div>
-        <div class="card-item greenSpace" @click="openDrillDown">
+        <div class="card-item greenSpace">
             <div class="tilte-text">林下空间绿地共享面积</div>
             <span class="tilte-text  big">
                 {{ data.greenSpace }}
@@ -15,7 +15,7 @@
             </span>
             
         </div>
-        <div class="card-item lawnShared" @click="openDrillDown">
+        <div class="card-item lawnShared">
             <div class="tilte-text">草坪共享面积</div>
             <span class="tilte-text  big">
                 {{ data.lawnShared }}
@@ -70,6 +70,11 @@ onMounted(() => {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.05);
 }
+.card:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
 
 .card-item {
     width: 242px;
@@ -79,11 +84,6 @@ onMounted(() => {
     flex-direction: column;
     align-items: flex-start;
 }
-
-.card-item:hover {
-    opacity: 0.85;
-}
-
 .opening {
     background-image: url("../../../../../assets/PeopleLivelihood/CulturalTourism/card1.png");
 }

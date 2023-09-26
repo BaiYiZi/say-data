@@ -184,6 +184,13 @@ onMounted(() => {
             }
         }
 
+        .item:hover {
+            cursor: pointer;
+            opacity: 0.9;
+            transform: scale(1.03);
+            transition: all 100ms ease-in-out;
+        }
+
         .item-active {
             width: 240px;
             height: 215px;

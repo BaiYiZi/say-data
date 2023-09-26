@@ -289,6 +289,11 @@ onMounted(() => {
     box-shadow: 0px 4px 16px  rgba(0, 0, 0, 0.05);
 }
 
+.item:hover {
+    cursor: pointer;
+    background: rgb(232, 232, 232);
+}
+
 .item .active {
     color: rgba(255, 255, 255, 1);
     background: linear-gradient(90deg, rgba(118, 106, 240, 1) 0%, rgba(142, 140, 255, 1) 100%);
