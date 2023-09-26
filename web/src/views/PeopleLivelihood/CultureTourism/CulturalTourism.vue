@@ -2,7 +2,11 @@
     <div class="page">
         <!-- 头部 -->
         <div class="header">
-            <div @click="goPeopleLivelihoodHome">数说保定-城市数据平台</div>
+            <div class="header-text"
+            @mouseover="hover" 
+            @mouseleave="leave"
+            @click="goPeopleLivelihoodHome"
+            >{{ title }}</div>
         </div>
         <!-- 内容 -->
         <div class="container">
@@ -33,6 +37,8 @@ import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter()
 const route = useRoute()
+
+const title = ref('数说保定-文化旅游')
 
 function goPeopleLivelihoodHome() {
     router.push('/people-livelihood')
@@ -81,6 +87,13 @@ function selected() {
     })
 }
 
+function hover() {
+    title.value = " <<数说保定-民生"
+}
+
+function leave() {
+    title.value = "数说保定-文化旅游"
+}
 
 onMounted(() => {
     selected()
@@ -108,7 +121,8 @@ onMounted(() => {
     background-color: #F8F7FF;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
 
-    div {
+    .header-text {
+        cursor: pointer;
         font-size: 48px;
         font-family: 'YouSheBiaoTiHei';
         color: #7367F0;

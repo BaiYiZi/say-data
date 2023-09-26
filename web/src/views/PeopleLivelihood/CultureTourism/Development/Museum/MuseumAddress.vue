@@ -89,7 +89,7 @@ function chart0ption() {
                 shadowOffsetY: 10,
                 shadowBlur: 20,
                 //区域颜色
-                areaColor: "#ffffff",
+                areaColor: "rgba(255, 255, 255, 0.75)",
             },
             emphasis: {
                 show: true,
@@ -124,16 +124,13 @@ function chart0ption() {
             itemWidth: 10,
             inRange: {
                 color: [
-                    '#46EEA1',
-                    '#3DDAB2',
-                    '#33C8C1',
-                    '#2DB4C5',
-                    '#2997AE',
-                    '#267C99',
-                    '#235F82',
-                    '#24518D',
-                    '#2846A5',
-                    '#2B3BBD',
+                    '#00668b',
+                    '#0080a2',
+                    '#009ab1',
+                    '#00b4b7',
+                    '#00cdb4',
+                    '#00e6a8',
+                    '#4efd95',
                 ],
             },
         },

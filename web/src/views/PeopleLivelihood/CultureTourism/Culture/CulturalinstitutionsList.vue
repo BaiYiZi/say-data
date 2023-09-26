@@ -82,52 +82,54 @@ function chart0ption() {
                 name: '公共图书馆建设数量',
                 data: chartData.value.museum,
                 itemStyle: {
-                    color: '#54EBC8',
+                    // color: '#54EBC8',
+                    color: 'rgba(108, 229, 245, 1)'
                 },
                 lineStyle: {
                     width: 4
                 },
-                // areaStyle: {
-                //     color: {
-                //         type: 'linear',
-                //         x: 0,
-                //         y: 0,
-                //         x2: 0,
-                //         y2: 1,
-                //         colorStops: [{
-                //             offset: 0, color: 'rgba(84, 235, 200, 0.5)' // 0% 处的颜色
-                //         }, {
-                //             offset: 1, color: 'rgba(84, 235, 200, 0)' // 100% 处的颜色
-                //         }],
-                //         global: false // 缺省为 false
-                //     }
-                // },
+                areaStyle: {
+                    color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: 'rgba(108, 229, 245, 0.5)' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgba(84, 235, 200, 0)' // 100% 处的颜色
+                        }],
+                        global: false // 缺省为 false
+                    }
+                },
             },
             {
                 type: 'line',
                 name: '博物馆建设数量',
                 data: chartData.value.publicLibrary,
                 itemStyle: {
-                    color: '#FFA652',
+                    // color: '#FFA652',
+                    color: 'rgba(69, 184, 255, 1)'
                 },
                 lineStyle: {
                     width: 4
                 },
-                // areaStyle: {
-                //     color: {
-                //         type: 'linear',
-                //         x: 0,
-                //         y: 0,
-                //         x2: 0,
-                //         y2: 1,
-                //         colorStops: [{
-                //             offset: 0, color: 'rgba(84, 235, 200, 0.5)' // 0% 处的颜色
-                //         }, {
-                //             offset: 1, color: 'rgba(84, 235, 200, 0)' // 100% 处的颜色
-                //         }],
-                //         global: false // 缺省为 false
-                //     }
-                // },
+                areaStyle: {
+                    color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: 'rgba(69, 184, 255, 0.5)' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgba(69, 184, 255, 0)' // 100% 处的颜色
+                        }],
+                        global: false // 缺省为 false
+                    }
+                },
             }
         ]
     }

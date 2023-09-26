@@ -32,6 +32,11 @@ const list = ref([
         imgPath: base + "/huoshao.png",
         infoImgPath: base + "/huoshaoInfoImage.png"
     },
+    {
+        name: "定州焖子",
+        imgPath: base + "/dingzhoumenzi.png",
+        infoImgPath: base + "/dingzhoumenziInfoImage.png"
+    },
 ])
 </script>
 

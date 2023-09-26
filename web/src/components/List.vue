@@ -40,7 +40,6 @@ defineExpose({
     }
 
     .item {
-        // width: calc( 100% - 20px );
         width: 100%;
         min-height: 84px;
 

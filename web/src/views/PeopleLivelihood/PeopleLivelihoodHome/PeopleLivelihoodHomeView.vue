@@ -4,7 +4,7 @@
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { ref, onMounted, onBeforeMount } from 'vue'
-import Item from './Item.vue';
+import Item from '../../../components/Item.vue';
 
 const router = useRouter()
 

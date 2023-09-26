@@ -135,7 +135,6 @@ onMounted(() => {
     // 初始化图表
     chart.value.initChart()
 
-    // chart.value.renderChart(chart0ption())
     getChartData().then(() => {
         chart.value.renderChart(chart0ption())
     })

@@ -46,15 +46,9 @@ function chart0ption() {
             trigger: 'item'
         },
         color: [
-            // '#2B3BBD',
-            // '#2846A5',
-            // '#24518D',
-            // '#235F82',
-            // '#267C99',
-            '#2997AE',
             '#2DB4C5',
+            '#2997AE',
             '#33C8C1',
-            '#3DDAB2',
             '#46EEA1',
         ],
         legend: {

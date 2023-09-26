@@ -122,28 +122,10 @@ function chart0ption() {
                                 offset: 1,
                                 color: 'rgba(69, 184, 255, 1)' // 100% 处的颜色
                             },
-                            // {
-                            //     offset: 0,
-                            //     color: 'rgba(152, 152, 255, 1)' // 0% 处的颜色
-                            // },
-                            // {
-                            //     offset: 1,
-                            //     color: 'rgba(118, 106, 240, 1)' // 100% 处的颜色
-                            // }
                         ]
                     },
 
                     borderRadius: [10, 10, 10, 10],
-                    // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                    //     {
-                    //         offset: 0,
-                    //         color: 'rgba(33, 196, 255, 1)'
-                    //     },
-                    //     {
-                    //         offset: 1,
-                    //         color: 'rgba(28, 146, 189, 1)'
-                    //     }
-                    // ])
                 },
                 data: chartData.value.count
             }

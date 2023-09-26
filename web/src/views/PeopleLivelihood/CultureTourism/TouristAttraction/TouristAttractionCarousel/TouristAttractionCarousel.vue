@@ -15,8 +15,6 @@ import frame from '@/components/Frame.vue'
 import dialogFrame from '@/components/dialogFrame.vue'
 import emitter from '@/utils/bus'
 
-import TouristAttractionInfo from './TouristAttractionInfo.vue'
-
 import Info from '@/components/Info.vue'
 
 const dialog = ref(null)

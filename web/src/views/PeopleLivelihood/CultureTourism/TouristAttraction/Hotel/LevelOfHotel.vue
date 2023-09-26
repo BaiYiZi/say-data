@@ -34,13 +34,11 @@ async function getChartData() {
     let dataList = [
         {
             name: "保定市",
-            // value: (data * 100).toFixed(1)
             value: data
 
         },
         {
             name: "河北省其他地区",
-            // value: 100 - (data * 100).toFixed(1)
             value: 1 - data
         }
     ]
@@ -50,12 +48,10 @@ async function getChartData() {
     dataList = [
         {
             name: "保定市",
-            // value: (data * 100).toFixed(1)
             value: data
         },
         {
             name: "河北省其他地区",
-            // value: 100 - (data * 100).toFixed(1)
             value: 1 - data
         }
     ]
@@ -75,7 +71,7 @@ function chart0ption(data) {
         },
         color: [
             '#3DDAB2',
-            '#2DB4C5',     
+            '#2DB4C5',
         ],
         legend: {
             type: 'scroll',
@@ -138,7 +134,6 @@ onMounted(() => {
         border-radius: 8px;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
 
-        // background-color: #f6f6f6;
         .title {
             width: fit-content;
             height: 50px;
@@ -158,5 +153,4 @@ onMounted(() => {
         }
     }
 }
-
 </style>

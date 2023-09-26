@@ -41,7 +41,6 @@ function chart0ption() {
             x: 'center',
             // y: 'bottom',
             bottom: 0,
-            // icon: 'roundRect', // 图例的图标样式
             textStyle: { //图例的文字样式
                 fontSize: 14,
                 color: '#858585',

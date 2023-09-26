@@ -12,7 +12,7 @@
                         </frame>
                     </div>
                     <div class="up-left-down-right">
-                        <frame title="景区客拥堵指数排行">
+                        <frame title="景区拥堵指数排行">
                             <Congestion/>
                         </frame>
                     </div>
