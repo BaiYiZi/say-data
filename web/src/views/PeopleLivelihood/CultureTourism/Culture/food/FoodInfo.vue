@@ -22,7 +22,11 @@
             <div class="particulars">
                 <div class="info-item">
                     <span>详情 ：</span>
-                    暂无
+                    <div class="text">
+                        <span v-for="item in infoData.history" :key="item">
+                            {{ item }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +124,27 @@ onMounted(() => {
 
             padding: 16px 0px 16px 0px;
 
+            .text {
+                width: 100%;
+                height: 94px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                overflow: scroll;
+
+                border-radius: 8px;
+                background-color: rgba(233, 233, 233, 0.35);
+
+                span {
+                    text-indent: 24px;
+                    margin-bottom: 12px;
+                }
+            }
         }
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
     }
 
     .info-item {
