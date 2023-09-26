@@ -4,6 +4,7 @@
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { ref, onMounted, onBeforeMount } from 'vue'
+import Item from '../../../components/Item.vue';
 
 const router = useRouter()
 
@@ -18,7 +19,7 @@ function undeveloped() {
 }
 
 function goCulturalTourism() {
-  router.push('/people-livelihood/cultural-tourism')
+  router.push({ name: "cultural-tourism" })
 }
 
 function goHome() {
@@ -34,18 +35,6 @@ function goMap() {
   window.open(
     'https://map.baidu.com/search/%E4%BF%9D%E5%AE%9A%E5%B8%82/@12854364,4677424,13z?querytype=s&wd=%E4%BF%9D%E5%AE%9A%E5%B8%82&c=307&provider=pc-aladin&pn=0&device_ratio=1&da_src=shareurl'
   )
-}
-
-function toMorePhoneNumber() {
-  window.open('http://www.114chn.com/tel.htm')
-}
-
-function toMoreNotification() {
-  window.open('https://www.baoding.gov.cn/')
-}
-
-function toMorePublicity() {
-  window.open('https://www.baoding.gov.cn/')
 }
 
 onBeforeMount(() => {
@@ -71,7 +60,7 @@ onMounted(() => {
   frameAppearanceAnimation.value = !frameAppearanceAnimation.value
 
   {
-    ;(() => {
+    ; (() => {
       return new Promise((resolve) => setTimeout(resolve, 200))
     })().then(() => {
       boxAppearanceAnimation.value = !boxAppearanceAnimation.value
@@ -89,139 +78,108 @@ onMounted(() => {
     <div class="content">
       <div class="cnt-colum-left">
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-left-up content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
-            <div class="title">
-              <span>常用电话</span><span @click="toMorePhoneNumber">更多</span>
-            </div>
+          <div class="cnt-colum-left-up" v-show="frameAppearanceAnimation">
+            <Item title="常用电话" more="http://www.114chn.com/tel.htm">
+              <div class="cnt">
+                <div class="line"></div>
+                <div>
+                  <table>
+                    <thead>
+                      <!-- <tr> -->
+                        <th>名称</th>
+                        <th>电话</th>
+                      <!-- </tr> -->
+                    </thead>
+                    <tr>
+                      <td>匪警</td>
+                      <td>110</td>
+                    </tr>
+                    <tr>
+                      <td>火警</td>
+                      <td>119</td>
+                    </tr>
+                    <tr>
+                      <td>急救中心</td>
 
-            <div class="cnt">
-              <div class="line"></div>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <td>名称</td>
-                      <!-- <td></td> -->
-                      <td>电话</td>
+                      <td>120</td>
                     </tr>
-                  </thead>
-                  <tr>
-                    <td>匪警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>110</td>
-                  </tr>
-                  <tr>
-                    <td>火警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>119</td>
-                  </tr>
-                  <tr>
-                    <td>急救中心</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>120</td>
-                  </tr>
-                  <tr>
-                    <td>交通事故</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>122</td>
-                  </tr>
-                </table>
-              </div>
-              <div>
-                <table>
-                  <thead>
                     <tr>
-                      <td>名称</td>
-                      <!-- <td></td> -->
-                      <td>电话</td>
+                      <td>交通事故</td>
+                      <td>122</td>
                     </tr>
-                  </thead>
-                  <tr>
-                    <td>市长热线</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12345</td>
-                  </tr>
-                  <tr>
-                    <td>文化市场举报</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12318</td>
-                  </tr>
-                  <tr>
-                    <td>水上求救专用</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12395</td>
-                  </tr>
-                  <tr>
-                    <td>公安短信报警</td>
-                    <!-- <td>&nbsp;&nbsp;&nbsp;</td> -->
-                    <td>12110</td>
-                  </tr>
-                </table>
+                  </table>
+                </div>
+                <div>
+                  <table>
+                    <thead>
+                      <!-- <tr> -->
+                        <th>名称</th>
+                        <th>电话</th>
+                      <!-- </tr> -->
+                    </thead>
+                    <tr>
+                      <td>市长热线</td>
+                      <td>12345</td>
+                    </tr>
+                    <tr>
+                      <td>文化市场举报</td>
+                      <td>12318</td>
+                    </tr>
+                    <tr>
+                      <td>水上求救专用</td>
+                      <td>12395</td>
+                    </tr>
+                    <tr>
+                      <td>公安短信报警</td>
+                      <td>12110</td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
+            </Item>
           </div>
         </transition>
 
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-left-down content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
-            <div class="title"><span>宣传相关</span><span @click="toMorePublicity">更多</span></div>
+          <div class="cnt-colum-left-down" v-show="frameAppearanceAnimation">
+            <!-- <div class="title"><span>宣传相关</span><span @click="toMorePublicity">更多</span></div> -->
+            <Item title="宣传相关" more="https://www.baoding.gov.cn/">
             <div class="list-box">
-              <a class="li" href="https://mp.weixin.qq.com/s/r35XoiM1TdapMgmciK8-_A" target="_blank"
-                ><span>防汛减灾第12天</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/nsGqscRcBfnxdYhkEdY7Zg" target="_blank"
-                ><span>8.11依棉社区防减灾宣讲</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/LovpuzoHZezm-6C9mXjkZQ" target="_blank"
-                ><span>8.防汛抗洪第11天</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/rnJ6EBDxucVGxQxRasyFsA" target="_blank"
-                ><span>保定市各地体育活动速览</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/Z2k6r9IDCW7Kq6UQdYfVng" target="_blank"
-                ><span>保定籍选手索咪娅获得大运会跳水项目女子团体金牌</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/gKrjKRbQv-b-o6OSwrUw7w" target="_blank"
-                ><span>20分钟内夺两金！“劳模”李冰洁以八枚金牌收官大运会</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/IXeEunMfiqZATChU05UkeQ" target="_blank"
-                ><span>暴雨自救指南</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/8q5sQ4I-38a0n5oFPkt6KA" target="_blank"
-                ><span>【全民健身日 竞秀动起来】好消息，全民健身日期间一大波福利来袭~</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/OCt4e4K8serd5MAObzuXHw" target="_blank"
-                ><span>河北日报解读：保定一中女足 校园“玫瑰”如何绽放世界</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/Oe40Zvtzyg-7RnSGNmL6xw" target="_blank"
-                ><span>易县赈灾，尽我所能</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/oYmSgq5YLQGc-x6ZxQir8g" target="_blank"
-                ><span>保定蓝天抗洪救灾，介绍虽简单，贵在真实</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/1K2INKDWSCWNrDABg90rvA" target="_blank"
-                ><span>闪亮的瞬间——涞水抗洪第10天</span></a
-              >
-              <a class="li" href="https://mp.weixin.qq.com/s/M6hpacvidyCuWekSC4ckQw" target="_blank"
-                ><span>文化风情{{ '<360>' }} | 我以我笔写英雄——军旅作家宫洁民</span></a
-              >
+              <a class="li" href="https://mp.weixin.qq.com/s/r35XoiM1TdapMgmciK8-_A"
+                target="_blank"><span>防汛减灾第12天</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/nsGqscRcBfnxdYhkEdY7Zg"
+                target="_blank"><span>8.11依棉社区防减灾宣讲</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/LovpuzoHZezm-6C9mXjkZQ"
+                target="_blank"><span>8.防汛抗洪第11天</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/rnJ6EBDxucVGxQxRasyFsA"
+                target="_blank"><span>保定市各地体育活动速览</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/Z2k6r9IDCW7Kq6UQdYfVng"
+                target="_blank"><span>保定籍选手索咪娅获得大运会跳水项目女子团体金牌</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/gKrjKRbQv-b-o6OSwrUw7w"
+                target="_blank"><span>20分钟内夺两金！“劳模”李冰洁以八枚金牌收官大运会</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/IXeEunMfiqZATChU05UkeQ"
+                target="_blank"><span>暴雨自救指南</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/8q5sQ4I-38a0n5oFPkt6KA" target="_blank"><span>【全民健身日
+                  竞秀动起来】好消息，全民健身日期间一大波福利来袭~</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/OCt4e4K8serd5MAObzuXHw" target="_blank"><span>河北日报解读：保定一中女足
+                  校园“玫瑰”如何绽放世界</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/Oe40Zvtzyg-7RnSGNmL6xw"
+                target="_blank"><span>易县赈灾，尽我所能</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/oYmSgq5YLQGc-x6ZxQir8g"
+                target="_blank"><span>保定蓝天抗洪救灾，介绍虽简单，贵在真实</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/1K2INKDWSCWNrDABg90rvA"
+                target="_blank"><span>闪亮的瞬间——涞水抗洪第10天</span></a>
+              <a class="li" href="https://mp.weixin.qq.com/s/M6hpacvidyCuWekSC4ckQw" target="_blank"><span>文化风情{{ '<360>'
+              }} | 我以我笔写英雄——军旅作家宫洁民</span></a>
             </div>
+            </Item>
           </div>
         </transition>
       </div>
 
       <div class="cnt-colum-middle">
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-middle-up content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
+          <div class="cnt-colum-middle-up content-box-opacity-radius" v-show="frameAppearanceAnimation">
             <div class="cnt-colum-middle-up-left">
               <transition name="el-fade-in-linear" v-show="boxAppearanceAnimation">
                 <div class="cnt-colum-middle-up-left-up box-public" @click="undeveloped">
@@ -237,10 +195,7 @@ onMounted(() => {
                 </transition>
 
                 <transition name="el-fade-in-linear" v-show="boxAppearanceAnimation">
-                  <div
-                    class="cnt-colum-middle-up-left-middle-right box-public"
-                    @click="undeveloped"
-                  >
+                  <div class="cnt-colum-middle-up-left-middle-right box-public" @click="undeveloped">
                     <div>社会保障</div>
                   </div>
                 </transition>
@@ -276,10 +231,7 @@ onMounted(() => {
         </transition>
 
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-middle-down content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
+          <div class="cnt-colum-middle-down content-box-opacity-radius" v-show="frameAppearanceAnimation">
             <table>
               <tr>
                 <td onclick="window.open('https://www.baoding.gov.cn/')"> >市政府</td>
@@ -322,10 +274,7 @@ onMounted(() => {
 
       <div class="cnt-colum-right">
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-right-up content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
+          <div class="cnt-colum-right-up content-box-opacity-radius" v-show="frameAppearanceAnimation">
             <div>
               <div id="he-plugin-standard"></div>
             </div>
@@ -333,75 +282,31 @@ onMounted(() => {
           </div>
         </transition>
         <transition name="el-zoom-in-center">
-          <div
-            class="cnt-colum-right-down content-box-opacity-radius"
-            v-show="frameAppearanceAnimation"
-          >
-            <div class="title">
-              <span>通知公告</span><span @click="toMoreNotification">更多</span>
-            </div>
-            <div class="list-box">
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-159-405308.html"
-                target="_blank"
-                ><span>全力防范！我市启动重大气象灾害（暴雨）Ⅳ级应急响应</span></a
-              >
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-173-405596.html"
-                target="_blank"
-                ><span>举办专场招聘会</span></a
-              >
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-173-405520.html"
-                target="_blank"
-                ><span>基本公共卫生服务质量提升项目经验交流会</span></a
-              >
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-173-405390.html"
-                target="_blank"
-                ><span>第二届“文化旅游看河北——你不知道的特色小镇”媒体行活动</span></a
-              >
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-173-405315.html"
-                target="_blank"
-                ><span>中央媒体“高质量发展调研行”主题采访活动</span></a
-              >
-              <a
-                class="li"
-                href="https://www.baoding.gov.cn/content-173-405249.html"
-                target="_blank"
-                ><span>全省组织工作会议</span></a
-              >
-              <a
-                class="li"
-                href="https://www.gov.cn/zhengce/202305/content_6875434.htm"
-                target="_blank"
-                ><span>关于推进基本养老服务体系建设的意见</span></a
-              >
-              <a
-                class="li"
-                href="https://www.gov.cn/zhengce/content/202306/content_6887167.htm"
-                target="_blank"
-                ><span>国务院办公厅关于进一步构建高质量充电基础设施体系的指导意见</span></a
-              >
-              <a
-                class="li"
-                href="https://www.gov.cn/zhengce/202304/content_6762874.htm"
-                target="_blank"
-                ><span>关于进一步完善医疗卫生服务体系的意见</span></a
-              >
-              <a
-                class="li"
-                href="https://www.gov.cn/zhengce/202306/content_6886110.htm"
-                target="_blank"
-                ><span>关于构建优质均衡的基本公共教育服务体系的意见</span></a
-              >
-            </div>
+          <div class="cnt-colum-right-down" v-show="frameAppearanceAnimation">
+            <Item title="通知公告" more="https://www.baoding.gov.cn/">
+              <div class="list-box">
+                <a class="li" href="https://www.baoding.gov.cn/content-159-405308.html"
+                  target="_blank"><span>全力防范！我市启动重大气象灾害（暴雨）Ⅳ级应急响应</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405596.html"
+                  target="_blank"><span>举办专场招聘会</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405520.html"
+                  target="_blank"><span>基本公共卫生服务质量提升项目经验交流会</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405390.html"
+                  target="_blank"><span>第二届“文化旅游看河北——你不知道的特色小镇”媒体行活动</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405315.html"
+                  target="_blank"><span>中央媒体“高质量发展调研行”主题采访活动</span></a>
+                <a class="li" href="https://www.baoding.gov.cn/content-173-405249.html"
+                  target="_blank"><span>全省组织工作会议</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202305/content_6875434.htm"
+                  target="_blank"><span>关于推进基本养老服务体系建设的意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/content/202306/content_6887167.htm"
+                  target="_blank"><span>国务院办公厅关于进一步构建高质量充电基础设施体系的指导意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202304/content_6762874.htm"
+                  target="_blank"><span>关于进一步完善医疗卫生服务体系的意见</span></a>
+                <a class="li" href="https://www.gov.cn/zhengce/202306/content_6886110.htm"
+                  target="_blank"><span>关于构建优质均衡的基本公共教育服务体系的意见</span></a>
+              </div>
+            </Item>
           </div>
         </transition>
       </div>

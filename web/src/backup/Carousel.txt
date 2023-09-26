@@ -1,0 +1,13 @@
+< !-- 
+    <el-carousel-item >
+        <img src="@/assets/PeopleLivelihood/CulturalTourism/baishishan.png"/>
+    </el-carousel-item >
+
+    <el-carousel-item>
+        <img src="@/assets/PeopleLivelihood/CulturalTourism/baishishan2.png"/>
+    </el-carousel-item>
+
+    <el-carousel-item>
+        <img src="@/assets/PeopleLivelihood/CulturalTourism/yesanpo.png"/>
+    </el-carousel-item>
+ -->

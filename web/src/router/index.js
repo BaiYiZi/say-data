@@ -1,59 +1,72 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/Home/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+
+import Home from '@/views/Home/HomeView.vue'
+import PeopleLivelihoodHome from '@/views/PeopleLivelihood/PeopleLivelihoodHome/PeopleLivelihoodHomeView.vue'
+import CulturalTourism from '@/views/PeopleLivelihood/CultureTourism/CulturalTourism.vue'
+import TouristAttraction from '@/views/PeopleLivelihood/CultureTourism/TouristAttraction/TouristAttraction.vue'
+import Culture from '@/views/PeopleLivelihood/CultureTourism/Culture/Culture.vue'
+import Development from '@/views/PeopleLivelihood/CultureTourism/Development/Development.vue'
+import Ecology from '@/views/PeopleLivelihood/CultureTourism/Ecology/Ecology.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/:catchAll(.*)',
-      name: '404',
-      component: () => import('@/views/error/NotFound/NotFoundView.vue'),
-    },
-    {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      redirect: '/home'
     },
+    // 数说保定主页
     {
+      name: 'home',
+      path: '/home',
+      component: Home
+    },
+    // 民生主页
+    {
+      name: 'people-livelihood-home',
       path: '/people-livelihood',
-      name: 'people-livelihood',
-      component: () => import('../views/Peoplelivelihood/Entrance/EntranceView.vue'),
+      component: PeopleLivelihoodHome
+    },
+    //文化旅游页面
+    // 默认为景区及周边页面
+    {
+      name: "cultural-tourism",
+      path: "/people-livelihood/cultural-tourism",
+      component: CulturalTourism,
+      redirect: "/people-livelihood/cultural-tourism/tourist-attraction",
       children: [
+        // 景区及周边页面
         {
-          path: "",
-          name: "people-livelihood-home",
-          component: () => import('../views/Peoplelivelihood/PeopleLivelihoodHome/PeoplelivelihoodHomeView.vue'),
+          name: 'tourist-attraction',
+          path: 'tourist-attraction',
+          component: TouristAttraction
         },
+        // 景区及周边页面
         {
-          path: "cultural-tourism",
-          name: "cultural-tourism",
-          component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalTourismView.vue'),
-          children: [
-            {
-              path: "scenic-spot",
-              name: "scenic-spot",
-              component: () => import('../views/Peoplelivelihood/CulturalTourism/ScenicSpot/ScenicSpotView.vue'),
-            },
-            {
-              path: "cultural-tourism-construction",
-              name: "cultural-tourism-construction",
-              component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalTourismConstruction/CulturalTourismConstructionView.vue'),
-            },
-            {
-              path: "mechanism",
-              name: "mechanism",
-              component: () => import('../views/Peoplelivelihood/CulturalTourism/Mechanism/MechanismView.vue'),
-            },
-            {
-              path: "cultural-heritage",
-              name: "cultural-heritage",
-              component: () => import('../views/Peoplelivelihood/CulturalTourism/CulturalHeritage/CulturalHeritageView.vue'),
-            }
-          ],
-          redirect: "/people-livelihood/cultural-tourism/scenic-spot"
-        }
-      ],
-    }
+          name: 'tourist-attraction',
+          path: 'tourist-attraction',
+          component: TouristAttraction
+        },
+        // 各类文化情况页面
+        {
+          name: 'cultrue',
+          path: 'cultrue',
+          component: Culture
+        },
+        // 文旅发展概况页面
+        {
+          name: 'development',
+          path: 'development',
+          component: Development
+        },
+        // 文旅周边生态页面
+        {
+          name: 'ecology',
+          path: 'ecology',
+          component: Ecology
+        },
+      ]
+    },
   ]
 })
 
