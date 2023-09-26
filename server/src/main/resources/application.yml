@@ -1,8 +1,0 @@
-server:
-  port: 8081
-spring:
-  datasource:
-    url: jdbc:mysql://114.115.202.226/shushuo
-    username: shushuo
-    password: asd123456
-    type: com.alibaba.druid.pool.DruidDataSource
