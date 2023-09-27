@@ -41,7 +41,7 @@ async function getChartData() {
     const count = []
     chartData.value = ((await getActivity(selectedYear.value)).data.data).map(item => {
         var d = new Date(item.dates)
-        dates.push(d.getFullYear() + '年' + d.getMonth() + '月')
+        dates.push(d.getFullYear() + '年' + (d.getMonth() + 1) + '月')
         count.push(item.count)
     });
 
