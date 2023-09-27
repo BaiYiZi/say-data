@@ -29,6 +29,11 @@
 .header div {
   cursor: pointer;
   font-family: "YouSheBiaoTiHei";
+  transition: all 150ms ease-out;
+}
+
+.header div:hover {
+  transform: scale(1.06);
 }
 
 .content {

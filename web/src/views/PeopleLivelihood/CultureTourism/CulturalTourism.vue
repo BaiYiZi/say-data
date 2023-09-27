@@ -123,11 +123,24 @@ onMounted(() => {
 
     .header-text {
         height: 80px;
+        width: 420px;
         line-height: 80px;
         padding-left: 40px;
+
         cursor: pointer;
         font-size: 48px;
         font-family: 'YouSheBiaoTiHei';
+        color: #7367F0;
+
+        transition-property: all;
+        transition-duration: 0.26s;
+        transition-timing-function: ease-out 200ms;
+    }
+
+    .header-text:hover {
+        width: 432px;
+        transform: translateX(-12px);
+        background: rgba(114, 103, 240, 0.06);
         color: #7367F0;
     }
 }
